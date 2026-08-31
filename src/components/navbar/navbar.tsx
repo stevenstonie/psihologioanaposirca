@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
+import { Link } from 'react-router-dom';
+import '../../styles/button.scss';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,16 +11,23 @@ export default function Navbar() {
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
+        const scrollThreshold = 100;
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 60) {
-                setIsVisible(false);
-                setIsOpen(false);
-            } else {
-                setIsVisible(true);
+            const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+            if (scrollDifference > scrollThreshold) {
+                if (currentScrollY > lastScrollY && currentScrollY > 60) {
+                    setIsVisible(false);
+                    setIsOpen(false);
+                }
+                else if (currentScrollY < lastScrollY) {
+                    setIsVisible(true);
+                }
+
+                lastScrollY = Math.max(currentScrollY, 0);
             }
-            lastScrollY = currentScrollY;
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -59,11 +68,12 @@ export default function Navbar() {
     return (
         <div className={`nav-wrapper ${isVisible ? 'is-visible' : 'is-hidden'}`}>
             <header className="nav-container">
-
-                <a className="nav-brand" href="#intro" onClick={() => setIsOpen(false)}>
-                    {/* <span className="nav-logo" aria-hidden="true"></span> */}
-                    My Portfolio
-                </a>
+                <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}>
+                    <div className="nav-logo" aria-hidden="true">
+                        <img src="/logo.svg" alt="" />
+                    </div>
+                    Psiholog Posirca Ioana
+                </Link>
 
                 <button
                     ref={buttonRef}
@@ -75,7 +85,7 @@ export default function Navbar() {
                 >
                     <span className="burger-bars" aria-hidden="true">
                         <i className="bar-1"></i>
-                        <i className="bar-2"></i>
+                        {/* <i className="bar-2"></i> */}
                         <i className="bar-3"></i>
                     </span>
                 </button>
@@ -85,11 +95,18 @@ export default function Navbar() {
                     className={`nav-drawer ${isOpen ? 'is-open' : ''}`}
                     aria-label="Main"
                 >
-                    <a className="nav-link" href="#intro" onClick={() => setIsOpen(false)}>Intro</a>
-                    <a className="nav-link" href="#specializations" onClick={() => setIsOpen(false)}>Specializations</a>
-                    <a className="nav-link" href="#services" onClick={() => setIsOpen(false)}>Services</a>
-                    <a className="nav-link" href="#articles" onClick={() => setIsOpen(false)}>Recent Articles</a>
-                    <a className="nav-cta" href="#why-choose-me" onClick={() => setIsOpen(false)}>Why Me?</a>
+                    <Link className="nav-link" to="/despre-mine" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Despre mine</Link>
+                    <Link className="nav-link" to="/servicii" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Servicii</Link>
+                    <Link className="nav-link" to="/articole" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Articole</Link>
+                    <Link className="nav-link" to="/programare" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Programare</Link>
+                    <Link className="nav-link" to="/faq" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Întrebări frecvente</Link>
+                    <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}>Contact</Link>
                 </nav>
 
             </header>
