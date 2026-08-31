@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'IBMPlexSerifMedium';
+  src: url('./assets/fonts/ibmplexserif/IBMPlexSerif-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Parisienne';
+  src: url('./assets/fonts/parisienne/Parisienne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #168d5b;
+  --color-secondary: #bb2a66;
+  --color-accent: #26b076;
+  --color-bg: #e7ddcb;
+
+  --font-primary: 'IBMPlexSerifMedium', sans-serif;
+  --font-quote: 'Parisienne', serif;
+
+  --nav-max-width: 1200px;
+}
+
+body,
+html {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
