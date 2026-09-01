@@ -155,7 +155,7 @@ $nav-max-width: 1000px;
     &:hover,
     &:focus-visible {
         color: var(--color-primary);
-        background: rgba(204, 204, 204, 0.555);
+        background: color-mix(in srgb, var(--color-secondary) 25%, transparent);
         translate: 0 -2px;
     }
 

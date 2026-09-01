@@ -35,6 +35,10 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--color-bg);
+}
+
 button,
 input,
 textarea,
