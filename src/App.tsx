@@ -1,7 +1,14 @@
-import { BrowserRouter, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import Navbar from './components/navbar/navbar'
-import IntroSection from './sections/intro'
+import AboutMePage from './pages/about_me_page'
+import ServicesPage from './pages/services_page'
+import ArticlesPage from './pages/articles_page'
+import BookingPage from './pages/booking_page'
+import FAQPage from './pages/faq_page'
+import ContactPage from './pages/contact_page'
+import HomePage from './pages/home_page'
+import NotFoundPage from './pages/not_found_page'
 
 function App() {
 
@@ -12,12 +19,17 @@ function App() {
         <Navbar />
 
         <Routes>
-
+          <Route path="/" element={<HomePage />} />
+          <Route path="/despre-mine" element={<AboutMePage />} />
+          <Route path="/servicii" element={<ServicesPage />} />
+          <Route path="/articole" element={<ArticlesPage />} />
+          <Route path="/programare" element={<BookingPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
-      <div style={{ height: '200svh' }}></div>
-
-      <IntroSection></IntroSection>
+      <br></br>
     </>
   )
 }

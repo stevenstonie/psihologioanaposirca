@@ -70,7 +70,7 @@ export default function Navbar() {
             <header className="nav-container">
                 <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}>
                     <div className="nav-logo" aria-hidden="true">
-                        <img src="/logo.svg" alt="" />
+                        <img src="/logo.jpg" alt="" />
                     </div>
                     Psiholog Posirca Ioana
                 </Link>
@@ -96,17 +96,17 @@ export default function Navbar() {
                     aria-label="Main"
                 >
                     <Link className="nav-link" to="/despre-mine" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Despre mine</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Despre mine</Link>
                     <Link className="nav-link" to="/servicii" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Servicii</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Servicii</Link>
                     <Link className="nav-link" to="/articole" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Articole</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Articole</Link>
                     <Link className="nav-link" to="/programare" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Programare</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Programare</Link>
                     <Link className="nav-link" to="/faq" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Întrebări frecvente</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Întrebări frecvente</Link>
                     <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()}>Contact</Link>
+                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Contact</Link>
                 </nav>
 
             </header>

@@ -1,0 +1,52 @@
+.intro-section {
+    padding: 4rem 1.5rem;
+    background-color: var(--color-bg);
+}
+
+.intro-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.intro-image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+}
+
+.intro-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    clear: both;
+}
+
+@media (min-width: 768px) {
+    .intro-image {
+        float: left;
+        margin: 0 2rem 1rem 0;
+    }
+
+    .intro-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+        padding: .8rem 2rem;
+    }
+}

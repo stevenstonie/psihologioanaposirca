@@ -17,14 +17,14 @@
 :root {
   --color-primary: #168d5b;
   --color-primary-darker: #106d46;
-  --color-accent: #26b076;
+  --color-primary-lighter: #26b076;
   --color-secondary: #bb2a66;
+  --color-secondary-darker: #aa1c57;
+  --color-secondary-lighter: #cb3976;
   --color-bg: #e7ddcb;
 
   --font-primary: 'IBMPlexSerifMedium', sans-serif;
   --font-quote: 'Parisienne', serif;
-
-  --nav-max-width: 900px;
 }
 
 body,
@@ -35,8 +35,27 @@ html {
   box-sizing: border-box;
 }
 
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
