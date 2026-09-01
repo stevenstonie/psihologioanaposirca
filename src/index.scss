@@ -22,21 +22,23 @@
   --color-secondary-darker: #aa1c57;
   --color-secondary-lighter: #cb3976;
   --color-bg: #e7ddcb;
+  --color-text: #2a2a2a;
 
   --font-primary: 'IBMPlexSerifMedium', sans-serif;
   --font-quote: 'Parisienne', serif;
 }
 
-body,
 html {
   font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-html {
-  background-color: var(--color-bg);
+body {
+  margin: 0;
+  padding: 0;
 }
 
 button,

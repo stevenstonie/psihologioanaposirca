@@ -5,7 +5,7 @@ export default function ServicesSection() {
     return (
         <section>
             <h2>Serviciile mele</h2>
-            <p>În cadrul cabinetului sunt disponibile servicii de evaluare psihologică, consiliere psihologică și intervenție psihologică, în funcție de nevoile și obiectivele fiecărei persoane.</p>
+            <p>În cadrul cabinetului sunt disponibile servicii de <strong>evaluare psihologică</strong>, <strong>consiliere psihologică</strong> și <strong>intervenție psihologică</strong>, în funcție de nevoile și obiectivele fiecărei persoane.</p>
             <p>Poți apela la aceste servicii pentru înțelegerea și gestionarea dificultăților emoționale, autocunoaștere, dezvoltare personală, relații, perioade de tranziție sau situații care îți afectează echilibrul de zi cu zi. Evaluările psihologice pot fi realizate, de asemenea, în funcție de scopul și contextul pentru care sunt solicitate.</p>
 
             <h3>Cum putem lucra</h3>

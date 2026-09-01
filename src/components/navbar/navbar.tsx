@@ -68,11 +68,12 @@ export default function Navbar() {
     return (
         <div className={`nav-wrapper ${isVisible ? 'is-visible' : 'is-hidden'}`}>
             <header className="nav-container">
-                <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}>
+                <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}
+                    onMouseDown={(e) => e.preventDefault()} draggable={false}>
                     <div className="nav-logo" aria-hidden="true">
                         <img src="/logo.jpg" alt="" />
                     </div>
-                    Psiholog Posirca Ioana
+                    <span className='nav-brand-text'>Psiholog Posirca Ioana</span>
                 </Link>
 
                 <button

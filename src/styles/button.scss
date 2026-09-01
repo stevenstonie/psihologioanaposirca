@@ -5,8 +5,8 @@
 }
 
 .btn.secondary {
-    --bg-base: var(--color-secondary);
-    --bg-hover: var(--color-secondary-lighter);
+    --bg-base: var(--color-secondary-lighter);
+    --bg-hover: var(--color-secondary);
     --bg-active: var(--color-secondary-darker);
 }
 

@@ -1,6 +1,10 @@
 `npm install -D sass`
 
 
+any react dom \<Link\> tag should have the following:
+`onMouseDown={(e) => e.preventDefault()}`
+and
+`draggable={false}` attributes as to not freeze the page on a long press... <small>weird bug</small>
 
 
 
@@ -8,23 +12,33 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
