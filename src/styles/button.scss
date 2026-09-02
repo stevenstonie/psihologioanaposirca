@@ -5,8 +5,8 @@
 }
 
 .btn.secondary {
-    --bg-base: var(--color-secondary-lighter);
-    --bg-hover: var(--color-secondary);
+    --bg-base: var(--color-secondary);
+    --bg-hover: var(--color-secondary-lighter);
     --bg-active: var(--color-secondary-darker);
 }
 
@@ -21,6 +21,10 @@
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
+    box-shadow:
+        0 22px 40px -10px var(--bg-base),
+        inset 0 -16px 26px -10px var(--bg-active),
+        inset 0 18px 26px -8px var(--bg-hover);
 
     color: #fff;
 
@@ -37,8 +41,9 @@
     background: var(--bg-hover);
     translate: 0 -1px;
     box-shadow:
-        0 8px 18px -12px color-mix(in oklab, var(--color-primary-lighter) 85%, transparent),
-        0 12px 20px 0 transparent;
+        0 12px 40px -10px var(--bg-base),
+        inset 0 -16px 26px -10px var(--bg-active),
+        inset 0 18px 26px -8px var(--bg-hover);
 }
 
 .btn:focus-visible:not(:disabled) {

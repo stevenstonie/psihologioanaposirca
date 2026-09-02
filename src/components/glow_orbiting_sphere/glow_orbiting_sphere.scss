@@ -1,0 +1,81 @@
+@property --cl-02-lx {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+}
+
+@property --cl-02-ly {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 20px;
+}
+
+.glowing-orbit-sphere {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 26px 44px -14px var(--color-primary-darker),
+        inset var(--cl-02-lx) var(--cl-02-ly) 30px -8px white,
+        inset calc(var(--cl-02-lx) * -1) calc(var(--cl-02-ly) * -1) 30px -8px black;
+    animation: cl-02-orbit 9s linear infinite;
+}
+
+.glowing-orbit-sphere-content {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glowing-orbit-sphere-content svg,
+.glowing-orbit-sphere-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glowing-orbit-sphere {
+        animation: none;
+        --cl-02-lx: 0px;
+        --cl-02-ly: 20px;
+    }
+}
+
+@keyframes cl-02-orbit {
+    0% {
+        --cl-02-lx: 0px;
+        --cl-02-ly: 20px;
+    }
+
+    25% {
+        --cl-02-lx: 20px;
+        --cl-02-ly: 0px;
+    }
+
+    50% {
+        --cl-02-lx: 0px;
+        --cl-02-ly: -20px;
+    }
+
+    75% {
+        --cl-02-lx: -20px;
+        --cl-02-ly: 0px;
+    }
+
+    100% {
+        --cl-02-lx: 0px;
+        --cl-02-ly: 20px;
+    }
+}

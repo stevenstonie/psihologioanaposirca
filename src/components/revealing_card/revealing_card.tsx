@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
-import './reveal_card.scss';
+import './revealing_card.scss';
 
-interface RevealCardProps {
+interface RevealingCardProps {
     title: string;
     description: string;
     icon: ReactNode;
     isListItem?: boolean;
 }
 
-export default function RevealCard({ title, description, icon, isListItem = true }: Readonly<RevealCardProps>) {
+export default function RevealingCard({ title, description, icon, isListItem = true }: Readonly<RevealingCardProps>) {
     const Tag = isListItem ? 'li' : 'div';
     return (
         <Tag className="reveal-card">

@@ -11,8 +11,6 @@ import HomePage from './pages/home_page/home_page'
 import NotFoundPage from './pages/not_found_page'
 
 function App() {
-
-
   return (
     <>
       <BrowserRouter>

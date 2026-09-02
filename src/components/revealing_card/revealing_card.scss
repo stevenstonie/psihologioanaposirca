@@ -3,12 +3,14 @@
     grid-template-columns: 60px 1fr;
     gap: 12px;
     padding: 24px 22px 26px;
-    background: color-mix(in srgb, var(--color-bg) 70%, transparent);
+    background: color-mix(in srgb, var(--color-bg) 60%, transparent);
     border: 2px solid var(--color-primary-lighter, #e0e0e0);
     border-radius: 8px;
     opacity: 1;
     transform: none;
-    box-shadow: 0 15px 35px -20px color-mix(in srgb, var(--color-primary-darker) 90%, transparent);
+    box-shadow:
+        inset 5px 5px 15px 0px color-mix(in srgb, var(--color-primary-lighter) 30%, transparent),
+        0 15px 35px -10px color-mix(in srgb, var(--color-primary-darker) 90%, transparent);
 
     @supports (animation-timeline: view()) {
         animation: card-reveal linear both;

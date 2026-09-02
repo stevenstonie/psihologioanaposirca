@@ -1,5 +1,5 @@
 import CardLayout from "../../components/card_layout/card_layout";
-import RevealCard from "../../components/reveal_card/reveal_card";
+import RevealingCard from "../../components/revealing_card/revealing_card";
 import './why_choose_my_services_section.scss';
 import certificateIcon from '@/assets/svgs/icons/why_choose_my_services/certificate.svg';
 import heartWithHandsIcon from '@/assets/svgs/icons/why_choose_my_services/heart_with_hands_touching_inside.svg';
@@ -23,22 +23,22 @@ export default function WhyChooseMyServicesSection() {
                     Fiecare persoană are propriul său context, iar demersul psihologic este construit pornind de la nevoile și obiectivele sale.
                 </p>
                 <CardLayout mode="grid">
-                    <RevealCard
+                    <RevealingCard
                         icon={<img src={certificateIcon} alt="" />}
                         title="Rigoare profesională"
                         description="Formarea și practica mea se bazează pe principii și metode specifice domeniului psihologic..."
                     />
-                    <RevealCard
+                    <RevealingCard
                         icon={<img src={heartWithHandsIcon} alt="" />}
                         title="Un spațiu în care poți fi tu"
                         description="Fără etichete și fără presiunea de a avea toate răspunsurile..."
                     />
-                    <RevealCard
+                    <RevealingCard
                         icon={<img src={personClimbingIcon} alt="" />}
                         title="Respect pentru ritmul tău"
                         description="Schimbarea nu arată la fel pentru toată lumea..."
                     />
-                    <RevealCard
+                    <RevealingCard
                         icon={<img src={threePeopleIcon} alt="" />}
                         title="O perspectivă integrativă asupra persoanei"
                         description="Dincolo de un simptom sau de o situație punctuală..."

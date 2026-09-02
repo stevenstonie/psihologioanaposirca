@@ -1,0 +1,43 @@
+.my-services-section {
+    // background-color: var(--color-bg);
+    // -webkit-mask-image: linear-gradient(to bottom,
+    //         transparent 0%,
+    //         black 10%,
+    //         black 90%,
+    //         transparent 100%);
+    // mask-image: linear-gradient(to bottom,
+    //         transparent 0%,
+    //         black 10%,
+    //         black 90%,
+    //         transparent 100%);
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    .floating-sphere {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 10px;
+
+        @media (max-width: 600px) {
+            width: 150px;
+            margin-right: 15px;
+        }
+    }
+
+    p {
+        @media (min-width: 600px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    li {
+        @media (min-width: 600px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .how-we-can-work,
+    .how-we-can-work-items {
+        clear: left;
+    }
+}
