@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/images/logo.jpg';
 import '../../styles/button.scss';
 
 export default function Navbar() {
@@ -71,7 +72,7 @@ export default function Navbar() {
                 <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}
                     onMouseDown={(e) => e.preventDefault()} draggable={false}>
                     <div className="nav-logo" aria-hidden="true">
-                        <img src="/logo.jpg" alt="" />
+                        <img src={logo} alt="" />
                     </div>
                     <span className='nav-brand-text'>Psiholog Posirca Ioana</span>
                 </Link>
