@@ -7,7 +7,7 @@ import ArticlesPage from './pages/articles_page'
 import BookingPage from './pages/booking_page'
 import FAQPage from './pages/faq_page'
 import ContactPage from './pages/contact_page'
-import HomePage from './pages/home_page'
+import HomePage from './pages/home_page/home_page'
 import NotFoundPage from './pages/not_found_page'
 
 function App() {

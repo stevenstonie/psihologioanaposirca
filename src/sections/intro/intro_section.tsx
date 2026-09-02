@@ -32,10 +32,6 @@ export default function IntroSection() {
                         Programează-te
                     </Link>
                 </div>
-
-                <br></br>
-                <br></br>
-                <br></br>
             </div>
         </section>
     );

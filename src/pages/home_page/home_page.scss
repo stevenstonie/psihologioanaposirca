@@ -1,0 +1,10 @@
+.home-page {
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &:first-of-type {
+            padding-top: 5rem;
+        }
+    }
+}

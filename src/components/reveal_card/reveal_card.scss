@@ -1,6 +1,6 @@
 .reveal-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 60px 1fr;
     gap: 12px;
     padding: 24px 22px 26px;
     background: color-mix(in srgb, var(--color-bg) 70%, transparent);
@@ -20,11 +20,12 @@
 .reveal-card-icon {
     display: grid;
     place-items: center;
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
     border-radius: 50%;
     color: var(--color-primary);
-    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    // background: color-mix(in srgb, var(--color-primary) 12%, transparent);
 
     svg {
         width: 22px;
@@ -38,11 +39,11 @@
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-text);
-    text-wrap: balance;
 }
 
 .reveal-card-description {
     margin: 0;
+    grid-column: 1 / -1;
     font-family: var(--font-primary);
     font-size: 0.9rem;
     line-height: 1.6;
