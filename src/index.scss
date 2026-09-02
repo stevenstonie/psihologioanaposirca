@@ -19,7 +19,7 @@
   --color-primary-darker: #106d46;
   --color-primary-lighter: #26b076;
   --color-secondary: #bb2a66;
-  --color-secondary-darker: #aa1c57;
+  --color-secondary-darker: #901548;
   --color-secondary-lighter: #cb3976;
   --color-bg: #e7ddcb;
   --color-text: #2a2a2a;
@@ -38,6 +38,12 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 h2 {
@@ -63,11 +69,14 @@ select {
   font-family: inherit;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+a {
+  color: var(--color-secondary);
+
+  &:hover {
+    color: var(--color-secondary-darker);
+  }
 }
+
 
 .sr-only {
   position: absolute;

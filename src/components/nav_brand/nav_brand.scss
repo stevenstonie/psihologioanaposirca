@@ -1,0 +1,49 @@
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+
+    .nav-brand-text {
+        position: relative;
+        padding-bottom: 4px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &:hover {
+        color: var(--color-primary);
+    }
+
+    &:hover .nav-brand-text::after {
+        transform: scaleX(1);
+    }
+}
+
+
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+}

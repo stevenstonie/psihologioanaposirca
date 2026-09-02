@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
 import { Link } from 'react-router-dom';
-import logo from '@/assets/images/logo.jpg';
 import '../../styles/button.scss';
+import NavBrand from '../nav_brand/nav_brand';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -69,13 +69,7 @@ export default function Navbar() {
     return (
         <div className={`nav-wrapper ${isVisible ? 'is-visible' : 'is-hidden'}`}>
             <header className="nav-container">
-                <Link className="nav-brand" to="/" onClick={() => setIsOpen(false)}
-                    onMouseDown={(e) => e.preventDefault()} draggable={false}>
-                    <div className="nav-logo" aria-hidden="true">
-                        <img src={logo} alt="" />
-                    </div>
-                    <span className='nav-brand-text'>Psiholog Posirca Ioana</span>
-                </Link>
+                <NavBrand onClick={() => setIsOpen(false)} />
 
                 <button
                     ref={buttonRef}

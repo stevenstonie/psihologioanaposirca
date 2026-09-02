@@ -9,11 +9,15 @@ import FAQPage from './pages/faq_page'
 import ContactPage from './pages/contact_page'
 import HomePage from './pages/home_page/home_page'
 import NotFoundPage from './pages/not_found_page'
+import { ScrollToTop } from './utils/scroll_to_top'
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
+
         <Navbar />
 
         <Routes>
@@ -27,7 +31,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
-      <br></br>
+      <></>
     </>
   )
 }

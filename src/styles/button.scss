@@ -27,9 +27,7 @@
         inset 0 18px 26px -8px var(--bg-hover);
 
     color: #fff;
-
     background: var(--bg-base);
-
     transition: background-color 0.18s ease,
         translate 0.18s cubic-bezier(0.16, 1, 0.3, 1),
         scale 0.18s ease,
@@ -40,6 +38,7 @@
 .btn:hover:not(:disabled) {
     background: var(--bg-hover);
     translate: 0 -1px;
+    color: #fff;
     box-shadow:
         0 12px 40px -10px var(--bg-base),
         inset 0 -16px 26px -10px var(--bg-active),
