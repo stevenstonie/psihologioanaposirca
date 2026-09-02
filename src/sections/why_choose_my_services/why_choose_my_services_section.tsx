@@ -1,4 +1,6 @@
-
+import CardLayout from "../../components/card_layout/card_layout";
+import RevealCard from "../../components/reveal_card/reveal_card";
+import './why_choose_my_services_section.scss';
 
 
 export default function WhyChooseMyServicesSection() {
@@ -17,24 +19,28 @@ export default function WhyChooseMyServicesSection() {
                 <p>
                     Fiecare persoană are propriul său context, iar demersul psihologic este construit pornind de la nevoile și obiectivele sale.
                 </p>
-                <ul>
-                    <li>
-                        <strong>Rigoare profesională</strong>
-                        <p>Formarea și practica mea se bazează pe principii și metode specifice domeniului psihologic...</p>
-                    </li>
-                    <li>
-                        <strong>Un spațiu în care poți fi tu</strong>
-                        <p>Fără etichete și fără presiunea de a avea toate răspunsurile...</p>
-                    </li>
-                    <li>
-                        <strong>Respect pentru ritmul tău</strong>
-                        <p>Schimbarea nu arată la fel pentru toată lumea...</p>
-                    </li>
-                    <li>
-                        <strong>O perspectivă integrativă asupra persoanei</strong>
-                        <p>Dincolo de un simptom sau de o situație punctuală...</p>
-                    </li>
-                </ul>
+                <CardLayout mode="grid">
+                    <RevealCard
+                        icon={<svg>...</svg>}
+                        title="Rigoare profesională"
+                        description="Formarea și practica mea se bazează pe principii și metode specifice domeniului psihologic..."
+                    />
+                    <RevealCard
+                        icon={<svg>...</svg>}
+                        title="Un spațiu în care poți fi tu"
+                        description="Fără etichete și fără presiunea de a avea toate răspunsurile..."
+                    />
+                    <RevealCard
+                        icon={<svg>...</svg>}
+                        title="Respect pentru ritmul tău"
+                        description="Schimbarea nu arată la fel pentru toată lumea..."
+                    />
+                    <RevealCard
+                        icon={<svg>...</svg>}
+                        title="O perspectivă integrativă asupra persoanei"
+                        description="Dincolo de un simptom sau de o situație punctuală..."
+                    />
+                </CardLayout>
             </div>
         </section>
     );

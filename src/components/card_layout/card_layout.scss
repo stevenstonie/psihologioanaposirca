@@ -1,0 +1,47 @@
+.card-layout {
+    width: 100%;
+    max-width: var(--nav-max-width, 1200px);
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+
+    &.layout-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    &.layout-carousel {
+        display: flex;
+        gap: 20px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 24px;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--color-secondary-lighter);
+            border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 8px;
+        }
+
+        >* {
+            flex: 0 0 300px;
+            max-width: 85vw;
+            scroll-snap-align: start;
+            height: fit-content;
+        }
+    }
+}

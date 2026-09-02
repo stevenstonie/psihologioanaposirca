@@ -1,0 +1,72 @@
+.reveal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 22px 26px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-primary-lighter, #e0e0e0);
+    border-radius: 8px;
+    opacity: 1;
+    transform: none;
+
+    box-shadow: 0 15px 35px -20px color-mix(in srgb, var(--color-primary-darker) 30%, transparent);
+
+    @supports (animation-timeline: view()) {
+        animation: card-reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 15% cover 40%;
+    }
+}
+
+.reveal-card-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.reveal-card-title {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-wrap: balance;
+}
+
+.reveal-card-description {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-primary);
+    text-wrap: pretty;
+}
+
+@keyframes card-reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.94) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-card {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+    }
+}

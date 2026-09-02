@@ -1,6 +1,13 @@
+# pre
 `npm install -D sass`
 
+# during
+`npm run dev`
 
+`npm run build`
+
+
+# post
 any react dom \<Link\> tag should have the following:
 `onMouseDown={(e) => e.preventDefault()}`
 and
