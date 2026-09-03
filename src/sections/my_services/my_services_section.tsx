@@ -1,5 +1,5 @@
 import GlowOrbitingSphere from '../../components/glow_orbiting_sphere/glow_orbiting_sphere';
-import headOfPersonOnABookIcon from '@/assets/svgs/icons/others/head_of_person_on_a_book.svg';
+import headOfPersonOnABookIcon from '@/assets/svgs/icons/others/head_of_person_with_psychology_sign_on_a_book.svg';
 import './my_services_section.scss';
 
 export default function MyServicesSection() {

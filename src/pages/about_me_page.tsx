@@ -2,7 +2,7 @@
 
 export default function AboutMePage() {
     return (
-        <>
+        <main>
             <br></br>
             <br></br>
 
@@ -44,6 +44,6 @@ export default function AboutMePage() {
                     <li>Organizații și servicii din domeniul sănătății și asistenței sociale</li>
                 </ul>
             </section>
-        </>
+        </main>
     );
 }

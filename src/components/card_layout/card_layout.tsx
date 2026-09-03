@@ -14,7 +14,7 @@ export default function CardLayout({ mode = 'grid', semanticList = true, childre
 
     const handleScroll = (direction: 'left' | 'right') => {
         if (containerRef.current) {
-            const scrollAmount = 50;
+            const scrollAmount = 200;
             containerRef.current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'

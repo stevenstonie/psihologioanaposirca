@@ -8,7 +8,7 @@ import BookingPage from './pages/booking_page'
 import FAQPage from './pages/faq_page'
 import ContactPage from './pages/contact_page'
 import HomePage from './pages/home_page/home_page'
-import NotFoundPage from './pages/not_found_page'
+import NotFoundPage from './pages/not_found_page/not_found_page'
 import { ScrollToTop } from './utils/scroll_to_top'
 
 function App() {

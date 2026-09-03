@@ -16,6 +16,8 @@ export function NavLinks({ items, className = '', onNavigate }: Readonly<NavLink
                         className="nav-link"
                         to={item.route}
                         onClick={onNavigate}
+                        onMouseDown={(e) => e.preventDefault()}
+                        draggable={false}
                     >
                         {item.name}
                     </Link>
