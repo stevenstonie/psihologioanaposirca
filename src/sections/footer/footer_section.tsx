@@ -1,4 +1,6 @@
 import NavBrand from "../../components/nav_brand/nav_brand"
+import { NavLinks } from "../../components/nav_links/nav_links";
+import { NAV_ITEMS, ROUTES } from "../../utils/nav_items";
 import './footer_section.scss';
 
 
@@ -12,10 +14,7 @@ export default function FooterSection() {
 
                 <nav>
                     <h3>Link-uri utile</h3>
-                    <ul>
-                        <li><a href="/a">Link 1</a></li>
-                        <li><a href="/b">Link 2</a></li>
-                    </ul>
+                    <NavLinks items={NAV_ITEMS.filter(item => item.route !== ROUTES.CONTACT)} className="footer-nav-list" />
                 </nav>
 
                 <address>
@@ -25,7 +24,7 @@ export default function FooterSection() {
             </div>
 
             <div className='footer-copyright'>
-                <small style={{ fontSize: '1rem'}}>&copy; {currentYear} Toate drepturile rezervate.</small>
+                <small style={{ fontSize: '1rem' }}>&copy; {currentYear} Toate drepturile rezervate.</small>
                 <small style={{ fontSize: '.8rem' }}>Realizat cu grijă de <a href="https://stevendev.me" target="_blank" rel="noopener noreferrer">stevendev</a>.</small>
             </div>
         </footer>

@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
-import { Link } from 'react-router-dom';
 import '../../styles/button.scss';
 import NavBrand from '../nav_brand/nav_brand';
+import { NavLinks } from '../nav_links/nav_links';
+import { NAV_ITEMS } from '../../utils/nav_items';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -66,10 +67,39 @@ export default function Navbar() {
         return () => document.removeEventListener('keydown', handleKeyDown);
     }, [isOpen]);
 
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Node;
+
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(target) &&
+                buttonRef.current &&
+                !buttonRef.current.contains(target)
+            ) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isOpen]);
+
     return (
         <div className={`nav-wrapper ${isVisible ? 'is-visible' : 'is-hidden'}`}>
             <header className="nav-container">
                 <NavBrand onClick={() => setIsOpen(false)} />
+
+                <nav ref={menuRef}>
+                    <div className={`nav-drawer ${isOpen ? 'is-open' : ''}`}>
+                        <NavLinks
+                            items={NAV_ITEMS}
+                            onNavigate={() => setIsOpen(false)}
+                        />
+                    </div>
+                </nav>
 
                 <button
                     ref={buttonRef}
@@ -85,26 +115,6 @@ export default function Navbar() {
                         <i className="bar-3"></i>
                     </span>
                 </button>
-
-                <nav
-                    ref={menuRef}
-                    className={`nav-drawer ${isOpen ? 'is-open' : ''}`}
-                    aria-label="Main"
-                >
-                    <Link className="nav-link" to="/despre-mine" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Despre mine</Link>
-                    <Link className="nav-link" to="/servicii" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Servicii</Link>
-                    <Link className="nav-link" to="/articole" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Articole</Link>
-                    <Link className="nav-link" to="/programare" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Programare</Link>
-                    <Link className="nav-link" to="/faq" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Întrebări frecvente</Link>
-                    <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>Contact</Link>
-                </nav>
-
             </header>
         </div>
     );

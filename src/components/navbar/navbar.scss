@@ -108,6 +108,17 @@ $nav-max-width: 1000px;
     visibility: hidden;
     transition: translate 0.3s cubic-bezier(.32, .72, .3, 1), opacity 0.24s ease, visibility 0s 0.3s;
 
+    ul {
+        display: grid;
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
     &.is-open {
         translate: 0 -5px;
         opacity: 1;
@@ -123,6 +134,7 @@ $nav-max-width: 1000px;
     padding: 0 14px;
     font-size: 1rem;
     font-weight: 500;
+    border-bottom: 2px solid transparent;
     color: var(--color-secondary);
     text-decoration: none;
     transition: background-color 0.18s ease, translate 0.18s cubic-bezier(0.16, 1, 0.3, 1),
@@ -131,7 +143,7 @@ $nav-max-width: 1000px;
     &:hover,
     &:focus-visible {
         color: var(--color-primary);
-        border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+        border-bottom-color: rgba(0, 0, 0, 0.7);
 
         translate: 0 -2px;
     }
@@ -168,9 +180,6 @@ $nav-max-width: 1000px;
     .nav-drawer {
         position: static;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
         padding: 0;
         border: none;
         box-shadow: none;
@@ -179,6 +188,13 @@ $nav-max-width: 1000px;
         opacity: 1;
         visibility: visible;
         transition: none;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
     }
 
     .nav-link {
