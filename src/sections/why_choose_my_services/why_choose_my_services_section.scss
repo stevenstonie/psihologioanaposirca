@@ -1,11 +1,17 @@
-    p {
-        @media (min-width: 600px) {
-            font-size: 1.4rem;
-        }
-    }
+.why-choose-my-services-section {
+    padding-bottom: 50px;
 
-    li {
-        @media (min-width: 600px) {
-            font-size: 1.2rem;
+    .text-segment {
+        p {
+            @media (min-width: 600px) {
+                font-size: 1.4rem;
+            }
+        }
+
+        li {
+            @media (min-width: 600px) {
+                font-size: 1.2rem;
+            }
         }
     }
+}

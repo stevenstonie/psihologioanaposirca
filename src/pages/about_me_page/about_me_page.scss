@@ -1,6 +1,12 @@
 
 .about-me-page {
     padding: 30px var(--margin-spacing-small);
+
+    .certifications-section, .practical-experience-section {
+        ul {
+            padding: 0;
+        }
+    }
 }
 
 @media (min-width: 768px) {

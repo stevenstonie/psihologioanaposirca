@@ -8,10 +8,10 @@ import threePeopleIcon from '@/assets/svgs/icons/why_choose_my_services/three_pe
 
 export default function WhyChooseMyServicesSection() {
     return (
-        <section>
+        <section className="why-choose-my-services-section">
             <h2>De ce să alegi serviciile mele</h2>
-            <div>
-                <p style={{ fontWeight: 'bold'}}>
+            <div className="text-segment">
+                <p style={{ fontWeight: 'bold' }}>
                     Pentru că meriți să fii ascultat, nu încadrat într-un tipar.
                 </p>
                 <p>
@@ -22,29 +22,29 @@ export default function WhyChooseMyServicesSection() {
                 <p>
                     Fiecare persoană are propriul său context, iar demersul psihologic este construit pornind de la nevoile și obiectivele sale.
                 </p>
-                <CardLayout mode="grid">
-                    <RevealingCard
-                        icon={<img src={certificateIcon} alt="" />}
-                        title="Rigoare profesională"
-                        description="Formarea și practica mea se bazează pe principii și metode specifice domeniului psihologic..."
-                    />
-                    <RevealingCard
-                        icon={<img src={heartWithHandsIcon} alt="" />}
-                        title="Un spațiu în care poți fi tu"
-                        description="Fără etichete și fără presiunea de a avea toate răspunsurile..."
-                    />
-                    <RevealingCard
-                        icon={<img src={personClimbingIcon} alt="" />}
-                        title="Respect pentru ritmul tău"
-                        description="Schimbarea nu arată la fel pentru toată lumea..."
-                    />
-                    <RevealingCard
-                        icon={<img src={threePeopleIcon} alt="" />}
-                        title="O perspectivă integrativă asupra persoanei"
-                        description="Dincolo de un simptom sau de o situație punctuală..."
-                    />
-                </CardLayout>
             </div>
+            <CardLayout mode="grid">
+                <RevealingCard
+                    icon={<img src={certificateIcon} alt="" />}
+                    title="Rigoare profesională"
+                    description="Formarea și practica mea se bazează pe principii și metode specifice domeniului psihologic."
+                />
+                <RevealingCard
+                    icon={<img src={heartWithHandsIcon} alt="" />}
+                    title="Un spațiu în care poți fi tu"
+                    description="Fără etichete și fără presiunea de a avea toate răspunsurile."
+                />
+                <RevealingCard
+                    icon={<img src={personClimbingIcon} alt="" />}
+                    title="Respect pentru ritmul tău"
+                    description="Schimbarea nu arată la fel pentru toată lumea."
+                />
+                <RevealingCard
+                    icon={<img src={threePeopleIcon} alt="" />}
+                    title="O perspectivă integrativă asupra persoanei"
+                    description="Dincolo de un simptom sau de o situație punctuală."
+                />
+            </CardLayout>
         </section>
     );
 }

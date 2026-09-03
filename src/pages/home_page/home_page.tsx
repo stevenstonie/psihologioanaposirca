@@ -8,15 +8,18 @@ import './home_page.scss';
 
 export default function HomePage() {
     return (
-        <main className="home-page">
-            <h1 className="sr-only">Servicii profesionale de psihologie</h1>
+        <>
+            <main className="home-page">
+                <h1 className="sr-only">Servicii profesionale de psihologie</h1>
 
-            <IntroSection></IntroSection>
-            <SpecializationsSection></SpecializationsSection>
-            <MyServicesSection></MyServicesSection>
-            <RecentArticlesSection></RecentArticlesSection>
-            <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
+                <IntroSection></IntroSection>
+                <SpecializationsSection></SpecializationsSection>
+                <MyServicesSection></MyServicesSection>
+                <RecentArticlesSection></RecentArticlesSection>
+                <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
+            </main>
+
             <FooterSection></FooterSection>
-        </main>
+        </>
     );
 }
