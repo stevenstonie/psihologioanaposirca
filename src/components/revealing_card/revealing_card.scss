@@ -3,14 +3,14 @@
     grid-template-columns: 60px 1fr;
     gap: 12px;
     padding: 24px 22px 26px;
-    background: color-mix(in srgb, var(--color-bg) 60%, transparent);
-    border: 2px solid var(--color-primary-lighter, #e0e0e0);
-    border-radius: 8px;
+    background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+    border: 1px solid var(--color-primary);
     opacity: 1;
     transform: none;
-    box-shadow:
-        inset 5px 5px 15px 0px color-mix(in srgb, var(--color-primary-lighter) 30%, transparent),
-        0 15px 35px -10px color-mix(in srgb, var(--color-primary-darker) 90%, transparent);
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px 0px var(--color-primary),
+        inset -5px -5px 14px 0px var(--color-primary),
+        inset 0px 8px 28px 0px rgb(255, 255, 255);
 
     @supports (animation-timeline: view()) {
         animation: card-reveal linear both;
@@ -27,7 +27,6 @@
     padding: 5px;
     border-radius: 50%;
     color: var(--color-primary);
-    // background: color-mix(in srgb, var(--color-primary) 12%, transparent);
 
     svg {
         width: 22px;
@@ -40,7 +39,7 @@
     font-family: var(--font-primary);
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--color-text-darker);
 }
 
 .reveal-card-description {

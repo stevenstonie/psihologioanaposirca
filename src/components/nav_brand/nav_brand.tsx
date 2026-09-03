@@ -18,7 +18,7 @@ export default function NavBrand({ onClick }: Readonly<NavBrandProps>) {
       <div className="nav-logo" aria-hidden="true">
         <img src={logo} alt="" />
       </div>
-      <span className='nav-brand-text'>Psiholog Posirca Ioana</span>
+      <span className='nav-brand-text'>Psiholog Ioana Poșircă</span>
     </Link>
   );
 }

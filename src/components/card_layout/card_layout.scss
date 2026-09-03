@@ -14,7 +14,7 @@
     button {
         background: transparent;
         border: 1px solid var(--color-primary);
-        color: var(--color-text);
+        color: var(--color-text-darker);
         padding: 6px 12px;
         border-radius: 4px;
         cursor: pointer;
@@ -43,11 +43,9 @@
     &.layout-carousel {
         display: flex;
         gap: 20px;
-
         overflow-x: auto;
         overflow-y: hidden;
-        padding-bottom: 24px;
-
+        padding: 0 10px 24px 5px;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
