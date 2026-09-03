@@ -1,11 +1,8 @@
-
+import './about_me_page.scss';
 
 export default function AboutMePage() {
     return (
-        <main>
-            <br></br>
-            <br></br>
-
+        <main className="about-me-page">
             <h1>Despre Mine</h1>
 
             <section className="about-me-section">

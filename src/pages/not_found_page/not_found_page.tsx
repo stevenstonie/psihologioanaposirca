@@ -5,7 +5,7 @@ export default function NotFoundPage() {
 
     return (
         <main className="not-found-page-container">
-            <h1>Hopaa!!!</h1>
+            <h1>Hopaa!</h1>
             <img src={lostPersonIcon} alt='icon with a lost person'
                 style={{ aspectRatio: '1/1', width: '150px'}} />
             <h2>Te-ai rătăcit în drumul descoperirii de sine?</h2>

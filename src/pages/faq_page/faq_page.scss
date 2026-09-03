@@ -1,0 +1,10 @@
+
+.faq-page {
+    padding: 30px var(--margin-spacing-small);
+}
+
+@media (min-width: 768px) {
+    .faq-page {
+        padding: 30px var(--margin-spacing-large);
+    }
+}

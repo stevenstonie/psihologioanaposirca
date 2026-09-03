@@ -1,0 +1,10 @@
+
+.articles-page {
+    padding: 30px var(--margin-spacing-small);
+}
+
+@media (min-width: 768px) {
+    .articles-page {
+        padding: 30px var(--margin-spacing-large);
+    }
+}
