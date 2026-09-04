@@ -1,6 +1,14 @@
 
 .faq-page {
+    min-height: 100svh;
     padding: 30px var(--margin-spacing-small);
+
+    .faq-questions-section {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 768px) {

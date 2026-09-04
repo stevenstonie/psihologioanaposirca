@@ -46,6 +46,8 @@
   translate: 0 1px;
   scale: 0.985;
   box-shadow: none;
+
+  box-shadow: 0 0px 20px 0px var(--bg-hover);
 }
 
 .btn:focus-visible {
@@ -54,13 +56,17 @@
 }
 
 .sm {
-  padding: 0.1rem 0.7rem;
+  padding: 0rem 1rem;
+
+  font-size: .8rem;
 }
 
 .md {
-  padding: 0.5rem 1.3rem;
+  padding: .7rem 2rem;
 }
 
 .lg {
-  padding: .8rem 2rem;
+  padding: 1rem 2.5rem;
+
+  font-size: 1.4rem;
 }

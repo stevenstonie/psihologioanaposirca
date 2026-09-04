@@ -35,7 +35,7 @@ export default function SpecializationsSection() {
             <br></br>
 
             <div className="learn-more-button-container">
-                <Button to={ROUTES.ABOUT_ME} size="lg">Află mai multe</Button>
+                <Button to={ROUTES.ABOUT_ME} size="md">Află mai multe</Button>
             </div>
         </section>
     );

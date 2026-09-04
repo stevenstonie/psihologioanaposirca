@@ -52,7 +52,7 @@ export default function WhyChooseMyServicesSection() {
             <br></br>
 
             <div className="make-an-appointment-button-container">
-                <Button to={ROUTES.BOOKING} size="lg">Programează-te</Button>
+                <Button className="make-an-appointment-button" to={ROUTES.BOOKING} size="lg">Programează-te</Button>
             </div>
         </section>
     );

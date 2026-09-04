@@ -19,7 +19,7 @@ export default function RecentArticlesSection() {
 
             <br></br>
 
-            <Button to={ROUTES.ARTICLES} size="lg">Vezi toate articolele</Button>
+            <Button to={ROUTES.ARTICLES} size="md">Vezi toate articolele</Button>
         </section>
     );
 }

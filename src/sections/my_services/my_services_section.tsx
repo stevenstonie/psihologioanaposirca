@@ -34,7 +34,7 @@ export default function MyServicesSection() {
             <br></br>
 
             <div className='see-more-details-container'>
-                <Button to={ROUTES.SERVICES} size="lg">Vezi mai multe detalii</Button>
+                <Button to={ROUTES.SERVICES} size="md">Vezi mai multe detalii</Button>
             </div>
         </section>
 

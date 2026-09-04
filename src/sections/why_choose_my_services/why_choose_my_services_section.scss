@@ -15,10 +15,12 @@
         }
     }
 
-    @media (max-width: 768px) {
-        .make-an-appointment-button-container {
-            display: flex;
-            justify-content: center;
+    .make-an-appointment-button-container {
+        display: flex;
+        justify-content: center;
+
+        .make-an-appointment-button {
+            width: 70%;
         }
     }
 }
