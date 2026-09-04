@@ -1,7 +1,7 @@
 
 
 export const ROUTES = {
-    ABOUT: "/despre-mine",
+    ABOUT_ME: "/despre-mine",
     SERVICES: "/servicii",
     ARTICLES: "/articole",
     BOOKING: "/programare",
@@ -19,7 +19,7 @@ const NAV_NAMES = {
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
-    { name: NAV_NAMES.ABOUT, route: ROUTES.ABOUT },
+    { name: NAV_NAMES.ABOUT, route: ROUTES.ABOUT_ME },
     { name: NAV_NAMES.SERVICES, route: ROUTES.SERVICES },
     { name: NAV_NAMES.ARTICLES, route: ROUTES.ARTICLES },
     { name: NAV_NAMES.BOOKING, route: ROUTES.BOOKING },

@@ -1,15 +1,4 @@
 .my-services-section {
-    // background-color: var(--color-bg);
-    // -webkit-mask-image: linear-gradient(to bottom,
-    //         transparent 0%,
-    //         black 10%,
-    //         black 90%,
-    //         transparent 100%);
-    // mask-image: linear-gradient(to bottom,
-    //         transparent 0%,
-    //         black 10%,
-    //         black 90%,
-    //         transparent 100%);
     padding-top: 2rem;
     padding-bottom: 4rem;
 
@@ -43,5 +32,12 @@
 
     .how-we-can-work-options {
         padding: 0;
+    }
+
+    @media (max-width: 768px) {
+        .see-more-details-container {
+            display: flex;
+            justify-content: center;
+        }
     }
 }

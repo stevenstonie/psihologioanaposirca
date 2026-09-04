@@ -5,6 +5,8 @@ import certificateIcon from '@/assets/svgs/icons/why_choose_my_services/certific
 import heartWithHandsIcon from '@/assets/svgs/icons/why_choose_my_services/heart_with_hands_touching_inside.svg';
 import personClimbingIcon from '@/assets/svgs/icons/why_choose_my_services/person_climbing_mountain.svg';
 import threePeopleIcon from '@/assets/svgs/icons/why_choose_my_services/three_people_one_behind_the_other.svg';
+import Button from "../../components/button/button";
+import { ROUTES } from "../../utils/nav_items";
 
 export default function WhyChooseMyServicesSection() {
     return (
@@ -45,6 +47,13 @@ export default function WhyChooseMyServicesSection() {
                     description="Dincolo de un simptom sau de o situație punctuală."
                 />
             </CardLayout>
+
+            <br></br>
+            <br></br>
+
+            <div className="make-an-appointment-button-container">
+                <Button to={ROUTES.BOOKING} size="lg">Programează-te</Button>
+            </div>
         </section>
     );
 }

@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
 import './intro_section.scss';
 import introImage from '@/assets/images/intro-image.jpg';
+import { ROUTES } from '../../utils/nav_items';
+import Button from '../../components/button/button';
 
 export default function IntroSection() {
     return (
@@ -23,14 +24,10 @@ export default function IntroSection() {
                 </div>
 
                 <div className="intro-buttons">
-                    <Link to="/despre-mine" className="btn secondary"
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>
+                    <Button variant="secondary" size="lg" to={ROUTES.ABOUT_ME}>
                         Despre Mine
-                    </Link>
-                    <Link to="/programare" className="btn primary"
-                        onMouseDown={(e) => e.preventDefault()} draggable={false}>
-                        Programează-te
-                    </Link>
+                    </Button>
+                    <Button variant='primary' size="lg" to={ROUTES.BOOKING}>Programează-te</Button>
                 </div>
             </div>
         </section>

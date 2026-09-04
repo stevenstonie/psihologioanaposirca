@@ -14,4 +14,11 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .make-an-appointment-button-container {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }

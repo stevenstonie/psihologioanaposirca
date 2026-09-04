@@ -5,6 +5,8 @@ import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info'
 import computerWithPersonIconPath from '@/assets/svgs/icons/my_services/computer_with_a_person_and_a_globe.svg';
 import evaluationFileIconPath from '@/assets/svgs/icons/my_services/evaluation_file_with_an_a_plus.svg';
 import twoHeadsTalkingIconPath from '@/assets/svgs/icons/my_services/two_heads_talking_about_something.svg';
+import { ROUTES } from '../../utils/nav_items';
+import Button from '../../components/button/button';
 
 export default function MyServicesSection() {
     return (
@@ -27,6 +29,12 @@ export default function MyServicesSection() {
                     <StrapWithInfo icon={<img src={computerWithPersonIconPath} alt='video call with a person' />} title={<><strong>Online</strong> - o alternativă flexibilă pentru persoanele care nu pot ajunge la cabinet sau preferă ședințele la distanță.</>}></StrapWithInfo>
                     <StrapWithInfo icon={<img src={evaluationFileIconPath} alt='evaluation file' />} title={<><strong>Evaluare psihologică</strong> - în funcție de obiectivul evaluării, cu utilizarea instrumentelor psihologice adecvate.</>}></StrapWithInfo>
                 </ul>
+            </div>
+
+            <br></br>
+
+            <div className='see-more-details-container'>
+                <Button to={ROUTES.SERVICES} size="lg">Vezi mai multe detalii</Button>
             </div>
         </section>
 
