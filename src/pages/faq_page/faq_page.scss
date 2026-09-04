@@ -4,10 +4,16 @@
     padding: 30px var(--margin-spacing-small);
 
     .faq-questions-section {
-        width: 80%;
+        width: 95%;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .faq-questions-section {
+            width: 70%;
+        }
     }
 }
 

@@ -14,6 +14,7 @@ export default function FAQPage() {
                         <Accordion title="what i eat" description="picha" />
                         <Accordion title="what i shit" description="caca" />
                         <Accordion title="where i sit" description="maka" />
+                        <Accordion title="lol" description="ol" />
                     </AccordionList>
                 </section>
             </main>
