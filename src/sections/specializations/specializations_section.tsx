@@ -4,7 +4,7 @@ import eyeWithGrowingArrowIconPath from '@/assets/svgs/icons/specializations/eye
 import handsProtectingBrainIconPath from '@/assets/svgs/icons/specializations/hands_protecting_a_brain.svg';
 import shieldWithPersonIconPath from '@/assets/svgs/icons/specializations/shield_with_person_inside.svg';
 import peopleConnectedByGearIconPath from '@/assets/svgs/icons/specializations/people_connected_by_gear.svg';
-import { ROUTES } from "../../utils/nav_items";
+import { ROUTES } from "../../utils/navigation";
 import Button from "../../components/button/button";
 import './specializations_section.scss';
 

@@ -6,7 +6,7 @@ import heartWithHandsIcon from '@/assets/svgs/icons/why_choose_my_services/heart
 import personClimbingIcon from '@/assets/svgs/icons/why_choose_my_services/person_climbing_mountain.svg';
 import threePeopleIcon from '@/assets/svgs/icons/why_choose_my_services/three_people_one_behind_the_other.svg';
 import Button from "../../components/button/button";
-import { ROUTES } from "../../utils/nav_items";
+import { ROUTES } from "../../utils/navigation";
 
 export default function WhyChooseMyServicesSection() {
     return (

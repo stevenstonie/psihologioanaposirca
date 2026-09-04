@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './navbar.scss';
 import NavBrand from '../nav_brand/nav_brand';
 import { NavLinks } from '../nav_links/nav_links';
-import { NAV_ITEMS } from '../../utils/nav_items';
+import { NAV_ITEMS } from '../../utils/navigation';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);

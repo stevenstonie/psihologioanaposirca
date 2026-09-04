@@ -1,6 +1,6 @@
 import NavBrand from "../../components/nav_brand/nav_brand"
 import { NavLinks } from "../../components/nav_links/nav_links";
-import { NAV_ITEMS, ROUTES } from "../../utils/nav_items";
+import { NAV_ITEMS, ROUTES } from "../../utils/navigation";
 import './footer_section.scss';
 
 

@@ -1,17 +1,34 @@
 # pre
+
 `npm install -D sass`
 
+## articles feature
+
+### get the key
+go to `google console` --> `api's and services` --> `credentials` --> `create credentials` and make sure the key has the google sheets API selected (if not shown go and enable the API), then restrict the key to only the needed URL's (including maybe the local one as well)
+
+### make the sheet
+
+create the spreadsheet, set the general access to 'anyone with the link' and make sure its set to 'viewer'. also to grab its id, copy the string after /d/ in url
+
+
 # during
+
 `npm run dev`
 
 `npm run build`
 
 
 # post
+
 any react dom \<Link\> tag should have the following:
 `onMouseDown={(e) => e.preventDefault()}`
 and
 `draggable={false}` attributes as to not freeze the page on a long press... <small>weird bug</small>
+
+^^^ actually it was just my browser apparently ;-P
+
+^^^ and also it wasnt just ract dom \<Link\> tags but anything draggable like images and such
 
 
 

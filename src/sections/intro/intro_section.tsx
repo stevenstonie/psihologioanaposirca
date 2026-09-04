@@ -1,6 +1,6 @@
 import './intro_section.scss';
 import introImage from '@/assets/images/intro-image.jpg';
-import { ROUTES } from '../../utils/nav_items';
+import { ROUTES } from '../../utils/navigation';
 import Button from '../../components/button/button';
 
 export default function IntroSection() {

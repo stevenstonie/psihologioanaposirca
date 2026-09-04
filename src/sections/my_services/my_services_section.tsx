@@ -5,7 +5,7 @@ import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info'
 import computerWithPersonIconPath from '@/assets/svgs/icons/my_services/computer_with_a_person_and_a_globe.svg';
 import evaluationFileIconPath from '@/assets/svgs/icons/my_services/evaluation_file_with_an_a_plus.svg';
 import twoHeadsTalkingIconPath from '@/assets/svgs/icons/my_services/two_heads_talking_about_something.svg';
-import { ROUTES } from '../../utils/nav_items';
+import { ROUTES } from '../../utils/navigation';
 import Button from '../../components/button/button';
 
 export default function MyServicesSection() {

@@ -10,27 +10,35 @@ import ContactPage from './pages/contact_page/contact_page'
 import HomePage from './pages/home_page/home_page'
 import NotFoundPage from './pages/not_found_page/not_found_page'
 import { ScrollToTop } from './utils/scroll_to_top'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ROUTES } from './utils/navigation'
+import ArticleDetails from './pages/article_details/article_details'
+
+const queryClient = new QueryClient();
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <ScrollToTop />
 
-        <Navbar />
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/despre-mine" element={<AboutMePage />} />
-          <Route path="/servicii" element={<ServicesPage />} />
-          <Route path="/articole" element={<ArticlesPage />} />
-          <Route path="/programare" element={<BookingPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path={ROUTES.ABOUT_ME} element={<AboutMePage />} />
+            <Route path={ROUTES.SERVICES} element={<ServicesPage />} />
+            <Route path={ROUTES.ARTICLES} element={<ArticlesPage />} />
+            <Route path={ROUTES.BOOKING} element={<BookingPage />} />
+            <Route path={ROUTES.FAQ} element={<FAQPage />} />
+            <Route path={ROUTES.CONTACT} element={<ContactPage />} />
+            <Route path={`${ROUTES.ARTICLE}/:id`} element={<ArticleDetails />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
       <></>
     </>
   )

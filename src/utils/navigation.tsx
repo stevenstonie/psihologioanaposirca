@@ -7,6 +7,7 @@ export const ROUTES = {
     BOOKING: "/programare",
     FAQ: "/faq",
     CONTACT: "/contact",
+    ARTICLE: "/articol"
 } as const;
 
 const NAV_NAMES = {
