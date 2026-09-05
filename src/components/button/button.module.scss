@@ -10,7 +10,7 @@
   text-decoration: none;
   color: #fff;
   background: var(--bg-base);
-  box-shadow: 0 22px 40px -10px var(--bg-base),
+  box-shadow: 0 22px 40px -10px var(--color-text-lighter),
     inset -4px -4px 10px 0px var(--bg-active),
     inset 2px 2px 10px 0px floralwhite;
 
@@ -36,7 +36,7 @@
   color: #fff;
   background: var(--bg-hover);
   translate: 0 -1px;
-  box-shadow: 0 12px 40px -10px var(--bg-base),
+  box-shadow: 0 12px 40px -10px var(--color-text-lighter),
     inset 0 -16px 26px -10px var(--bg-active),
     inset 0 18px 26px -8px var(--bg-hover);
 }

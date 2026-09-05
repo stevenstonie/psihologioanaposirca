@@ -12,7 +12,7 @@ export default function Navbar() {
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
-        const scrollThreshold = 100;
+        const scrollThreshold = 200;
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;

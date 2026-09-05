@@ -26,9 +26,11 @@ export default function RecentArticlesSection() {
 
             <br></br>
 
-            <Button to={ROUTES.ARTICLES} size="sm" variant='secondary'>
-                Vezi toate articolele
-            </Button>
+            <div className='see-all-articles-btn-container'>
+                <Button to={ROUTES.ARTICLES} size="md" variant='secondary'>
+                    Vezi toate articolele
+                </Button>
+            </div>
         </section>
     );
 }

@@ -10,17 +10,33 @@ import ContactPage from './pages/contact_page/contact_page'
 import HomePage from './pages/home_page/home_page'
 import NotFoundPage from './pages/not_found_page/not_found_page'
 import { ScrollToTop } from './utils/scroll_to_top'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ROUTES } from './utils/navigation'
-import ArticleDetails from './pages/article_details/article_details'
+import ArticleDetailsPage from './pages/article_details_page/article_details_page'
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
+import { QueryClient } from '@tanstack/react-query'
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      gcTime: 24 * 60 * 60 * 1000,
+      staleTime: 1 * 60 * 1000,
+    },
+  },
+});
+
+const localStoragePersister = createAsyncStoragePersister({
+  storage: window.localStorage,
+});
 
 function App() {
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
+      <PersistQueryClientProvider 
+      client={queryClient} 
+      persistOptions={{ persister: localStoragePersister }}
+    >
         <BrowserRouter>
           <ScrollToTop />
 
@@ -34,11 +50,11 @@ function App() {
             <Route path={ROUTES.BOOKING} element={<BookingPage />} />
             <Route path={ROUTES.FAQ} element={<FAQPage />} />
             <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-            <Route path={`${ROUTES.ARTICLE}/:id`} element={<ArticleDetails />} />
+            <Route path={`${ROUTES.ARTICLE}/:id`} element={<ArticleDetailsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </BrowserRouter>
-      </QueryClientProvider>
+      </PersistQueryClientProvider>
       <></>
     </>
   )

@@ -44,7 +44,7 @@ export function ArticlePreviewCard({ article }: Readonly<Props>) {
             <img src={article.imageUrl} alt={article.title} loading="lazy" />
             <h3>{article.title}</h3>
             <time>{article.date} | Autori: {article.authors}</time>
-            <p style={{ color: 'var(--color-secondary-darker)' }}>Citește articolul</p>
+            <p style={{ color: 'var(--color-secondary-darker)' }}>Citește fragmentul →</p> {/* sau pasajul */}
         </Link>
     );
 }
