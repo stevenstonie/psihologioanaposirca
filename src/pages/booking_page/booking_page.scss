@@ -1,10 +1,10 @@
 
 .booking-page {
-    padding: 30px var(--margin-spacing-small);
+    padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 }
 
 @media (min-width: 768px) {
     .booking-page {
-        padding: 30px var(--margin-spacing-large);
+        padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
     }
 }

@@ -1,7 +1,7 @@
 
 .faq-page {
     min-height: 100svh;
-    padding: 30px var(--margin-spacing-small);
+    padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 
     .faq-questions-section {
         width: 95%;
@@ -19,6 +19,6 @@
 
 @media (min-width: 768px) {
     .faq-page {
-        padding: 30px var(--margin-spacing-large);
+        padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
     }
 }
