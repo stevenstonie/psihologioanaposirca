@@ -8,7 +8,7 @@
 
     background: color-mix(in srgb, var(--color-bg) 80%, transparent);
     border-radius: 10px;
-    box-shadow: 4px 4px 10px 0px var(--color-primary),
+    box-shadow: 4px 4px 10px 0px rgb(55, 55, 55),
         inset -5px -5px 14px 0px rgb(55, 55, 55),
         inset 8px 8px 20px 0px white;
 

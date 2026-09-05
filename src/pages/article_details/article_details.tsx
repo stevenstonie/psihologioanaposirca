@@ -12,7 +12,7 @@ export default function ArticleDetails() {
         queryFn: fetchArticles,
     });
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <div>Se încarcă...</div>;
 
     const article = articles?.find(a => a.id === id);
 

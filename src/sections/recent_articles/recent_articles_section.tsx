@@ -2,8 +2,8 @@ import './recent_articles_section.scss';
 import { ROUTES } from '../../utils/navigation';
 import Button from '../../components/button/button';
 import { useQuery } from '@tanstack/react-query';
-import { fetchArticles, type Article } from '../../api/sheet_service';
-import ArticlePreviewCard from '../../components/article_preview_card/article_preview_card';
+import { ArticlesPreviewGrid } from '../../components/article_preview/article_preview';
+import { fetchArticles } from '../../api/sheet_service';
 
 
 export default function RecentArticlesSection() {
@@ -13,25 +13,22 @@ export default function RecentArticlesSection() {
         staleTime: 5 * 60 * 1000,
     });
 
-    if (isLoading) return <div>Loading articles...</div>;
-    if (error) return <div>Failed to load articles.</div>;
+    if (isLoading) return <div>Se preiau articolele...</div>;
+    if (error) return <div>Preluarea articolelor a eșuat.</div>;
 
     const recentSix = articles?.slice(0, 6) || [];
 
     return (
         <section className='recent-articles-section'>
             <h2>Articole recente</h2>
-            <div className="recent-articles-grid">
-                {recentSix.map((article: Article) => (
-                    <div key={article.id} className="grid-item">
-                        <ArticlePreviewCard article={article} />
-                    </div>
-                ))}
-            </div>
+
+            <ArticlesPreviewGrid articles={recentSix} emptyMessage='Niciun articol recent..' />
 
             <br></br>
 
-            <Button to={ROUTES.ARTICLES} size="md">Vezi toate articolele</Button>
+            <Button to={ROUTES.ARTICLES} size="sm" variant='secondary'>
+                Vezi toate articolele
+            </Button>
         </section>
     );
 }

@@ -7,7 +7,7 @@
     transform: none;
     border-radius: 20px;
     background: color-mix(in srgb, var(--color-bg) 100%, transparent);
-    box-shadow: 4px 4px 10px 0px var(--color-primary),
+    box-shadow: 4px 4px 10px 0px rgb(55, 55, 55),
         inset -5px -5px 14px 0px rgb(55, 55, 55),
         inset 8px 8px 20px 0px white;
 
@@ -16,40 +16,41 @@
         animation-timeline: view();
         animation-range: entry 15% cover 40%;
     }
-}
 
-.reveal-card-icon {
-    display: grid;
-    place-items: center;
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-    border-radius: 50%;
-    color: var(--color-primary);
+    .reveal-card-icon {
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 50%;
+        color: var(--color-primary);
 
-    svg {
-        width: 22px;
-        height: 22px;
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .reveal-card-title {
+        margin: 0;
+        font-family: var(--font-primary);
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--color-text-darker);
+    }
+
+    .reveal-card-description {
+        margin: 0;
+        grid-column: 1 / -1;
+        font-family: var(--font-primary);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--color-primary-darker);
+        text-wrap: pretty;
     }
 }
 
-.reveal-card-title {
-    margin: 0;
-    font-family: var(--font-primary);
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-text-darker);
-}
-
-.reveal-card-description {
-    margin: 0;
-    grid-column: 1 / -1;
-    font-family: var(--font-primary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--color-primary);
-    text-wrap: pretty;
-}
 
 @keyframes card-reveal {
     from {
