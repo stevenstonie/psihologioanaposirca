@@ -15,7 +15,7 @@ export default function IntroSection() {
                 />
 
                 <div className="intro-text">
-                    <blockquote style={{ fontSize: 'clamp(1.5rem, 5vw, 2.4rem)', margin: '1rem 0' }}>
+                    <blockquote style={{ fontSize: 'clamp(1.5rem, 5vw, 2.4rem)', margin: '1rem 0', fontFamily: 'var(--font-quote)', textShadow: '1px 0' }}>
                         Un loc în care întrebările să nu fie prea mult, emoțiile să nu fie greu de pus în cuvinte, iar ceea ce trăim să poată fi privit <span style={{ color: 'var(--color-secondary)', textDecoration: 'underline' }}>cu mai multă înțelegere</span>.
                     </blockquote>
                     <p style={{ fontSize: 'clamp(1.2rem, 4vw, 1.7rem)', color: 'var(--color-primary-darker)' }}>

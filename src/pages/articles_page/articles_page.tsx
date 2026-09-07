@@ -1,15 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
 import FooterSection from '../../sections/footer/footer_section';
 import './articles_page.scss';
-import { fetchArticles } from '../../api/sheet_service';
 import { ArticlesPreviewGrid } from '../../components/article_preview/article_preview';
+import { queryForArticles } from '../../utils/react_query_hooks';
 
 export default function ArticlesPage() {
-    const { data: articles, isLoading, error } = useQuery({
-        queryKey: ['articles'],
-        queryFn: fetchArticles,
-        staleTime: 5 * 60 * 1000,
-    });
+    const { data: articles, isLoading, error } = queryForArticles();
 
     if (isLoading) return <div>Se preiau articolele...</div>;
     if (error) return <div>Preluarea articolelor a eșuat.</div>;

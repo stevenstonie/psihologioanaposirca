@@ -1,5 +1,4 @@
 import CardLayout from "../../components/card_layout/card_layout"
-import RevealingCard from "../../components/revealing_card/revealing_card";
 import eyeWithGrowingArrowIconPath from '@/assets/svgs/icons/specializations/eye_with_growing_arrow_inside.svg';
 import handsProtectingBrainIconPath from '@/assets/svgs/icons/specializations/hands_protecting_a_brain.svg';
 import shieldWithPersonIconPath from '@/assets/svgs/icons/specializations/shield_with_person_inside.svg';
@@ -7,6 +6,7 @@ import peopleConnectedByGearIconPath from '@/assets/svgs/icons/specializations/p
 import { ROUTES } from "../../utils/navigation";
 import Button from "../../components/button/button";
 import './specializations_section.scss';
+import { StrapWithInfo } from "../../components/strap_with_info/strap_with_info";
 
 export default function SpecializationsSection() {
 
@@ -14,20 +14,20 @@ export default function SpecializationsSection() {
         <section className="specializations-section">
             <h2>Specializări</h2>
             <CardLayout mode="carousel">
-                <RevealingCard icon={<img src={handsProtectingBrainIconPath} alt="hands protecting a brain" />}
-                    title="Psiholog clinician."
+                <StrapWithInfo icon={<img src={handsProtectingBrainIconPath} alt="hands protecting a brain" />}
+                    title={<strong>Psiholog clinician</strong>}
                     description=""
                 />
-                <RevealingCard icon={<img src={shieldWithPersonIconPath} alt="shield with a person" />}
-                    title="Psiholog atestat în specialitatea Psihologie aplicată în domeniul securității naționale."
+                <StrapWithInfo icon={<img src={shieldWithPersonIconPath} alt="shield with a person" />}
+                    title={<strong>Psiholog atestat în specialitatea Psihologie aplicată în domeniul securității naționale.</strong>}
                     description=""
                 />
-                <RevealingCard icon={<img src={peopleConnectedByGearIconPath} alt="people connected by gear" />}
-                    title="Psiholog atestat în Psihologia muncii și organizațională."
+                <StrapWithInfo icon={<img src={peopleConnectedByGearIconPath} alt="people connected by gear" />}
+                    title={<strong>Psiholog atestat în Psihologia muncii și organizațională.</strong>}
                     description=""
                 />
-                <RevealingCard icon={<img src={eyeWithGrowingArrowIconPath} alt="eye with a growing arrow inside" />}
-                    title="Psiholog Integrativ în formare."
+                <StrapWithInfo icon={<img src={eyeWithGrowingArrowIconPath} alt="eye with a growing arrow inside" />}
+                    title={<strong>Psiholog Integrativ în formare.</strong>}
                     description=""
                 />
             </CardLayout>

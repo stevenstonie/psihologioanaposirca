@@ -11,7 +11,7 @@
         background: color-mix(in srgb, var(--color-bg) 100%, transparent);
         box-shadow:
             3px 8px 15px 4px rgba(0, 0, 0, 0.2),
-            inset -3px -3px 10px rgba(0, 0, 0, 0.5),
+            inset -3px -3px 10px var(--color-bg-darker),
             inset 5px 5px 10px rgba(255, 255, 255, 0.9);
         transition: box-shadow 0.3s, background 0.3s;
 

@@ -7,8 +7,8 @@
 }
 
 @font-face {
-  font-family: 'Parisienne';
-  src: url('./assets/fonts/parisienne/Parisienne-Regular.ttf') format('truetype');
+  font-family: 'Arima';
+  src: url('./assets/fonts/arima/Arima-VariableFont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -22,12 +22,13 @@
   --color-secondary-darker: #901548;
   --color-secondary-lighter: #cb3976;
   --color-bg: #e7ddcb;
+  --color-bg-darker: #a0834c;
   --color-text-darker: #2a2a2a;
   --color-text-lighter: #4a4a4a;
   --color-grey-even-lighter: #898989;
 
   --font-primary: 'IBMPlexSerifMedium', sans-serif;
-  --font-quote: 'Parisienne', serif;
+  --font-quote: 'Arima', serif;
 
   --margin-x-spacing-large: 3rem;
   --margin-x-spacing-small: 1rem;

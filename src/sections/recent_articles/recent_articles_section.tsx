@@ -1,17 +1,12 @@
 import './recent_articles_section.scss';
 import { ROUTES } from '../../utils/navigation';
 import Button from '../../components/button/button';
-import { useQuery } from '@tanstack/react-query';
 import { ArticlesPreviewGrid } from '../../components/article_preview/article_preview';
-import { fetchArticles } from '../../api/sheet_service';
+import { queryForArticles } from '../../utils/react_query_hooks';
 
 
 export default function RecentArticlesSection() {
-    const { data: articles, isLoading, error } = useQuery({
-        queryKey: ['articles'],
-        queryFn: fetchArticles,
-        staleTime: 5 * 60 * 1000,
-    });
+    const { data: articles, isLoading, error } = queryForArticles();
 
     if (isLoading) return <div>Se preiau articolele...</div>;
     if (error) return <div>Preluarea articolelor a eșuat.</div>;

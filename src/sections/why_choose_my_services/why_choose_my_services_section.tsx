@@ -13,7 +13,7 @@ export default function WhyChooseMyServicesSection() {
         <section className="why-choose-my-services-section">
             <h2>De ce să alegi serviciile mele</h2>
             <div className="text-segment">
-                <p style={{ fontWeight: 'bold' }}>
+                <p style={{ fontWeight: 'bold', fontSize: '2rem', fontFamily: 'var(--font-quote)' }}>
                     Pentru că meriți să fii ascultat, nu încadrat într-un tipar.
                 </p>
                 <p>

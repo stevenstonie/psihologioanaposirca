@@ -1,7 +1,7 @@
 
 import { useParams, Navigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { fetchArticles } from '../../api/sheet_service';
+import { fetchArticles, type Article } from '../../api/sheet_service';
 import Markdown from 'react-markdown'
 import './article_details_page.scss';
 import FooterSection from '../../sections/footer/footer_section';
@@ -21,7 +21,7 @@ export default function ArticleDetailsPage() {
     if (isPending) return <div>Se încarcă...</div>;
     if (isError) return <div>Eroare la conectarea cu serverul.</div>;
 
-    const article = articles?.find(a => String(a.id).trim() === String(id).trim());
+    const article: Article | undefined = articles?.find(a => String(a.id).trim() === String(id).trim());
     if (!article && isFetching) {
         return <div>Se actualizează articolul...</div>;
     }
@@ -40,9 +40,8 @@ export default function ArticleDetailsPage() {
                         <header className="article-meta">
                             <span className="category-tag">{article.category} • {readingTime} min</span>
                             <p>
-                                De {article.authors} • {article.date}
+                                De {article.authors} • <time dateTime={article.date}>{article.date}</time>
                             </p>
-                            {/* add <time >{article.date}</time> instead */}
                         </header>
                     </div>
                 </div>
@@ -53,7 +52,7 @@ export default function ArticleDetailsPage() {
 
                 <br />
 
-                <Button variant='secondary' size='lg' to={article.wholeArticleUrl}>Citește tot articolul ↗</Button>
+                <Button variant='secondary' size='lg' to={article.fullArticleUrl}>Citește tot articolul ↗</Button>
             </article>
 
             <FooterSection />

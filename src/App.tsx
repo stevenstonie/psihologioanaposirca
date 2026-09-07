@@ -4,7 +4,7 @@ import Navbar from './components/navbar/navbar'
 import AboutMePage from './pages/about_me_page/about_me_page'
 import ServicesPage from './pages/my_services_page/my_services_page'
 import ArticlesPage from './pages/articles_page/articles_page'
-import BookingPage from './pages/booking_page/booking_page'
+import BookingPage from './pages/make_an_appointment_page/make_an_appointment_page'
 import FAQPage from './pages/faq_page/faq_page'
 import ContactPage from './pages/contact_page/contact_page'
 import HomePage from './pages/home_page/home_page'
@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       gcTime: 24 * 60 * 60 * 1000,
-      staleTime: 1 * 60 * 1000,
+      staleTime: 5 * 60 * 1000,
     },
   },
 });

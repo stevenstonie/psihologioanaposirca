@@ -5,10 +5,10 @@
     padding: 24px 22px 26px;
     opacity: 1;
     transform: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background: color-mix(in srgb, var(--color-bg) 100%, transparent);
-    box-shadow: 4px 4px 10px 0px rgb(55, 55, 55),
-        inset -5px -5px 14px 0px rgb(55, 55, 55),
+    box-shadow: 9px 9px 20px -10px rgb(55, 55, 55),
+        inset -5px -5px 14px 0px var(--color-bg-darker),
         inset 8px 8px 20px 0px white;
 
     @supports (animation-timeline: view()) {
