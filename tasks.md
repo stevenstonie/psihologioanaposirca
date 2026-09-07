@@ -27,7 +27,7 @@
 
 - [ ] descriptive image in 'about me' sections
 
-- [ ] 'how we can work' section should have text image; image text; text imageș
+- [ ] 'how we can work' section should have text image; image text; text image
 
 - [ ] loading animation
 

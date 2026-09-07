@@ -3,6 +3,7 @@ import { fetchArticles } from "../api/sheet_service";
 import { fetchBusyDates } from "../api/calendar_service";
 
 export function queryForArticles() {
+    
     return useQuery({
         queryKey: ['articles'],
         queryFn: fetchArticles,

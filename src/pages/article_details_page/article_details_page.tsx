@@ -1,36 +1,43 @@
 
 import { useParams, Navigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { fetchArticles, type Article } from '../../api/sheet_service';
 import Markdown from 'react-markdown'
 import './article_details_page.scss';
 import FooterSection from '../../sections/footer/footer_section';
 import Button from '../../components/button/button';
+import { queryForArticles } from '../../utils/react_query_hooks';
+import type { Article } from '../../api/sheet_service';
+import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
 
 export default function ArticleDetailsPage() {
+    const articleTagClassName: string = "article-details-page";
     const { id } = useParams<{ id: string }>();
     const {
         data: articles,
         isPending,
         isFetching,
         isError
-    } = useQuery({
-        queryKey: ['articles'],
-        queryFn: fetchArticles,
-    });
-    if (isPending) return <div>Se încarcă...</div>;
-    if (isError) return <div>Eroare la conectarea cu serverul.</div>;
+    } = queryForArticles();
+
+    if (isPending) {
+        return (
+            <div className={articleTagClassName}>
+                <LoaderBreathing text='Se preiau detaliile articolului...' />
+            </div>
+        );
+    }
+    if (isError) return <div className={articleTagClassName}>Eroare la conectarea cu serverul.</div>;
 
     const article: Article | undefined = articles?.find(a => String(a.id).trim() === String(id).trim());
+
     if (!article && isFetching) {
-        return <div>Se actualizează articolul...</div>;
+        return <div className={articleTagClassName}><LoaderBreathing text='Se actualizează articolul...' /></div>;
     }
     if (!article) return <Navigate to="/404" replace />;
 
     const readingTime = estimateReadingTime(article.contents);
     return (
         <>
-            <article className="article-details-page">
+            <article className={articleTagClassName}>
                 <div className="article-hero">
                     <img src={article.imageUrl} alt={article.title} />
 

@@ -3,6 +3,7 @@ import './availability_calendar.scss';
 import { useState } from "react";
 import { queryForCalendar } from '../../utils/react_query_hooks';
 import type { BusyRange } from '../../api/calendar_service';
+import { LoaderBreathing } from '../loader_breathing/loader_breathing';
 
 
 export default function AvailabilityCalendar() {
@@ -53,7 +54,7 @@ export default function AvailabilityCalendar() {
         return dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     };
 
-    if (isLoading) return <div>Loading availability...</div>;
+    if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..'></LoaderBreathing></div>;
 
     const daySlots = availableRanges ? getAvailableSlotsForDay(selectedDate, availableRanges) : [];
 
