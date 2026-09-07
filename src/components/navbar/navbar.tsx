@@ -7,6 +7,7 @@ import { NAV_ITEMS } from '../../utils/navigation';
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
+
     const menuRef = useRef<HTMLElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -87,32 +88,34 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <header className={`nav-container ${isVisible ? 'is-visible' : 'is-hidden'}`}>
-            <NavBrand onClick={() => setIsOpen(false)} />
+        <header className="nav-wrapper">
+            <div className={`nav-container ${isVisible ? 'is-visible' : 'is-hidden'}`}>
+                <NavBrand onClick={() => setIsOpen(false)} />
 
-            <nav ref={menuRef}>
-                <div className={`nav-drawer ${isOpen ? 'is-open' : ''}`}>
-                    <NavLinks
-                        items={NAV_ITEMS}
-                        onNavigate={() => setIsOpen(false)}
-                    />
-                </div>
-            </nav>
+                <nav ref={menuRef}>
+                    <div className={`nav-drawer ${isOpen ? 'is-open' : ''}`}>
+                        <NavLinks
+                            items={NAV_ITEMS}
+                            onNavigate={() => setIsOpen(false)}
+                        />
+                    </div>
+                </nav>
 
-            <button
-                ref={buttonRef}
-                className="nav-burger"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-expanded={isOpen}
-                aria-label={isOpen ? "Close main menu" : "Open main menu"}
-                type='button'
-            >
-                <span className="burger-bars" aria-hidden="true">
-                    <i className="bar-1"></i>
-                    {/* <i className="bar-2"></i> */}
-                    <i className="bar-3"></i>
-                </span>
-            </button>
+                <button
+                    ref={buttonRef}
+                    className="nav-burger"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-expanded={isOpen}
+                    aria-label={isOpen ? "Close main menu" : "Open main menu"}
+                    type='button'
+                >
+                    <span className="burger-bars" aria-hidden="true">
+                        <i className="bar-1"></i>
+                        {/* <i className="bar-2"></i> */}
+                        <i className="bar-3"></i>
+                    </span>
+                </button>
+            </div>
         </header>
     );
 }

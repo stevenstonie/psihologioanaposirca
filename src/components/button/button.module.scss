@@ -2,7 +2,6 @@
   display: inline-grid;
   place-items: center;
   padding: 0 1rem;
-  height: 2.5rem;
   border-radius: 0.7rem;
   border: 0;
   cursor: pointer;
@@ -56,8 +55,7 @@
 }
 
 .sm {
-  padding: 0rem 1rem;
-
+  padding: .3rem 1rem;
   font-size: .8rem;
 }
 
@@ -67,6 +65,5 @@
 
 .lg {
   padding: 1rem 2.5rem;
-
   font-size: 1.4rem;
 }

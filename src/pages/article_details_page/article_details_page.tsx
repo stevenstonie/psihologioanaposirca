@@ -7,6 +7,7 @@ import Button from '../../components/button/button';
 import { queryForArticles } from '../../utils/react_query_hooks';
 import type { Article } from '../../api/sheet_service';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
+import { handleArticleImageError } from '../../utils/image_helpers';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";
@@ -39,7 +40,7 @@ export default function ArticleDetailsPage() {
         <>
             <article className={articleTagClassName}>
                 <div className="article-hero">
-                    <img src={article.imageUrl} alt={article.title} />
+                    <img src={article.imageUrl} alt={article.title} onError={handleArticleImageError} />
 
                     <div className="article-hero-overlay">
                         <h1>{article.title}</h1>

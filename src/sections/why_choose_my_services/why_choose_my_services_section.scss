@@ -21,7 +21,11 @@
         justify-content: center;
 
         .make-an-appointment-button {
-            width: 70%;
+            width: 100%;
+
+            @media (min-width: 768px) {
+                width: 70%;
+            }
         }
     }
 }

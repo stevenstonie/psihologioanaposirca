@@ -15,8 +15,6 @@
 
 - [ ] robots.txt
 
-- [ ] antisuicide strap
-
 - [ ] experiment with certificates being in a single card
 
 - [ ] descriptive image in 'about me' sections

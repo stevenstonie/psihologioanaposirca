@@ -15,6 +15,7 @@ import ArticleDetailsPage from './pages/article_details_page/article_details_pag
 import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import AntiSuicideBanner from './components/anti_suicide_banner/anti_suicide_banner'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,13 +34,14 @@ function App() {
 
   return (
     <>
-      <PersistQueryClientProvider 
-      client={queryClient} 
-      persistOptions={{ persister: localStoragePersister }}
-    >
+      <PersistQueryClientProvider
+        client={queryClient}
+        persistOptions={{ persister: localStoragePersister }}
+      >
         <BrowserRouter>
           <ScrollToTop />
-
+          
+          <AntiSuicideBanner />
           <Navbar />
 
           <Routes>
