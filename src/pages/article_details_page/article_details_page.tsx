@@ -59,7 +59,9 @@ export default function ArticleDetailsPage() {
 
                 <br />
 
-                <Button variant='secondary' size='lg' to={article.fullArticleUrl}>Citește tot articolul ↗</Button>
+                {article.fullArticleUrl?.trim() && (
+                    <Button variant='secondary' size='lg' to={article.fullArticleUrl}>Citește tot articolul ↗</Button>
+                )}
             </article>
 
             <FooterSection />

@@ -3,6 +3,7 @@ import './article_preview.scss';
 import type { Article } from '../../api/sheet_service';
 import { ROUTES } from '../../utils/navigation';
 import { Link } from 'react-router-dom';
+import { handleArticleImageError } from '../../utils/image_helpers';
 
 interface ArticlesPreviewGridProps {
     articles: Article[];
@@ -41,7 +42,8 @@ export function ArticlePreviewCard({ article }: Readonly<Props>) {
             className="article-preview-card"
         >
             <span className="category-tag">{article.category}</span>
-            <img src={article.imageUrl} alt={article.title} loading="lazy" />
+            <img src={article.imageUrl} alt={article.title} loading="lazy"
+                onError={handleArticleImageError} style={{ borderRadius: '5px' }} />
             <h3>{article.title}</h3>
             <time>{article.date} | Autori: {article.authors}</time>
             <p style={{ color: 'var(--color-secondary-darker)' }}>Citește fragmentul →</p> {/* sau pasajul */}
