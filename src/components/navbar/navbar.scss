@@ -41,6 +41,10 @@ $nav-max-width: 1000px;
     color: var(--color-primary);
     cursor: pointer;
     transition: background 0.2s ease;
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.08),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 6px rgba(50, 50, 50, 0.2);
 
     .burger-bars {
         position: relative;
@@ -72,6 +76,11 @@ $nav-max-width: 1000px;
     }
 
     &[aria-expanded="true"] {
+        box-shadow:
+            4px 4px 5px -2px rgb(0 0 0 / 50%),
+            inset 6px 6px 16px rgba(255, 255, 255, 0.8),
+            inset -6px -6px 16px rgba(0, 0, 0, 0.2);
+
         .bar-1 {
             translate: 0 6px;
             rotate: 45deg;
@@ -153,6 +162,7 @@ $nav-max-width: 1000px;
     }
 }
 
+/* // NOSONAR
 .nav-cta {
     display: grid;
     place-items: center;
@@ -164,11 +174,12 @@ $nav-max-width: 1000px;
     background: var(--color-primary-lighter);
     text-decoration: none;
     transition: opacity 0.2s;
-
+    
     &:hover {
         opacity: 0.9;
     }
 }
+*/
 
 @media (min-width: $nav-max-width) {
     .nav-burger {
@@ -201,10 +212,12 @@ $nav-max-width: 1000px;
         font-size: 0.95rem;
     }
 
+    /* // NOSONAR
     .nav-cta {
         margin-top: 0;
         margin-left: 12px;
         min-height: 36px;
         padding: 0 16px;
     }
+    */
 }
