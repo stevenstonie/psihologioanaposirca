@@ -1,8 +1,14 @@
 import { Accordion, AccordionList } from '../../components/accordion/accordion';
 import FooterSection from '../../sections/footer/footer_section';
+import { updatePageHeader } from '../../utils/page_header_updater';
 import './faq_page.scss';
 
 export default function FAQPage() {
+    updatePageHeader(
+        'Întrebări Frecvente (FAQ) | Ioana Poșircă',
+        'Ai întrebări despre cum decurge o ședință de psihologie, confidențialitate sau alte detalii? Găsești aici răspunsuri la cele mai frecvente neclarități.'
+    );
+
     return (
         <>
             <main className='faq-page'>

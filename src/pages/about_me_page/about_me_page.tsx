@@ -9,8 +9,14 @@ import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_tea
 import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
+import { updatePageHeader } from '../../utils/page_header_updater';
 
 export default function AboutMePage() {
+    updatePageHeader(
+        'Despre mine | Ioana Poșircă',
+        'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
+    );
+
     return (
         <>
             <main className="about-me-page">

@@ -5,8 +5,14 @@ import MyServicesSection from "../../sections/my_services/my_services_section";
 import SpecializationsSection from "../../sections/specializations/specializations_section";
 import WhyChooseMyServicesSection from "../../sections/why_choose_my_services/why_choose_my_services_section";
 import './home_page.scss';
+import { updatePageHeader } from "../../utils/page_header_updater";
 
 export default function HomePage() {
+    updatePageHeader(
+        'Ioana Poșircă | Psiholog',
+        'Cabinet de consiliere psihologică (în Constanța și online). Te ajut să gestionezi anxietatea, stresul și să îți regăsești echilibrul.'
+    );
+
     return (
         <>
             <main className="home-page">

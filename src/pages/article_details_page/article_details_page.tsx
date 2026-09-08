@@ -8,6 +8,7 @@ import { queryForArticles } from '../../utils/react_query_hooks';
 import type { Article } from '../../api/sheet_service';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
 import { handleArticleImageError } from '../../utils/image_helpers';
+import { updatePageHeader } from '../../utils/page_header_updater';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";
@@ -18,6 +19,11 @@ export default function ArticleDetailsPage() {
         isFetching,
         isError
     } = queryForArticles();
+    const article: Article | undefined = articles?.find(a => String(a.id).trim() === String(id).trim());
+    updatePageHeader(
+        article ? `${article.title} | Ioana Poșircă` : 'Se încarcă articolul... | Ioana Poșircă',
+        article ? getCleanExcerpt(article.contents) : ''
+    );
 
     if (isPending) {
         return (
@@ -28,7 +34,6 @@ export default function ArticleDetailsPage() {
     }
     if (isError) return <div className={articleTagClassName}>Eroare la conectarea cu serverul.</div>;
 
-    const article: Article | undefined = articles?.find(a => String(a.id).trim() === String(id).trim());
 
     if (!article && isFetching) {
         return <div className={articleTagClassName}><LoaderBreathing text='Se actualizează articolul...' /></div>;
@@ -70,8 +75,24 @@ export default function ArticleDetailsPage() {
     );
 }
 
-export function estimateReadingTime(text: string): number {
+function estimateReadingTime(text: string): number {
     const wordsPerMinute = 180;
     const wordCount = text.trim().split(/\s+/).length;
     return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+}
+
+function getCleanExcerpt(markdown: string): string {
+    if (!markdown) return '';
+
+    const cleanText = markdown
+        .replace(/\]\([^)]{0,200}\)/g, ']')
+        .replace(/<[^>]{1,200}>/g, '')
+        .replace(/^[ \t]{0,10}[#\-*+0-9.>]{1,10}[ \t]{1,10}/gm, '')
+        .replace(/[[\]*_~`!]/g, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
+
+    return cleanText.length > 150
+        ? cleanText.substring(0, 150) + '...'
+        : cleanText;
 }

@@ -68,7 +68,7 @@ function App() {
   )
 }
 
-const LOADING_MESSAGES = [
+const LOADING_PAGE_MESSAGES = [
   "Ia o gură de aer cât timp se încarcă pagina...",
   "Lucrurile bune au nevoie de timp...",
   "Acordă-ți un moment de liniște...",
@@ -79,13 +79,12 @@ const LOADING_MESSAGES = [
 ];
 
 const Suspended = ({ children }: { children: React.ReactNode }) => {
-
   const randomText = useMemo(() => {
     const randomBuffer = new Uint32Array(1);
     window.crypto.getRandomValues(randomBuffer);
 
-    const randomIndex = randomBuffer[0] % LOADING_MESSAGES.length;
-    return LOADING_MESSAGES[randomIndex];
+    const randomIndex = randomBuffer[0] % LOADING_PAGE_MESSAGES.length;
+    return LOADING_PAGE_MESSAGES[randomIndex];
   }, []);
 
   return (
@@ -94,7 +93,9 @@ const Suspended = ({ children }: { children: React.ReactNode }) => {
         <LoaderBreathing text={randomText} />
       </div>
     }>
-      {children}
+      <div className="page-transition-fade">
+        {children}
+      </div>
     </Suspense>
   );
 };
