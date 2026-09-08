@@ -1,21 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import Navbar from './components/navbar/navbar'
-import AboutMePage from './pages/about_me_page/about_me_page'
-import ServicesPage from './pages/my_services_page/my_services_page'
-import ArticlesPage from './pages/articles_page/articles_page'
-import BookingPage from './pages/make_an_appointment_page/make_an_appointment_page'
-import FAQPage from './pages/faq_page/faq_page'
-import ContactPage from './pages/contact_page/contact_page'
-import HomePage from './pages/home_page/home_page'
-import NotFoundPage from './pages/not_found_page/not_found_page'
 import { ScrollToTop } from './utils/scroll_to_top'
 import { ROUTES } from './utils/navigation'
-import ArticleDetailsPage from './pages/article_details_page/article_details_page'
 import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import AntiSuicideBanner from './components/anti_suicide_banner/anti_suicide_banner'
+import { lazy, Suspense, useMemo } from 'react'
+import { LoaderBreathing } from './components/loader_breathing/loader_breathing'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +23,16 @@ const localStoragePersister = createAsyncStoragePersister({
   storage: window.localStorage,
 });
 
+const HomePage = lazy(() => import('./pages/home_page/home_page'));
+const AboutMePage = lazy(() => import('./pages/about_me_page/about_me_page'));
+const ServicesPage = lazy(() => import('./pages/my_services_page/my_services_page'));
+const ArticlesPage = lazy(() => import('./pages/articles_page/articles_page'));
+const AppointmentPage = lazy(() => import('./pages/make_an_appointment_page/make_an_appointment_page'));
+const FAQPage = lazy(() => import('./pages/faq_page/faq_page'));
+const ContactPage = lazy(() => import('./pages/contact_page/contact_page'));
+const ArticleDetailsPage = lazy(() => import('./pages/article_details_page/article_details_page'));
+const NotFoundPage = lazy(() => import('./pages/not_found_page/not_found_page'));
+
 function App() {
 
   return (
@@ -40,26 +43,60 @@ function App() {
       >
         <BrowserRouter>
           <ScrollToTop />
-          
+
           <AntiSuicideBanner />
           <Navbar />
 
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path={ROUTES.ABOUT_ME} element={<AboutMePage />} />
-            <Route path={ROUTES.SERVICES} element={<ServicesPage />} />
-            <Route path={ROUTES.ARTICLES} element={<ArticlesPage />} />
-            <Route path={ROUTES.BOOKING} element={<BookingPage />} />
-            <Route path={ROUTES.FAQ} element={<FAQPage />} />
-            <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-            <Route path={`${ROUTES.ARTICLE}/:id`} element={<ArticleDetailsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/" element={
+              <Suspended key="home"><HomePage /></Suspended>
+            } />
+            <Route path={ROUTES.ABOUT_ME} element={<Suspended key="about"><AboutMePage /></Suspended>} />
+            <Route path={ROUTES.SERVICES} element={<Suspended key="services"><ServicesPage /></Suspended>} />
+            <Route path={ROUTES.ARTICLES} element={<Suspended key="articles"><ArticlesPage /></Suspended>} />
+            <Route path={ROUTES.APPOINTMENT} element={<Suspended key="appointment"><AppointmentPage /></Suspended>} />
+            <Route path={ROUTES.FAQ} element={<Suspended key="faq"><FAQPage /></Suspended>} />
+            <Route path={ROUTES.CONTACT} element={<Suspended key="contact"><ContactPage /></Suspended>} />
+            <Route path={`${ROUTES.ARTICLE}/:id`} element={<Suspended key="article_details"><ArticleDetailsPage /></Suspended>} />
+            <Route path="*" element={<Suspended key="not_found"><NotFoundPage /></Suspended>} />
           </Routes>
+
         </BrowserRouter>
       </PersistQueryClientProvider>
       <></>
     </>
   )
 }
+
+const LOADING_MESSAGES = [
+  "Ia o gură de aer cât timp se încarcă pagina...",
+  "Lucrurile bune au nevoie de timp...",
+  "Acordă-ți un moment de liniște...",
+  "Relaxează-ți umerii pentru o secundă...",
+  "Se pregătește spațiul pentru tine...",
+  "Respiră adânc. Suntem aproape gata...",
+  "Fiecare pas contează. Se încarcă..."
+];
+
+const Suspended = ({ children }: { children: React.ReactNode }) => {
+
+  const randomText = useMemo(() => {
+    const randomBuffer = new Uint32Array(1);
+    window.crypto.getRandomValues(randomBuffer);
+
+    const randomIndex = randomBuffer[0] % LOADING_MESSAGES.length;
+    return LOADING_MESSAGES[randomIndex];
+  }, []);
+
+  return (
+    <Suspense fallback={
+      <div style={{ height: '80svh', display: 'grid', placeItems: 'center' }}>
+        <LoaderBreathing text={randomText} />
+      </div>
+    }>
+      {children}
+    </Suspense>
+  );
+};
 
 export default App

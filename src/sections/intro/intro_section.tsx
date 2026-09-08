@@ -27,7 +27,7 @@ export default function IntroSection() {
                     <Button variant="secondary" size="lg" to={ROUTES.ABOUT_ME}>
                         Despre Mine
                     </Button>
-                    <Button variant='primary' size="lg" to={ROUTES.BOOKING}>Programează-te</Button>
+                    <Button variant='primary' size="lg" to={ROUTES.APPOINTMENT}>Programează-te</Button>
                 </div>
             </div>
         </section>
