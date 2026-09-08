@@ -8,30 +8,52 @@ import { LoaderBreathing } from '../loader_breathing/loader_breathing';
 
 export default function AvailabilityCalendar() {
     const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-
     const { data: availableRanges, isLoading } = queryForCalendar();
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     const maxDate = new Date();
     maxDate.setMonth(maxDate.getMonth() + 3);
 
-    const hasAvailableSlots = (date: Date, ranges: BusyRange[]) => {
-        return ranges.some(range => {
-            const checkDate = new Date(date).setHours(0, 0, 0, 0);
-            const start = new Date(range.start).setHours(0, 0, 0, 0);
-            const end = new Date(range.end).setHours(0, 0, 0, 0);
-            return checkDate >= start && checkDate <= end;
-        });
+    const calculateFreeSlots = (date: Date, busyRanges: BusyRange[]) => {
+        const dayStart = new Date(date).setHours(0, 0, 0, 0);
+        const dayEnd = new Date(date).setHours(23, 59, 59, 999);
+
+        const daysBusySlots = busyRanges
+            .filter(range => {
+                const rangeStart = new Date(range.start).getTime();
+                const rangeEnd = new Date(range.end).getTime();
+                return rangeStart < dayEnd && rangeEnd > dayStart;
+            })
+            .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+
+        const freeSlots = [];
+        let currentMarker = Math.max(dayStart, Date.now());
+
+        for (const busy of daysBusySlots) {
+            const busyStart = new Date(busy.start).getTime();
+            const busyEnd = new Date(busy.end).getTime();
+
+            if (currentMarker < busyStart) {
+                freeSlots.push({ start: currentMarker, end: busyStart });
+            }
+
+            currentMarker = Math.max(currentMarker, busyEnd);
+        }
+
+        if (currentMarker < dayEnd) {
+            freeSlots.push({ start: currentMarker, end: dayEnd });
+        }
+
+        return freeSlots.filter(slot => (slot.end - slot.start) >= 15 * 60 * 1000);
     };
 
-    const getAvailableSlotsForDay = (date: Date, ranges: BusyRange[]) => {
-        const targetDate = new Date(date).setHours(0, 0, 0, 0);
-        return ranges.filter(range => {
-            const start = new Date(range.start).setHours(0, 0, 0, 0);
-            return start === targetDate;
-        });
+
+    const hasAvailableSlots = (date: Date, busyRanges: BusyRange[]) => {
+        return calculateFreeSlots(date, busyRanges).length > 0;
     };
 
-    const getTimelineStyles = (start: Date | string, end: Date | string) => {
+    const getTimelineStyles = (start: Date | string | number, end: Date | string | number) => {
         const startDate = new Date(start);
         const endDate = new Date(end);
 
@@ -56,11 +78,11 @@ export default function AvailabilityCalendar() {
 
     if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..'></LoaderBreathing></div>;
 
-    const daySlots = availableRanges ? getAvailableSlotsForDay(selectedDate, availableRanges) : [];
+    const freeSlots = availableRanges ? calculateFreeSlots(selectedDate, availableRanges) : [];
 
     return (
         <div className="availability-container">
-            <h3>my availability</h3>
+            <h3>calendarul cu ore disponibile</h3>
 
             <div className="legend">
                 <span className="legend-busy">busy</span>
@@ -72,36 +94,55 @@ export default function AvailabilityCalendar() {
                 maxDate={maxDate}
                 minDetail="month"
                 calendarType="gregory"
-
+                locale="ro-RO"
                 onClickDay={(value) => setSelectedDate(value)}
                 value={selectedDate}
-
                 tileClassName={({ date, view }) => {
-                    if (view === 'month' && availableRanges && hasAvailableSlots(date, availableRanges)) {
-                        return 'date-is-free';
+                    if (view !== 'month') return '';
+
+                    if (date < today || date > maxDate) {
+                        return 'tile-unselectable';
                     }
-                    return 'date-is-busy';
+
+                    if (availableRanges && hasAvailableSlots(date, availableRanges)) {
+                        return 'tile-available';
+                    }
+
+                    return 'tile-fully-booked';
                 }}
             />
 
             <div className="hourly-breakdown">
                 <h4>schedule for {selectedDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}</h4>
 
-                {daySlots.length === 0 ? (
+                {freeSlots.length === 0 ? (
                     <p className="all-busy">completely booked on this day.</p>
                 ) : (
-                    <div className="busy-details">
+                    <div className="free-details">
+                        <ul className="free-slots-list">
+                            <li className="list-header">available booking windows:</li>
+                            {freeSlots.map((slot) => {
+                                const startObj = new Date(slot.start);
+                                const endObj = new Date(slot.end);
+
+                                return (
+                                    <li key={`text-${slot.start}-${slot.end}`} className="available-slot">
+                                        {formatShortTime(startObj)} {' - '} {formatShortTime(endObj)}
+                                    </li>
+                                );
+                            })}
+                        </ul>
 
                         <div className="timeline-container" aria-hidden="true">
                             <div className="timeline-bar">
-                                {daySlots.map((slot, index) => {
+                                {freeSlots.map((slot) => {
                                     const startObj = new Date(slot.start);
                                     const endObj = new Date(slot.end);
                                     const timeString = `${formatShortTime(startObj)} - ${formatShortTime(endObj)}`;
 
                                     return (
                                         <div
-                                            key={`visual-${index}`}
+                                            key={`visual-${slot.start}-${slot.end}`}
                                             className="timeline-available-block"
                                             style={getTimelineStyles(slot.start, slot.end)}
                                             title={timeString}
@@ -119,21 +160,6 @@ export default function AvailabilityCalendar() {
                                 <span>12am</span>
                             </div>
                         </div>
-
-                        <ul className="busy-slots-list">
-                            <li className="list-header">available booking windows:</li>
-                            {daySlots.map((slot, index) => {
-                                const startObj = new Date(slot.start);
-                                const endObj = new Date(slot.end);
-
-                                return (
-                                    <li key={`text-${index}`} className="available-slot">
-                                        {formatShortTime(startObj)} {' - '} {formatShortTime(endObj)}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-
                     </div>
                 )}
             </div>

@@ -35,6 +35,6 @@ export async function fetchArticles(): Promise<Article[]> {
             imageUrl: row[5] || '',
             contents: row[6] || '',
             fullArticleUrl: row[7] || '',
-            isPublished: row[8] === 'Y',
+            isPublished: true,
         }));
 }
