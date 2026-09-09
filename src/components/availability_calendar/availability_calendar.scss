@@ -7,12 +7,12 @@
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     span {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      align-items: baseline;
+      gap: 5px;
 
       &::before {
         content: '';
@@ -159,6 +159,21 @@
   }
 }
 
+.react-calendar__navigation {
+  button {
+    font-size: 1rem;
+    padding: .2rem 1rem;
+  }
+
+  .react-calendar__navigation__next-button,
+  .react-calendar__navigation__prev-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
 .react-calendar__navigation__label__labelText {
   color: rgba(0, 0, 0, 0.733);
 }
@@ -177,6 +192,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .react-calendar__month-view__weekdays__weekday abbr {

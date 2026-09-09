@@ -10,8 +10,8 @@
 
         @media (min-width: 768px) {
             flex-direction: row;
-            justify-content: space-around;
             justify-content: center;
+            // NO_SONAR align-items: end;
         }
     }
 }

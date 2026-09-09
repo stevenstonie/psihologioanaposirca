@@ -85,8 +85,8 @@ export default function AvailabilityCalendar() {
             <h3>calendarul cu ore disponibile</h3>
 
             <div className="legend">
-                <span className="legend-busy">busy</span>
-                <span className="legend-free">available</span>
+                <span className="legend-busy">ocupat</span>
+                <span className="legend-free">disponibil</span>
             </div>
 
             <Calendar
@@ -97,6 +97,8 @@ export default function AvailabilityCalendar() {
                 locale="ro-RO"
                 onClickDay={(value) => setSelectedDate(value)}
                 value={selectedDate}
+                prev2Label={null}
+                next2Label={null}
                 tileClassName={({ date, view }) => {
                     if (view !== 'month') return '';
 
@@ -113,14 +115,16 @@ export default function AvailabilityCalendar() {
             />
 
             <div className="hourly-breakdown">
-                <h4>schedule for {selectedDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}</h4>
+                <h4>Programul pentru {selectedDate.toLocaleDateString('ro-RO', { weekday: 'long', month: 'long', day: 'numeric' })}</h4>
 
                 {freeSlots.length === 0 ? (
-                    <p className="all-busy">completely booked on this day.</p>
+                    <p className="all-busy">Complet rezervat în această zi.</p>
                 ) : (
                     <div className="free-details">
-                        <ul className="free-slots-list">
-                            <li className="list-header">available booking windows:</li>
+                        <p className="list-header" id="slots-list-heading">Intervale orare disponibile:</p>
+
+                        {/* aria-labelledby to connect the title to the list for screen readers */}
+                        <ul className="free-slots-list" aria-labelledby="slots-list-heading">
                             {freeSlots.map((slot) => {
                                 const startObj = new Date(slot.start);
                                 const endObj = new Date(slot.end);
