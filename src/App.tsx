@@ -31,6 +31,7 @@ const AppointmentPage = lazy(() => import('./pages/make_an_appointment_page/make
 const FAQPage = lazy(() => import('./pages/faq_page/faq_page'));
 const ContactPage = lazy(() => import('./pages/contact_page/contact_page'));
 const ArticleDetailsPage = lazy(() => import('./pages/article_details_page/article_details_page'));
+const PoliciesPage = lazy(() => import('./pages/policies_page/policies_page'));
 const NotFoundPage = lazy(() => import('./pages/not_found_page/not_found_page'));
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
             <Route path={ROUTES.FAQ} element={<Suspended key="faq"><FAQPage /></Suspended>} />
             <Route path={ROUTES.CONTACT} element={<Suspended key="contact"><ContactPage /></Suspended>} />
             <Route path={`${ROUTES.ARTICLE}/:id`} element={<Suspended key="article_details"><ArticleDetailsPage /></Suspended>} />
+            <Route path={ROUTES.POLICIES} element={<Suspended key="policies"><PoliciesPage /></Suspended>} />
             <Route path="*" element={<Suspended key="not_found"><NotFoundPage /></Suspended>} />
           </Routes>
 

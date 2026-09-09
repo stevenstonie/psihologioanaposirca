@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    max-width: 90%;
+    max-width: 100%;
     padding: 1rem;
     border-radius: 15px;
     background: color-mix(in srgb, var(--color-bg) 80%, transparent);
@@ -13,6 +13,10 @@
 
     opacity: 0;
     animation: formIn 0.5s ease-out forwards;
+
+    @media (min-width: 768px) {
+        max-width: 600px;
+    }
 
     .contact-form-title {
         margin: 0;
@@ -83,17 +87,9 @@
 
     .captcha-wrapper {
         width: 100%;
-        display: flex;
-        justify-content: center;
-
-        @media (max-width: 380px) {
-            transform: scale(0.85);
-            transform-origin: center;
-        }
-
-        @media (max-width: 320px) {
-            transform: scale(0.75);
-        }
+        max-width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
     }
 
     .contact-form-button {
@@ -141,11 +137,11 @@
         animation: slideIn 0.3s ease-out;
 
         &.success {
-            color: var(--color-success, green);
+            color: var(--color-success);
         }
 
         &.error {
-            color: var(--color-error, red);
+            color: var(--color-error);
         }
     }
 }

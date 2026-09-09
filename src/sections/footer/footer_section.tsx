@@ -1,6 +1,7 @@
 import { ContactDetails, contactData } from "../../components/contact_details/contact_details";
 import NavBrand from "../../components/nav_brand/nav_brand"
 import { NavLinks } from "../../components/nav_links/nav_links";
+import { PrivacyPolicyLink } from "../../pages/policies_page/policies_page";
 import { NAV_ITEMS, ROUTES } from "../../utils/navigation";
 import './footer_section.scss';
 
@@ -16,6 +17,7 @@ export default function FooterSection() {
                 <nav>
                     <h3>Link-uri utile</h3>
                     <NavLinks items={NAV_ITEMS.filter(item => item.route !== ROUTES.CONTACT)} className="footer-nav-list" />
+                    <PrivacyPolicyLink />
                 </nav>
 
                 <div>

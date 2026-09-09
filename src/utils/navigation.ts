@@ -7,7 +7,8 @@ export const ROUTES = {
     APPOINTMENT: "/programare",
     FAQ: "/faq",
     CONTACT: "/contact",
-    ARTICLE: "/articol"
+    ARTICLE: "/articol",
+    POLICIES: "/politici"
 } as const;
 
 const NAV_NAMES = {

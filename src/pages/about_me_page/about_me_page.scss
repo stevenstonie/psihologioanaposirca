@@ -1,8 +1,8 @@
-
 .about-me-page {
     padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 
-    .certifications-section, .practical-experience-section {
+    .certifications-section,
+    .practical-experience-section {
         ul {
             padding: 0;
         }
@@ -10,15 +10,21 @@
         .content-with-image-container {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 1rem;
 
             @media (min-width: 768px) {
                 flex-direction: row;
+                gap: 3rem;
             }
 
             img {
                 width: 300px;
+                height: min-content;
                 border-radius: 10px;
+
+                @media (max-width: 400px) {
+                    width: 100%;
+                }
             }
         }
     }

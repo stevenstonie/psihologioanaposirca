@@ -1,6 +1,7 @@
 import { useState, useRef, type SyntheticEvent } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import './contact_form.scss';
+import { PrivacyPolicyLink } from '../../pages/policies_page/policies_page';
 
 interface ContactFormProps {
     selectedTime?: string;
@@ -53,7 +54,7 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
             }
         } catch (error) {
             console.error('Web3Forms submission failed:', error);
-            setStatus('Eroare de rețea. Vă rugăm să încercați din nou.');
+            setStatus('Eroare de rețea. Vă rugăm să încercați din nou mai târziu.');
             setIsError(true);
         }
     };
@@ -110,7 +111,7 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
 
             <label className="contact-form-checkbox-label">
                 <input type="checkbox" name="consent" required />
-                <span>Sunt de acord ca datele mele să fie folosite pentru a primi un răspuns la solicitarea mea.</span>
+                <span>Sunt de acord cu Sunt de acord cu <PrivacyPolicyLink /> și ca datele mele să fie folosite pentru a primi un răspuns. și ca datele mele să fie folosite pentru a primi un răspuns.</span>
             </label>
 
             <div className="captcha-wrapper">
