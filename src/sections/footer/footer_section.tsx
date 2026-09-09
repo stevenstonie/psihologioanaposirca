@@ -1,3 +1,4 @@
+import { ContactDetails, contactData } from "../../components/contact_details/contact_details";
 import NavBrand from "../../components/nav_brand/nav_brand"
 import { NavLinks } from "../../components/nav_links/nav_links";
 import { NAV_ITEMS, ROUTES } from "../../utils/navigation";
@@ -17,10 +18,10 @@ export default function FooterSection() {
                     <NavLinks items={NAV_ITEMS.filter(item => item.route !== ROUTES.CONTACT)} className="footer-nav-list" />
                 </nav>
 
-                <address>
-                    <h3>Contact</h3>
-                    <p>contact info</p>
-                </address>
+                <div>
+                    <h3 style={{ marginBottom: '1rem' }}>Contact</h3>
+                    <ContactDetails contacts={contactData} />
+                </div>
             </div>
 
             <div className='footer-copyright'>

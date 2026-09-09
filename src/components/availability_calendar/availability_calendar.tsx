@@ -76,7 +76,7 @@ export default function AvailabilityCalendar() {
         return dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     };
 
-    if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..'></LoaderBreathing></div>;
+    if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..' /></div>;
 
     const freeSlots = availableRanges ? calculateFreeSlots(selectedDate, availableRanges) : [];
 

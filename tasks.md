@@ -1,19 +1,14 @@
 
 
-
-- [ ] 'revealing card' component doesnt do the revealing on firefox
-
 - [ ] add custom cursor
 
 - [ ] JSON-LD for articles
 
 - [ ] Meta tags in document head
 
-- [ ] website's title
+- [ ] set robots.txt to allow all before prod
 
-- [ ] each page's title
-
-- [ ] robots.txt
+- [ ] create an xml sitemap
 
 - [ ] experiment with certificates being in a single card
 

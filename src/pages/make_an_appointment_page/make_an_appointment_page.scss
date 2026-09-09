@@ -1,6 +1,19 @@
-
 .make-appointment-page {
     padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
+
+    .make-appointment-page-contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-around;
+            justify-content: center;
+        }
+    }
 }
 
 @media (min-width: 768px) {
