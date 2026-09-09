@@ -11,7 +11,7 @@ export const LoaderBreathing = ({ text = 'Se încarcă..' }: LoaderBreathing) =>
                 <div className="double-bounce1" />
                 <div className="double-bounce2" />
             </div>
-            {text && <p>{text}</p>}
+            {text && <p style={{ textAlign: 'center' }}>{text}</p>}
         </div>
     );
 };

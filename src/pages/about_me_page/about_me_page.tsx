@@ -10,6 +10,8 @@ import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
 import { updatePageHeader } from '../../utils/page_header_updater';
+import certificationImagePath from '@/assets/images/about_me/certification.jpg';
+import practicalExperienceImagePath from '@/assets/images/about_me/four-people-discussing-over-a-project.png';
 
 export default function AboutMePage() {
     updatePageHeader(
@@ -60,42 +62,48 @@ export default function AboutMePage() {
 
                 <section className="certifications-section">
                     <h2>Atestate</h2>
-                    <ul>
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Atestat de liberă practică în <strong>Psihologie Clinică</strong>.</>}
-                        />
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Atestat de liberă practică în <strong>Psihologia Muncii și Organizațională</strong>.</>}
-                        />
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Atestat de liberă practică în <strong>Psihologie aplicată în domeniul securității naționale</strong>.</>}
-                        />
-                    </ul>
+                    <div className='content-with-image-container'>
+                        <img src={certificationImagePath} alt='o imagine cu un certificat'></img>
+                        <ul>
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Atestat de liberă practică în <strong>Psihologie Clinică</strong>.</>}
+                            />
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Atestat de liberă practică în <strong>Psihologia Muncii și Organizațională</strong>.</>}
+                            />
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Atestat de liberă practică în <strong>Psihologie aplicată în domeniul securității naționale</strong>.</>}
+                            />
+                        </ul>
+                    </div>
                 </section>
 
                 <section className="practical-experience-section">
                     <h2>Experiență practică</h2>
-                    <ul>
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Centre și servicii pentru copii cu tulburări din spectrul autist și dificultăți de dezvoltare.</>}
-                        />
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Servicii și centre dedicate persoanelor vârstnice și persoanelor cu dizabilități.</>}
-                        />
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Instituții de învățământ primar, gimnazial și liceal.</>}
-                        />
-                        <StrapWithInfo
-                            icon={''}
-                            title={<>Organizații și servicii din domeniul sănătății și asistenței sociale.</>}
-                        />
-                    </ul>
+                    <div className='content-with-image-container'>
+                        <img src={practicalExperienceImagePath} alt='o imagine cu patru persoane discutând'></img>
+                        <ul>
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Centre și servicii pentru copii cu tulburări din spectrul autist și dificultăți de dezvoltare.</>}
+                            />
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Servicii și centre dedicate persoanelor vârstnice și persoanelor cu dizabilități.</>}
+                            />
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Instituții de învățământ primar, gimnazial și liceal.</>}
+                            />
+                            <StrapWithInfo
+                                icon={''}
+                                title={<>Organizații și servicii din domeniul sănătății și asistenței sociale.</>}
+                            />
+                        </ul>
+                    </div>
                 </section>
 
             </main>

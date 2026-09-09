@@ -6,6 +6,21 @@
         ul {
             padding: 0;
         }
+
+        .content-with-image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
+
+            img {
+                width: 300px;
+                border-radius: 10px;
+            }
+        }
     }
 }
 

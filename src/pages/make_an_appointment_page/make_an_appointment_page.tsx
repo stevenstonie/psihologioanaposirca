@@ -15,7 +15,7 @@ export default function AppointmentPage() {
             <main className="make-appointment-page">
                 <h1>Fă o programare</h1>
 
-                <div className='make-appointment-page-contents'>
+                <div className='page-contents'>
                     <AvailabilityCalendar></AvailabilityCalendar>
 
                     <ContactDetails contacts={contactData} />

@@ -6,15 +6,16 @@ import './contact_details.scss';
 
 interface ContactItem {
     type: 'phone' | 'email' | 'location';
-    icon?: React.ReactNode;
-    label?: string;
     value: string;
+    icon?: React.ReactNode;
+    label: string;
     lat?: number;
     lng?: number;
 }
 
 interface ContactDetailsProps {
     contacts: ContactItem[];
+    showLabels?: boolean;
 }
 
 const getHref = (contact: ContactItem) => {
@@ -34,7 +35,7 @@ const getHref = (contact: ContactItem) => {
     }
 };
 
-export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts }) => {
+export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts, showLabels = false }) => {
     const ref = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
@@ -65,7 +66,7 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts }) => {
                                 </div>
                             )}
                             <div className="contact-blob-content">
-                                {contact.label && (
+                                {contact.label && showLabels && (
                                     <p className="contact-blob-label">{contact.label}</p>
                                 )}
                                 <p className="contact-blob-value">{contact.value}</p>
@@ -81,16 +82,19 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts }) => {
 export const contactData: ContactItem[] = [
     {
         type: 'phone',
+        label: 'suna-ma te rog si iti voi raspunde poimarti lmaoooooo',
         icon: <img src={phoneIconPath} alt="telefon" width="40" height="40" />,
         value: '+40712345678'
     },
     {
         type: 'email',
+        label: 'acesta este inboxul meu dar pe asta nu raspund nicio data. decat daca-mi trimiti o felicitare prin posta',
         icon: <img src={mailIconPath} alt="email" width="40" height="40" />,
         value: 'email@email.email'
     },
     {
         type: 'location',
+        label: 'aici ma aflu. dar poate nu sunt defapt in acest moment aici. cine stie?',
         icon: <img src={locationPinIconPath} alt="locație" width="40" height="40" />,
         value: 'str. Mamaia nr. 42',
         lat: 46.772292,

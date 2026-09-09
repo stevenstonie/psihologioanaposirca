@@ -16,7 +16,7 @@ export default function ContactPage() {
                 <h1>Contact</h1>
                 <h2 style={{ fontFamily: 'var(--font-quote)'}}>Scrie-mi câteva rânduri, fără presiune.</h2>
 
-                <ContactDetails contacts={contactData}></ContactDetails>
+                <ContactDetails showLabels contacts={contactData}></ContactDetails>
             </main>
 
             <FooterSection />

@@ -1,12 +1,12 @@
 
 
+- [ ] set robots.txt to allow all before prod
+
 - [ ] add custom cursor
 
 - [ ] JSON-LD for articles
 
 - [ ] Meta tags in document head
-
-- [ ] set robots.txt to allow all before prod
 
 - [ ] create an xml sitemap
 
