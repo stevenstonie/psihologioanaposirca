@@ -1,0 +1,170 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 90%;
+    padding: 1rem;
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+    box-shadow:
+        9px 9px 20px -10px rgb(55, 55, 55),
+        inset -5px -5px 14px 0px var(--color-bg-darker),
+        inset 8px 8px 20px 0px white;
+
+    opacity: 0;
+    animation: formIn 0.5s ease-out forwards;
+
+    .contact-form-title {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .contact-form-input {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+        color: var(--color-text);
+        box-shadow:
+            0 8px 16px rgba(0, 0, 0, 0.08),
+            inset -2px -2px 6px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 6px rgba(50, 50, 50, 0.2);
+
+        transition: all 0.3s ease;
+
+        &::placeholder {
+            color: var(--color-text-light);
+            opacity: 0.6;
+        }
+
+        &:focus {
+            outline: none;
+            background: color-mix(in srgb, var(--color-bg) 95%, transparent);
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, 0.16),
+                inset 6px 6px 16px rgba(255, 255, 255, 0.8),
+                inset -6px -6px 20px -5px var(--color-bg-darker);
+        }
+
+        &.textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+    }
+
+    .contact-form-input.readonly-time {
+        background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+        color: var(--color-accent);
+        font-weight: bold;
+        cursor: default;
+        border: 1px solid var(--color-accent);
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .contact-form-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+        color: var(--color-text);
+        cursor: pointer;
+
+        input[type="checkbox"] {
+            margin-top: 0.2rem;
+            cursor: pointer;
+        }
+    }
+
+    .captcha-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 380px) {
+            transform: scale(0.85);
+            transform-origin: center;
+        }
+
+        @media (max-width: 320px) {
+            transform: scale(0.75);
+        }
+    }
+
+    .contact-form-button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: black;
+        background: var(--color-accent);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow:
+            0 6px 12px rgba(0, 0, 0, 0.08),
+            inset -1px -1px 4px rgba(255, 255, 255, 0.8),
+            inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover:not(:disabled) {
+            background: var(--color-accent-hover);
+        }
+
+        &:active:not(:disabled) {
+            box-shadow:
+                inset 0 4px 10px rgba(0, 0, 0, 0.2),
+                inset 0 -2px 6px rgba(255, 255, 255, 0.4);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .contact-form-status {
+        margin: 0;
+        padding: 0.875rem 1rem;
+        border-radius: 10px;
+        background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+        box-shadow:
+            inset -3px -3px 8px 0px var(--color-bg-darker),
+            inset 3px 3px 8px 0px white;
+        font-size: 0.9rem;
+        text-align: center;
+        animation: slideIn 0.3s ease-out;
+
+        &.success {
+            color: var(--color-success, green);
+        }
+
+        &.error {
+            color: var(--color-error, red);
+        }
+    }
+}
+
+@keyframes formIn {
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

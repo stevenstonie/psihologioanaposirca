@@ -6,7 +6,11 @@ import type { BusyRange } from '../../api/calendar_service';
 import { LoaderBreathing } from '../loader_breathing/loader_breathing';
 
 
-export default function AvailabilityCalendar() {
+interface AvailabilityCalendarProps {
+    onSlotSelect: (timeString: string) => void;
+}
+
+export default function AvailabilityCalendar({ onSlotSelect }: Readonly<AvailabilityCalendarProps>) {
     const [selectedDate, setSelectedDate] = useState<Date>(new Date());
     const { data: availableRanges, isLoading } = queryForCalendar();
 
@@ -48,7 +52,6 @@ export default function AvailabilityCalendar() {
         return freeSlots.filter(slot => (slot.end - slot.start) >= 15 * 60 * 1000);
     };
 
-
     const hasAvailableSlots = (date: Date, busyRanges: BusyRange[]) => {
         return calculateFreeSlots(date, busyRanges).length > 0;
     };
@@ -76,6 +79,17 @@ export default function AvailabilityCalendar() {
         return dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     };
 
+    const handleSlotClick = (startObj: Date, endObj: Date) => {
+        const dateString = selectedDate.toLocaleDateString('ro-RO', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+        });
+        const timeString = `${formatShortTime(startObj)} - ${formatShortTime(endObj)}`;
+
+        onSlotSelect(`${dateString} | ${timeString}`);
+    };
+
     if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..' /></div>;
 
     const freeSlots = availableRanges ? calculateFreeSlots(selectedDate, availableRanges) : [];
@@ -95,7 +109,7 @@ export default function AvailabilityCalendar() {
                 minDetail="month"
                 calendarType="gregory"
                 locale="ro-RO"
-                onClickDay={(value) => setSelectedDate(value)}
+                onClickDay={(value) => setSelectedDate(value as Date)}
                 value={selectedDate}
                 prev2Label={null}
                 next2Label={null}
@@ -123,7 +137,6 @@ export default function AvailabilityCalendar() {
                     <div className="free-details">
                         <p className="list-header" id="slots-list-heading">Intervale orare disponibile:</p>
 
-                        {/* aria-labelledby to connect the title to the list for screen readers */}
                         <ul className="free-slots-list" aria-labelledby="slots-list-heading">
                             {freeSlots.map((slot) => {
                                 const startObj = new Date(slot.start);
@@ -131,7 +144,14 @@ export default function AvailabilityCalendar() {
 
                                 return (
                                     <li key={`text-${slot.start}-${slot.end}`} className="available-slot">
-                                        {formatShortTime(startObj)} {' - '} {formatShortTime(endObj)}
+                                        <button
+                                            type="button"
+                                            className="slot-select-btn"
+                                            onClick={() => handleSlotClick(startObj, endObj)}
+                                            style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
+                                        >
+                                            {formatShortTime(startObj)} {' - '} {formatShortTime(endObj)}
+                                        </button>
                                     </li>
                                 );
                             })}
@@ -145,14 +165,16 @@ export default function AvailabilityCalendar() {
                                     const timeString = `${formatShortTime(startObj)} - ${formatShortTime(endObj)}`;
 
                                     return (
-                                        <div
+                                        <button
+                                            type="button"
                                             key={`visual-${slot.start}-${slot.end}`}
                                             className="timeline-available-block"
-                                            style={getTimelineStyles(slot.start, slot.end)}
+                                            style={{ ...getTimelineStyles(slot.start, slot.end), cursor: 'pointer', border: 'none' }}
                                             title={timeString}
+                                            onClick={() => handleSlotClick(startObj, endObj)}
                                         >
                                             <span className="block-text">{timeString}</span>
-                                        </div>
+                                        </button>
                                     );
                                 })}
                             </div>

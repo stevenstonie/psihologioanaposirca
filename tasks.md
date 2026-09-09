@@ -17,3 +17,5 @@
 - [ ] 'how we can work' section should have text image; image text; text image
 
 - [ ] experiment with blobs from https://app.haikei.app
+
+- [ ] tos and gdpr forr contact form
