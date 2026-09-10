@@ -3,11 +3,13 @@ import AvailabilityCalendar from '../../components/availability_calendar/availab
 import { ContactDetails, contactData } from '../../components/contact_details/contact_details';
 import ContactForm from '../../components/contact_form/contact_form';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHeader } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_header_updater';
 import './make_an_appointment_page.scss';
+import appointmentPageCoverImagePath from '@/assets/images/covers/journal_on_a_table.webp';
+import PageHeader from '../../components/page_header/page_header';
 
 export default function AppointmentPage() {
-    updatePageHeader(
+    updatePageHead(
         'Programări | Ioana Poșircă',
         'Programează o ședință. Vezi calendarul cu orele disponibile și alege un interval.'
     );
@@ -23,7 +25,12 @@ export default function AppointmentPage() {
     return (
         <>
             <main className="make-appointment-page">
-                <h1>Fă o programare</h1>
+                <PageHeader
+                    title={'Fă o programare'}
+                    description={'Un timp și un spațiu doar pentru tine. Alege când vrei să vorbim.'}
+                    imagePath={appointmentPageCoverImagePath}
+                >
+                </PageHeader>
 
                 <div className='page-contents'>
                     <section className='calendar-and-contact-section'>

@@ -43,26 +43,6 @@
     padding-bottom: 3rem;
 }
 
-// .ondulated-text {
-//     color: var(--color-secondary);
-//     position: relative;
-//     display: inline-block;
-//     padding-bottom: 12px;
-
-//     &::after {
-//         content: '';
-//         position: absolute;
-//         bottom: -25px;
-//         left: -20px;
-//         width: 120%;
-//         height: 5rem;
-//         background-image: url('/misc/curled pink underline 1.svg');
-//         background-repeat: no-repeat;
-//         background-size: 100% 100%;
-//     }
-// }
-
-
 @media (min-width: 768px) {
     .intro-image {
         float: left;

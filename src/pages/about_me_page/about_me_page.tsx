@@ -9,12 +9,12 @@ import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_tea
 import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHeader } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_header_updater';
 import certificationImagePath from '@/assets/images/about_me/certification.jpg';
 import practicalExperienceImagePath from '@/assets/images/about_me/four-people-discussing-over-a-project.png';
 
 export default function AboutMePage() {
-    updatePageHeader(
+    updatePageHead(
         'Despre mine | Ioana Poșircă',
         'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
     );
@@ -22,10 +22,18 @@ export default function AboutMePage() {
     return (
         <>
             <main className="about-me-page">
-                <h1>Despre Mine</h1>
 
                 <section className="about-me-section">
+                    <h1>Despre Mine</h1>
+                    <h2>Cine sunt</h2>
                     <p>detalii despre mine........</p>
+                    <p>.............</p>
+                    <p>.............</p>
+                    <p>.............</p>
+                    <p>.............</p>
+                    <p>.............</p>
+                    <p>.............</p>
+                    <p>.............</p>
                     <p>.............</p>
                     <p>.............</p>
                 </section>

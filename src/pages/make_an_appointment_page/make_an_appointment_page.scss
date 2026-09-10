@@ -1,11 +1,9 @@
 .make-appointment-page {
-    padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 
     .page-contents {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
 
         .calendar-and-contact-section {
             display: flex;
@@ -29,11 +27,5 @@
         .calendar-and-contact-section, .contact-form-section {
             width: 100%;
         }
-    }
-}
-
-@media (min-width: 768px) {
-    .make-appointment-page {
-        padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
     }
 }

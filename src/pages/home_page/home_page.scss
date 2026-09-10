@@ -1,15 +1,7 @@
 .home-page {
     section {
-        padding-left: var(--margin-x-spacing-small);
-        padding-right: var(--margin-x-spacing-small);
-
         &:first-of-type {
             padding-top: 5rem;
-        }
-
-        @media (min-width: 768px) {
-            padding-left: var(--margin-x-spacing-large);
-            padding-right: var(--margin-x-spacing-large);
         }
     }
 }

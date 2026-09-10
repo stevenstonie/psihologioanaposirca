@@ -1,0 +1,30 @@
+.page-hero {
+    min-height: 400px;
+    height: 70svh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4rem;
+    color: var(--color-text-light, #fff);
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.8), 
+        0 8px 16px rgba(0, 0, 0, 0.5);
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            black calc(100% - 150px),
+            rgba(0, 0, 0, 0.4) calc(100% - 75px),
+            transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            black calc(100% - 150px),
+            rgba(0, 0, 0, 0.4) calc(100% - 75px),
+            transparent 100%);
+
+    @media (min-width: 768px) {
+        height: 80svh;
+    }
+
+    p {
+        font-size: 2rem;
+        opacity: 0.9;
+        font-family: var(--font-quote);
+    }
+}

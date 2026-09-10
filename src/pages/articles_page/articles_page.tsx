@@ -3,10 +3,12 @@ import './articles_page.scss';
 import { ArticlesPreviewGrid } from '../../components/article_preview/article_preview';
 import { queryForArticles } from '../../utils/react_query_hooks';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
-import { updatePageHeader } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_header_updater';
+import articlesPageCoverImagePath from '@/assets/images/covers/hill_with_flock_of_birds_in_line.webp';
+import PageHeader from '../../components/page_header/page_header';
 
 export default function ArticlesPage() {
-    updatePageHeader(
+    updatePageHead(
         'Articole | Ioana Poșircă',
         'Explorează articole despre gestionarea anxietății, relații de cuplu, dezvoltare personală și sănătate mintală, scrise dintr-o perspectivă psihoterapeutică.'
     );
@@ -18,13 +20,19 @@ export default function ArticlesPage() {
     return (
         <>
             <main className='articles-page'>
-                <h1>Articole</h1>
+                <PageHeader
+                    title="Articole"
+                    description="Cuvinte așezate cu grijă, de citit în ritmul tău."
+                    imagePath={articlesPageCoverImagePath}
+                />
 
-                {isPending ? (
-                    <LoaderBreathing text='Se preiau articolele...' />
-                ) : (
-                    <ArticlesPreviewGrid articles={articles || []} />
-                )}
+                <section className="articles-grid-container">
+                    {isPending ? (
+                        <LoaderBreathing text='Se preiau articolele...' />
+                    ) : (
+                        <ArticlesPreviewGrid articles={articles || []} />
+                    )}
+                </section>
             </main>
 
             <FooterSection />

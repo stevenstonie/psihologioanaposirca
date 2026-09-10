@@ -1,14 +1,18 @@
 .contact-page {
-    padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
+    .introductory-text {
+        font-family: var(--font-quote);
+        font-size: 2rem;
 
-    @media (min-width: 768px) {
-        padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
+        @media (min-width: 768px) {
+            font-size: 2.5rem;
+        }
     }
 
     .page-contents {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
 
+        gap: 3rem;
+    }
 }

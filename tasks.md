@@ -8,6 +8,8 @@
 
 - [ ] Meta tags in document head
 
+- [ ] if there is a different number of free slots for some days, going through them changes the size of the free-slots container and does layout shifting
+
 - [ ] create an xml sitemap
 
 - [ ] experiment with certificates being in a single card
@@ -17,5 +19,3 @@
 - [ ] 'how we can work' section should have text image; image text; text image
 
 - [ ] experiment with blobs from https://app.haikei.app
-
-- [ ] tos and gdpr forr contact form

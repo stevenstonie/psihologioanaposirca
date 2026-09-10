@@ -5,9 +5,11 @@ import { PrivacyPolicyLink } from '../../pages/policies_page/policies_page';
 
 interface ContactFormProps {
     selectedTime?: string;
+    headingLevel?: 'h2' | 'h3' | 'h4';
 }
 
-export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>) {
+export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Readonly<ContactFormProps>) {
+    const TitleTag = headingLevel;
     const [status, setStatus] = useState<string>('');
     const [isError, setIsError] = useState<boolean>(false);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -24,8 +26,10 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
         }
 
         setStatus('Se trimite...');
+
+        const formElement = e.currentTarget;
         const formData = new FormData(e.currentTarget);
-        formData.append('access_key', 'WEB3FORMS_ACCESS_KEY');
+        formData.append('access_key', '458841d5-37e3-4439-89d7-8aa871667bef');
         formData.append('h-captcha-response', captchaToken);
 
         const messageVal = formData.get('message') as string;
@@ -35,17 +39,23 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
             return;
         }
 
+        const dataObject = Object.fromEntries(formData);
+        const jsonPayload = JSON.stringify(dataObject);
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: jsonPayload,
             });
 
             const data = await response.json();
 
             if (data.success) {
                 setStatus('Mesajul a fost trimis cu succes!');
-                (e.target as HTMLFormElement).reset();
+                formElement.reset();
                 captchaRef.current?.resetCaptcha();
                 setCaptchaToken(null);
             } else {
@@ -54,14 +64,14 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
             }
         } catch (error) {
             console.error('Web3Forms submission failed:', error);
-            setStatus('Eroare de rețea. Vă rugăm să încercați din nou mai târziu.');
+            setStatus('Eroare de rețea. Vă rugăm să încercați din nou.');
             setIsError(true);
         }
     };
 
     return (
         <form onSubmit={handleSubmit} className="contact-form">
-            <h2 className="contact-form-title">Contact</h2>
+            <TitleTag className="contact-form-title">Formular contact</TitleTag>
 
             <input type="hidden" name="subject" value="Mesaj de contact de pe psihologioanaposirca.ro" />
 
@@ -119,6 +129,7 @@ export default function ContactForm({ selectedTime }: Readonly<ContactFormProps>
                     ref={captchaRef}
                     sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
                     onVerify={setCaptchaToken}
+                    reCaptchaCompat={false}
                     languageOverride="ro"
                 />
             </div>

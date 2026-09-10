@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 
-export function updatePageHeader(title: string, description?: string) {
+export function updatePageHead(title: string, description?: string) {
     useEffect(() => {
         document.title = title;
 

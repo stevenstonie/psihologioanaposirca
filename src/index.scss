@@ -38,6 +38,7 @@
 
   --margin-x-spacing-large: 3rem;
   --margin-x-spacing-small: 1rem;
+  --margin-y-spacing-small: 1rem;
   --margin-top-spacing: 40px;
 }
 
@@ -97,6 +98,16 @@ a {
 
   &:hover {
     color: var(--color-secondary-darker);
+  }
+}
+
+section, .page-hero {
+  padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
+}
+
+@media (min-width: 768px) {
+  section, .page-hero {
+    padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
   }
 }
 

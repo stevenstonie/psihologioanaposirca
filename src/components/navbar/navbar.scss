@@ -18,7 +18,7 @@ $nav-max-width: 1000px;
     transition: transform 0.3s cubic-bezier(0.32, 0.72, 0.3, 1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    background: color-mix(in oklch, var(--color-bg) 68%, transparent);
+    background: color-mix(in oklch, var(--color-bg) 80%, transparent);
     border-bottom: 1px solid var(--border-line);
 
     &.is-hidden {
