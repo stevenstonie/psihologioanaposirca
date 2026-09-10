@@ -9,7 +9,7 @@ import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_tea
 import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 import certificationImagePath from '@/assets/images/about_me/certification.jpg';
 import practicalExperienceImagePath from '@/assets/images/about_me/four-people-discussing-over-a-project.png';
 

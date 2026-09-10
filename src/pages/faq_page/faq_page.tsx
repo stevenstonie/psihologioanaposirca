@@ -1,7 +1,7 @@
 import { Accordion, AccordionList } from '../../components/accordion/accordion';
 import PageHeader from '../../components/page_header/page_header';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 import faqPageCoverImagePath from '@/assets/images/covers/calm_ocean_with_sky.webp';
 
 import './faq_page.scss';

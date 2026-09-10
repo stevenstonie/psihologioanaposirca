@@ -3,7 +3,7 @@ import AvailabilityCalendar from '../../components/availability_calendar/availab
 import { ContactDetails, contactData } from '../../components/contact_details/contact_details';
 import ContactForm from '../../components/contact_form/contact_form';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 import './make_an_appointment_page.scss';
 import appointmentPageCoverImagePath from '@/assets/images/covers/journal_on_a_table.webp';
 import PageHeader from '../../components/page_header/page_header';

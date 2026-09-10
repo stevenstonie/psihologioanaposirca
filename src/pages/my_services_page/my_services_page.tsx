@@ -1,6 +1,6 @@
 import PageHeader from '../../components/page_header/page_header';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 import servicesPageCoverImagePath from '@/assets/images/covers/couch_with_a_lamp_and_flower_pot.webp';
 import './my_services_page.scss';
 

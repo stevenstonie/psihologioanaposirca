@@ -74,7 +74,6 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
             <TitleTag className="contact-form-title">Formular contact</TitleTag>
 
             <input type="hidden" name="subject" value="Mesaj de contact de pe psihologioanaposirca.ro" />
-
             {/* Web3Forms honeypot to silently trap automated bots */}
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
@@ -114,14 +113,14 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
             <textarea
                 name="message"
                 required
-                placeholder="Mesajul tău"
+                placeholder="Și un mesaj"
                 rows={4}
                 className="contact-form-input textarea"
             />
 
             <label className="contact-form-checkbox-label">
                 <input type="checkbox" name="consent" required />
-                <span>Sunt de acord cu Sunt de acord cu <PrivacyPolicyLink /> și ca datele mele să fie folosite pentru a primi un răspuns. și ca datele mele să fie folosite pentru a primi un răspuns.</span>
+                <span>Sunt de acord cu <PrivacyPolicyLink /> și ca datele mele să fie folosite pentru a primi un răspuns.</span>
             </label>
 
             <div className="captcha-wrapper">

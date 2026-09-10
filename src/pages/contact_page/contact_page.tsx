@@ -2,7 +2,7 @@ import { ContactDetails, contactData } from '../../components/contact_details/co
 import ContactForm from '../../components/contact_form/contact_form';
 import PageHeader from '../../components/page_header/page_header';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 import contactPageCoverImagePath from '@/assets/images/covers/two_coffee_cups_on_a_table.webp';
 import './contact_page.scss';
 

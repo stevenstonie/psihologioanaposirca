@@ -8,9 +8,11 @@ import { LoaderBreathing } from '../loader_breathing/loader_breathing';
 
 interface AvailabilityCalendarProps {
     onSlotSelect: (timeString: string) => void;
+    headingLevel?: 'h2' | 'h3' | 'h4';
 }
 
-export default function AvailabilityCalendar({ onSlotSelect }: Readonly<AvailabilityCalendarProps>) {
+export default function AvailabilityCalendar({ onSlotSelect, headingLevel = 'h2' }: Readonly<AvailabilityCalendarProps>) {
+    const TitleTag = headingLevel;
     const [selectedDate, setSelectedDate] = useState<Date>(new Date());
     const { data: availableRanges, isLoading } = queryForCalendar();
 
@@ -56,25 +58,6 @@ export default function AvailabilityCalendar({ onSlotSelect }: Readonly<Availabi
         return calculateFreeSlots(date, busyRanges).length > 0;
     };
 
-    const getTimelineStyles = (start: Date | string | number, end: Date | string | number) => {
-        const startDate = new Date(start);
-        const endDate = new Date(end);
-
-        const startMinutes = startDate.getHours() * 60 + startDate.getMinutes();
-        const endMinutes = endDate.getHours() * 60 + endDate.getMinutes();
-        const totalDayMinutes = 24 * 60;
-
-        const leftPercent = (startMinutes / totalDayMinutes) * 100;
-        let widthPercent = ((endMinutes - startMinutes) / totalDayMinutes) * 100;
-
-        if (widthPercent === 0) widthPercent = 2;
-
-        return {
-            left: `${leftPercent}%`,
-            width: `${widthPercent}%`,
-        };
-    };
-
     const formatShortTime = (dateObj: Date) => {
         return dateObj.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     };
@@ -90,13 +73,69 @@ export default function AvailabilityCalendar({ onSlotSelect }: Readonly<Availabi
         onSlotSelect(`${dateString} | ${timeString}`);
     };
 
+    const getClockGradients = (slots: any[]) => {
+        const amParts: string[] = [];
+        let amCurrentDeg = 0;
+
+        const pmParts: string[] = [];
+        let pmCurrentDeg = 0;
+
+        const NOON_MINS = 720;
+
+        slots.forEach(slot => {
+            const startObj = new Date(slot.start);
+            const endObj = new Date(slot.end);
+
+            const startMins = startObj.getHours() * 60 + startObj.getMinutes();
+            const endMins = endObj.getHours() * 60 + endObj.getMinutes();
+
+            const subSlots = [];
+            if (startMins < NOON_MINS && endMins > NOON_MINS) {
+                subSlots.push({ start: startMins, end: NOON_MINS, ring: 'am' },
+                    { start: NOON_MINS, end: endMins, ring: 'pm' });
+            } else if (endMins <= NOON_MINS) {
+                subSlots.push({ start: startMins, end: endMins, ring: 'am' });
+            } else {
+                subSlots.push({ start: startMins, end: endMins, ring: 'pm' });
+            }
+
+            subSlots.forEach(sub => {
+                if (sub.ring === 'am') {
+                    const startDeg = (sub.start / NOON_MINS) * 360;
+                    const endDeg = (sub.end / NOON_MINS) * 360;
+                    if (startDeg > amCurrentDeg) {
+                        amParts.push(`transparent ${amCurrentDeg}deg, transparent ${startDeg}deg`);
+                    }
+                    amParts.push(`#3bd494 ${startDeg}deg, #3bd494 ${endDeg}deg`);
+                    amCurrentDeg = endDeg;
+                } else {
+                    const startDeg = ((sub.start - NOON_MINS) / NOON_MINS) * 360;
+                    const endDeg = ((sub.end - NOON_MINS) / NOON_MINS) * 360;
+                    if (startDeg > pmCurrentDeg) {
+                        pmParts.push(`transparent ${pmCurrentDeg}deg, transparent ${startDeg}deg`);
+                    }
+                    pmParts.push(`var(--color-primary-lighter) ${startDeg}deg, var(--color-primary-lighter) ${endDeg}deg`);
+                    pmCurrentDeg = endDeg;
+                }
+            });
+        });
+
+        if (amCurrentDeg < 360) amParts.push(`transparent ${amCurrentDeg}deg, transparent 360deg`);
+        if (pmCurrentDeg < 360) pmParts.push(`transparent ${pmCurrentDeg}deg, transparent 360deg`);
+
+        return {
+            amGradient: `conic-gradient(from 0deg, ${amParts.length ? amParts.join(', ') : 'transparent 0deg, transparent 360deg'})`,
+            pmGradient: `conic-gradient(from 0deg, ${pmParts.length ? pmParts.join(', ') : 'transparent 0deg, transparent 360deg'})`
+        };
+    };
+
     if (isLoading) return <div><LoaderBreathing text='Se încarcă calendarul..' /></div>;
 
     const freeSlots = availableRanges ? calculateFreeSlots(selectedDate, availableRanges) : [];
 
     return (
         <div className="availability-container">
-            <h3>calendarul cu ore disponibile</h3>
+            <TitleTag>calendarul cu ore disponibile</TitleTag>
 
             <div className="legend">
                 <span className="legend-busy">ocupat</span>
@@ -129,7 +168,7 @@ export default function AvailabilityCalendar({ onSlotSelect }: Readonly<Availabi
             />
 
             <div className="hourly-breakdown">
-                <h4>Programul pentru {selectedDate.toLocaleDateString('ro-RO', { weekday: 'long', month: 'long', day: 'numeric' })}</h4>
+                <p style={{ fontSize: '1.3rem', fontWeight: 'bold', margin: '0' }}>Programul pentru {selectedDate.toLocaleDateString('ro-RO', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
 
                 {freeSlots.length === 0 ? (
                     <p className="all-busy">Complet rezervat în această zi.</p>
@@ -157,33 +196,43 @@ export default function AvailabilityCalendar({ onSlotSelect }: Readonly<Availabi
                             })}
                         </ul>
 
-                        <div className="timeline-container" aria-hidden="true">
-                            <div className="timeline-bar">
-                                {freeSlots.map((slot) => {
-                                    const startObj = new Date(slot.start);
-                                    const endObj = new Date(slot.end);
-                                    const timeString = `${formatShortTime(startObj)} - ${formatShortTime(endObj)}`;
-
+                        <div className="clock-container" aria-hidden="true">
+                            <div className="clock-visualizer">
+                                {(() => {
+                                    const { amGradient, pmGradient } = getClockGradients(freeSlots);
                                     return (
-                                        <button
-                                            type="button"
-                                            key={`visual-${slot.start}-${slot.end}`}
-                                            className="timeline-available-block"
-                                            style={{ ...getTimelineStyles(slot.start, slot.end), cursor: 'pointer', border: 'none' }}
-                                            title={timeString}
-                                            onClick={() => handleSlotClick(startObj, endObj)}
-                                        >
-                                            <span className="block-text">{timeString}</span>
-                                        </button>
+                                        <>
+                                            <div className="clock-ring clock-outer" style={{ background: pmGradient }}></div>
+
+                                            <div className="clock-ring clock-inner" style={{ background: amGradient }}></div>
+                                        </>
                                     );
+                                })()}
+
+                                <div className="clock-center-pin"></div>
+
+                                {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((hour) => {
+                                    const angle = hour * 30;
+                                    return [
+                                        <div
+                                            key={`tick-${hour}`}
+                                            className="clock-tick"
+                                            style={{
+                                                transform: `rotate(${angle}deg) translate(0, -71px)`
+                                            }}
+                                        ></div>,
+
+                                        <span
+                                            key={`label-${hour}`}
+                                            className="clock-hour-label"
+                                            style={{
+                                                transform: `rotate(${angle}deg) translate(0, -86px) rotate(-${angle}deg)`,
+                                            }}
+                                        >
+                                            {hour}
+                                        </span>
+                                    ];
                                 })}
-                            </div>
-                            <div className="timeline-labels">
-                                <span>12am</span>
-                                <span>6am</span>
-                                <span>12pm</span>
-                                <span>6pm</span>
-                                <span>12am</span>
                             </div>
                         </div>
                     </div>

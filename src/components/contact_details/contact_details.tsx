@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mailIconPath from '@/assets/svgs/icons/contact/email.svg';
 import phoneIconPath from '@/assets/svgs/icons/contact/phone.svg';
 import locationPinIconPath from '@/assets/svgs/icons/contact/location_pin.svg';
+import copyIconPath from '@/assets/svgs/icons/others/copy.svg';
+import checkmarkIconPath from '@/assets/svgs/icons/others/checkmark.svg';
 import './contact_details.scss';
 
 interface ContactItem {
@@ -37,6 +39,20 @@ const getHref = (contact: ContactItem) => {
 
 export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts, showLabels = false }) => {
     const ref = useRef<HTMLUListElement>(null);
+    const [copiedValue, setCopiedValue] = useState<string | null>(null);
+
+    const handleCopy = async (e: React.MouseEvent, value: string) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        try {
+            await navigator.clipboard.writeText(value);
+            setCopiedValue(value);
+            setTimeout(() => setCopiedValue(null), 2000);
+        } catch (err) {
+            console.error('Copierea textului a eșuat: ', err);
+        }
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
@@ -71,6 +87,18 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts, showLa
                                 )}
                                 <p className="contact-blob-value">{contact.value}</p>
                             </div>
+                            <button
+                                onClick={(e) => handleCopy(e, contact.value)}
+                                className="copy-button"
+                                aria-label="Copiază"
+                                title="Copiază"
+                            >
+                                {copiedValue === contact.value ? (
+                                    <img src={checkmarkIconPath} width="32" height="32" alt='success' />
+                                ) : (
+                                    <img src={copyIconPath} width="32" height="32" alt='copy button' />
+                                )}
+                            </button>
                         </a>
                     </li>
                 ))}

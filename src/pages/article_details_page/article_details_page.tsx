@@ -8,7 +8,7 @@ import { queryForArticles } from '../../utils/react_query_hooks';
 import type { Article } from '../../api/sheet_service';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
 import { handleArticleImageError } from '../../utils/image_helpers';
-import { updatePageHead } from '../../utils/page_header_updater';
+import { updatePageHead } from '../../utils/page_head_updater';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";

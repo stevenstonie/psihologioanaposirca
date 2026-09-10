@@ -5,7 +5,7 @@ import MyServicesSection from "../../sections/my_services/my_services_section";
 import SpecializationsSection from "../../sections/specializations/specializations_section";
 import WhyChooseMyServicesSection from "../../sections/why_choose_my_services/why_choose_my_services_section";
 import './home_page.scss';
-import { updatePageHead } from "../../utils/page_header_updater";
+import { updatePageHead } from "../../utils/page_head_updater";
 
 export default function HomePage() {
     updatePageHead(
