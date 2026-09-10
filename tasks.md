@@ -1,6 +1,6 @@
 
 
-- [ ] set robots.txt to allow all before prod
+- [ ] remove <meta name="robots" content="noindex, nofollow"> before prod
 
 - [ ] add custom cursor
 

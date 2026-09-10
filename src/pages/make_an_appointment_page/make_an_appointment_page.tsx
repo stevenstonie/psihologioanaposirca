@@ -3,13 +3,13 @@ import AvailabilityCalendar from '../../components/availability_calendar/availab
 import { ContactDetails, contactData } from '../../components/contact_details/contact_details';
 import ContactForm from '../../components/contact_form/contact_form';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_head_updater';
+import { usePageHead } from '../../utils/page_head_updater';
 import './make_an_appointment_page.scss';
 import appointmentPageCoverImagePath from '@/assets/images/covers/journal_on_a_table.webp';
 import PageHeader from '../../components/page_header/page_header';
 
 export default function AppointmentPage() {
-    updatePageHead(
+    usePageHead(
         'Programări | Ioana Poșircă',
         'Programează o ședință. Vezi calendarul cu orele disponibile și alege un interval.'
     );

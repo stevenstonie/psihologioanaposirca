@@ -8,7 +8,7 @@ import { queryForArticles } from '../../utils/react_query_hooks';
 import type { Article } from '../../api/sheet_service';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
 import { handleArticleImageError } from '../../utils/image_helpers';
-import { updatePageHead } from '../../utils/page_head_updater';
+import { usePageHead } from '../../utils/page_head_updater';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";
@@ -20,9 +20,24 @@ export default function ArticleDetailsPage() {
         isError
     } = queryForArticles();
     const article: Article | undefined = articles?.find(a => String(a.id).trim() === String(id).trim());
-    updatePageHead(
+    const articleSchema = article ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": article.title,
+        "image": article.imageUrl,
+        "datePublished": article.date,
+        "author": {
+            "@type": "Person",
+            "name": article.authors
+        },
+        "articleSection": article.category,
+        "url": article.fullArticleUrl || window.location.href
+    } : undefined;
+
+    usePageHead(
         article ? `${article.title} | Ioana Poșircă` : 'Se încarcă articolul... | Ioana Poșircă',
-        article ? getCleanExcerpt(article.contents) : ''
+        article ? getCleanExcerpt(article.contents) : '',
+        articleSchema
     );
 
     if (isPending) {

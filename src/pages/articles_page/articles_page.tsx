@@ -3,12 +3,12 @@ import './articles_page.scss';
 import { ArticlesPreviewGrid } from '../../components/article_preview/article_preview';
 import { queryForArticles } from '../../utils/react_query_hooks';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
-import { updatePageHead } from '../../utils/page_head_updater';
+import { usePageHead } from '../../utils/page_head_updater';
 import articlesPageCoverImagePath from '@/assets/images/covers/hill_with_flock_of_birds_in_line.webp';
 import PageHeader from '../../components/page_header/page_header';
 
 export default function ArticlesPage() {
-    updatePageHead(
+    usePageHead(
         'Articole | Ioana Poșircă',
         'Explorează articole despre gestionarea anxietății, relații de cuplu, dezvoltare personală și sănătate mintală, scrise dintr-o perspectivă psihoterapeutică.'
     );

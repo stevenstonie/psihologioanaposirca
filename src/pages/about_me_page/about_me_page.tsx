@@ -9,12 +9,12 @@ import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_tea
 import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
-import { updatePageHead } from '../../utils/page_head_updater';
+import { usePageHead } from '../../utils/page_head_updater';
 import certificationImagePath from '@/assets/images/about_me/certification.jpg';
 import practicalExperienceImagePath from '@/assets/images/about_me/four-people-discussing-over-a-project.png';
 
 export default function AboutMePage() {
-    updatePageHead(
+    usePageHead(
         'Despre mine | Ioana Poșircă',
         'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
     );
