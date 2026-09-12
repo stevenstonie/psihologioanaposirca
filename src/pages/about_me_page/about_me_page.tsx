@@ -12,12 +12,14 @@ import FooterSection from '../../sections/footer/footer_section';
 import { usePageHead } from '../../utils/page_head_updater';
 import certificationImagePath from '@/assets/images/about_me/certification.jpg';
 import practicalExperienceImagePath from '@/assets/images/about_me/four-people-discussing-over-a-project.png';
+import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function AboutMePage() {
     usePageHead(
         'Despre mine | Ioana Poșircă',
         'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
     );
+    // waitForAssets();
 
     return (
         <>

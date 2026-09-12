@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 
 export function usePageHead(title: string, description?: string, jsonLd?: Record<string, any>) {
+    const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
+
     useEffect(() => {
         document.title = title;
 
@@ -17,13 +19,17 @@ export function usePageHead(title: string, description?: string, jsonLd?: Record
 
         let scriptTag = document.querySelector('script[type="application/ld+json"]');
 
-        if (jsonLd) {
+        if (!jsonLdString && scriptTag) {
+            scriptTag.remove();
+        }
+
+        if (jsonLdString) {
             if (!scriptTag) {
                 scriptTag = document.createElement('script');
                 scriptTag.setAttribute('type', 'application/ld+json');
                 document.head.appendChild(scriptTag);
             }
-            scriptTag.textContent = JSON.stringify(jsonLd);
+            scriptTag.textContent = jsonLdString;
         }
 
         return () => {
@@ -31,5 +37,5 @@ export function usePageHead(title: string, description?: string, jsonLd?: Record
                 scriptTag.remove();
             }
         };
-    }, [title, description, jsonLd]);
+    }, [title, description, jsonLdString]);
 }

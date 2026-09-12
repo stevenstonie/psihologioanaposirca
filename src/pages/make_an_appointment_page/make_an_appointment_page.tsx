@@ -7,12 +7,14 @@ import { usePageHead } from '../../utils/page_head_updater';
 import './make_an_appointment_page.scss';
 import appointmentPageCoverImagePath from '@/assets/images/covers/journal_on_a_table.webp';
 import PageHeader from '../../components/page_header/page_header';
+import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function AppointmentPage() {
     usePageHead(
         'Programări | Ioana Poșircă',
         'Programează o ședință. Vezi calendarul cu orele disponibile și alege un interval.'
     );
+    // waitForAssets(appointmentPageCoverImagePath);
 
     const [selectedTime, setSelectedTime] = useState<string>('');
     const formRef = useRef<HTMLElement>(null);

@@ -4,10 +4,6 @@
 
 - [ ] add custom cursor
 
-- [ ] JSON-LD for articles
-
-- [ ] Meta tags in document head
-
 - [ ] if there is a different number of free slots for some days, going through them changes the size of the free-slots container and does layout shifting
 
 - [ ] create an xml sitemap
