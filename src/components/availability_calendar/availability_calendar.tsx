@@ -135,7 +135,7 @@ export default function AvailabilityCalendar({ onSlotSelect, headingLevel = 'h2'
 
     return (
         <div className="availability-container">
-            <TitleTag>calendarul cu ore disponibile</TitleTag>
+            <TitleTag style={{ marginTop: 0}}>calendarul cu ore disponibile</TitleTag>
 
             <div className="legend">
                 <span className="legend-busy">ocupat</span>
@@ -182,12 +182,11 @@ export default function AvailabilityCalendar({ onSlotSelect, headingLevel = 'h2'
                                 const endObj = new Date(slot.end);
 
                                 return (
-                                    <li key={`text-${slot.start}-${slot.end}`} className="available-slot">
+                                    <li key={`text-${slot.start}-${slot.end}`} style={{ display: 'inline' }}>
                                         <button
                                             type="button"
-                                            className="slot-select-btn"
+                                            className="available-slot"
                                             onClick={() => handleSlotClick(startObj, endObj)}
-                                            style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}
                                         >
                                             {formatShortTime(startObj)} {' - '} {formatShortTime(endObj)}
                                         </button>
