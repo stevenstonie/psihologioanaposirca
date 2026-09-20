@@ -10,14 +10,11 @@
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 3rem;
             text-align: center;
         }
     }
 
     .policy-section {
-        margin-bottom: 3rem;
-
         h2 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
@@ -45,9 +42,8 @@
     }
 
     .policy-divider {
-        border: none;
+        // border: none;
         height: 1px;
         background: color-mix(in srgb, var(--color-text) 20%, transparent);
-        margin: 4rem 0;
     }
 }

@@ -72,6 +72,7 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
     return (
         <form onSubmit={handleSubmit} className="contact-form">
             <TitleTag className="contact-form-title">Formular contact</TitleTag>
+            <p style={{ margin: 0 }}>Pentru programări, te rog să menționezi pe scurt motivul solicitării și disponibilitatea ta orară, iar eu te voi contacta pentru a stabili detaliile.</p>
 
             <input type="hidden" name="subject" value="Mesaj de contact de pe psihologioanaposirca.ro" />
             {/* Web3Forms honeypot to silently trap automated bots */}

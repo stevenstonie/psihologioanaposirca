@@ -26,6 +26,7 @@ export default function ContactPage() {
                 <section className='page-contents'>
                     <div>
                         <h2>Detalii contact</h2>
+                        <p style={{ maxWidth: '500px' }}>Îți las mai jos datele de contact. Nu ezita să îmi scrii sau să mă suni, iar eu revin cu un răspuns în cel mai scurt timp.</p>
                         <ContactDetails showLabels contacts={contactData} />
                     </div>
 

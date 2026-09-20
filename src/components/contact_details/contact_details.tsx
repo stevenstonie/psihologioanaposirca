@@ -9,7 +9,7 @@ import './contact_details.scss';
 interface ContactItem {
     type: 'phone' | 'email' | 'location';
     value: string;
-    icon?: React.ReactNode;
+    icon: React.ReactNode;
     label: string;
     lat?: number;
     lng?: number;
@@ -110,22 +110,20 @@ export const ContactDetails: React.FC<ContactDetailsProps> = ({ contacts, showLa
 export const contactData: ContactItem[] = [
     {
         type: 'phone',
-        label: 'suna-ma te rog si iti voi raspunde poimarti lmaoooooo',
+        label: '',
         icon: <img src={phoneIconPath} alt="telefon" width="40" height="40" />,
-        value: '+40712345678'
+        value: '+40749900483'
     },
     {
         type: 'email',
-        label: 'acesta este inboxul meu dar pe asta nu raspund nicio data. decat daca-mi trimiti o felicitare prin posta',
+        label: '',
         icon: <img src={mailIconPath} alt="email" width="40" height="40" />,
-        value: 'email@email.email'
+        value: 'psihologioanaposirca@gmail.com'
     },
     {
         type: 'location',
-        label: 'aici ma aflu. dar poate nu sunt defapt in acest moment aici. cine stie?',
+        label: '',
         icon: <img src={locationPinIconPath} alt="locație" width="40" height="40" />,
-        value: 'str. Mamaia nr. 42',
-        lat: 46.772292,
-        lng: 23.581816
+        value: 'Constanța, România',
     }
 ];
