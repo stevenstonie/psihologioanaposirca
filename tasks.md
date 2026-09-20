@@ -15,3 +15,7 @@
 - [ ] 'how we can work' section should have text image; image text; text image
 
 - [ ] experiment with blobs from https://app.haikei.app
+
+- [ ] check on how to integrate county in seo
+
+- [ ] change imabe types into webp

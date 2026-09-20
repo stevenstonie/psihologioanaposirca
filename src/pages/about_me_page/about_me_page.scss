@@ -1,12 +1,81 @@
 .about-me-page {
-    .about-me-section {
-        background-color: var(--color-bg);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%239C92AC' fill-opacity='0.13'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: var(--color-bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%239C92AC' fill-opacity='0.09'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
-        -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 60px), transparent 100%);
-        mask-image: linear-gradient(to bottom, black calc(100% - 60px), transparent 100%);
+    h1 {
+        margin-bottom: 0;
+        padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
+    }
 
-        padding-bottom: 4rem;
+    @media (min-width: 768px) {
+        h1 {
+            padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
+        }
+    }
+
+    .bigger-paragraph {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-top: 0;
+    }
+
+    .big-paragraph {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+
+    .medium-paragraph {
+        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+    }
+
+    .who-am-i-section {
+        display: block;
+        padding-top: 0;
+
+        /* keeps the section from collapsing if the text is short */
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            border-radius: 8px;
+            width: min(500px, 80vw);
+            margin: 0 auto 2rem auto;
+        }
+
+        @media (min-width: 600px) {
+            img {
+                float: right;
+                width: min(400px, 40vw);
+                margin: 0 0 1rem 2rem;
+            }
+        }
+    }
+
+    .how-i-work-section {
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            border-radius: 8px;
+            width: min(500px, 80vw);
+            margin: 0 auto 2rem auto;
+        }
+
+        @media (min-width: 600px) {
+            img {
+                float: left;
+                width: min(400px, 40vw);
+                margin: 0 2rem 1rem 0;
+            }
+        }
     }
 
     .certifications-section,
@@ -28,6 +97,7 @@
 
             img {
                 width: 300px;
+                aspect-ratio: 1/1;
                 height: min-content;
                 border-radius: 10px;
 
@@ -36,5 +106,12 @@
                 }
             }
         }
+    }
+
+    .cta-section {
+        text-align: center;
+        max-width: 1000px;
+        margin: auto;
+        padding-bottom: 5rem;
     }
 }

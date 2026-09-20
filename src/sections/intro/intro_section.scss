@@ -17,14 +17,10 @@
 .intro-image {
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     border-radius: 8px;
     margin: 0 auto 1.5rem auto;
-
-    @media (max-width: 768px) {
-        max-width: 300px;
-    }
 }
 
 .intro-text {
@@ -43,7 +39,7 @@
     padding-bottom: 3rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .intro-image {
         float: left;
         margin: 0 2rem 1rem 0;
@@ -61,7 +57,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 899px) {
     .btn {
         font-size: 1rem;
         padding: .4rem 2rem;
