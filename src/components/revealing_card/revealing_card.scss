@@ -7,9 +7,7 @@
     transform: none;
     border-radius: 10px;
     background: color-mix(in srgb, var(--color-bg) 100%, transparent);
-    box-shadow: 9px 9px 20px -10px rgb(55, 55, 55),
-        inset -5px -5px 14px 0px var(--color-bg-darker),
-        inset 8px 8px 20px 0px white;
+    box-shadow: var(--shadow-claymorphic);
 
     @supports (animation-timeline: view()) {
         animation: card-reveal linear both;

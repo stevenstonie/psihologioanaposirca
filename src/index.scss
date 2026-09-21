@@ -40,6 +40,10 @@
   --margin-x-spacing-small: 1rem;
   --margin-y-spacing-small: 1rem;
   --margin-top-spacing: 40px;
+
+  --shadow-claymorphic: 9px 9px 20px -10px rgb(55, 55, 55),
+    inset -5px -5px 14px 0px var(--color-bg-darker),
+    inset 8px 8px 20px 0px white;
 }
 
 html {
@@ -60,6 +64,22 @@ body {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+p {
+  font-size: 1.2rem;
+
+  @media (min-width: 600px) {
+    font-size: 1.4rem;
+  }
+}
+
+li {
+  font-size: 1.1rem;
+
+  @media (min-width: 600px) {
+    font-size: 1.2rem;
+  }
 }
 
 h1 {
@@ -101,17 +121,20 @@ a {
   }
 }
 
-section, .page-hero {
+section,
+.page-hero {
   padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 }
 
 @media (min-width: 768px) {
-  section, .page-hero {
+
+  section,
+  .page-hero {
     padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
   }
 }
 
-/* -------------------------------------------------- */
+/* for suspended -------------------------------------------------- */
 
 .page-transition-fade {
   animation: pageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
