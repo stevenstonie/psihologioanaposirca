@@ -6,6 +6,12 @@ import copyIconPath from '@/assets/svgs/icons/others/copy.svg';
 import checkmarkIconPath from '@/assets/svgs/icons/others/checkmark.svg';
 import './contact_details.scss';
 
+const city: string = 'Constanța';
+const country: string = 'Romania';
+const countryCodeIso2: string = 'RO';
+const phoneNumber: string = '+40749900483';
+const emailAddress: string = 'psihologioanaposirca@gmail.com';
+
 interface ContactItem {
     type: 'phone' | 'email' | 'location';
     value: string;
@@ -112,18 +118,53 @@ export const contactData: ContactItem[] = [
         type: 'phone',
         label: '',
         icon: <img src={phoneIconPath} alt="telefon" width="40" height="40" />,
-        value: '+40749900483'
+        value: phoneNumber
     },
     {
         type: 'email',
         label: '',
         icon: <img src={mailIconPath} alt="email" width="40" height="40" />,
-        value: 'psihologioanaposirca@gmail.com'
+        value: emailAddress
     },
     {
         type: 'location',
         label: '',
         icon: <img src={locationPinIconPath} alt="locație" width="40" height="40" />,
-        value: 'Constanța, România',
+        value: city + ', ' + country,
     }
 ];
+
+export const LocalBusinessSchema = () => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "medicalSpecialty": "Psihologie",
+        "name": "Cabinet Individual de Psihologie Ioana Poșircă",
+        "image": "https://psihologioanaposirca.ro/thumbnail-image.jpg",
+        "url": "https://psihologioanaposirca.ro",
+        "telephone": phoneNumber,
+        "address": {
+            "@type": "PostalAddress",
+            // "streetAddress": "strada sânzienelor, nr. 101",
+            "addressLocality": city,
+            // "postalCode": "000000",
+            "addressCountry": countryCodeIso2
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": city
+        },
+        // "geo": {
+        //     "@type": "GeoCoordinates",
+        //     "latitude": 44.4268, 
+        //     "longitude": 26.1025
+        // },
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+};

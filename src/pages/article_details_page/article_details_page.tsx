@@ -9,6 +9,7 @@ import type { Article } from '../../api/sheet_service';
 import { LoaderBreathing } from '../../components/loader_breathing/loader_breathing';
 import { handleArticleImageError } from '../../utils/image_helpers';
 import { usePageHead } from '../../utils/page_head_updater';
+import { getSafeIsoDate } from '../../utils/helpers';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";
@@ -25,13 +26,17 @@ export default function ArticleDetailsPage() {
         "@type": "Article",
         "headline": article.title,
         "image": article.imageUrl,
-        "datePublished": article.date,
+        "datePublished": getSafeIsoDate(article.date),
+        "articleSection": article.category,
+        "url": article.fullArticleUrl || window.location.href,
         "author": {
             "@type": "Person",
             "name": article.authors
         },
-        "articleSection": article.category,
-        "url": article.fullArticleUrl || window.location.href
+        "publisher": {
+            "@type": "Organization",
+            "name": "Cabinet Individual de Psihologie Ioana Poșircă"
+        },
     } : undefined;
 
     usePageHead(

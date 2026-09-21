@@ -83,6 +83,25 @@
         }
     }
 
+    .textarea-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .char-counter {
+            font-size: 0.8rem;
+            align-self: flex-end;
+            opacity: 0.6;
+            transition: color 0.2s ease;
+
+            &.limit-reached {
+                color: red;
+                opacity: 0.9;
+            }
+        }
+    }
+
+
     .captcha-wrapper {
         width: 100%;
         max-width: 100%;

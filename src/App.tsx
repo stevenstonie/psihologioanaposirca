@@ -1,13 +1,12 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import './App.scss'
 import Navbar from './components/navbar/navbar'
-import { ScrollToTop } from './utils/scroll_to_top'
 import { ROUTES } from './utils/navigation'
 import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { QueryClient } from '@tanstack/react-query'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import AntiSuicideBanner from './components/anti_suicide_banner/anti_suicide_banner';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Suspended } from './utils/page_loading/Suspended'
 
 const queryClient = new QueryClient({
@@ -71,3 +70,17 @@ function App() {
 }
 
 export default App
+
+
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+
+  return null;
+}

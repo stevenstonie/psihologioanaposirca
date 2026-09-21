@@ -41,7 +41,7 @@ export default function AppointmentPage() {
                     </section>
 
                     <section className='contact-form-section' ref={formRef}>
-                        <ContactForm selectedTime={selectedTime} />
+                        <ContactForm selectedTime={selectedTime} onFormSubmitted={() => setSelectedTime('')} />
                     </section>
                 </div>
             </main>

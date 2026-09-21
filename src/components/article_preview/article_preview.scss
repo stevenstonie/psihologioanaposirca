@@ -31,7 +31,9 @@
         color: var(--color-text-lighter);
     }
 
-    h3 {
+    h2,
+    h3,
+    h4 {
         margin: 0.5rem 1rem 0.25rem 1rem;
         font-size: 1.1rem;
         line-height: 1.4;
@@ -48,8 +50,9 @@
         color: var(--color-text-lighter);
     }
 
-    p {
+    span {
         padding: 1rem 1rem;
+        font-size: 1rem;
         margin: 0;
     }
 

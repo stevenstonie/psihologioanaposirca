@@ -17,7 +17,7 @@ export function usePageHead(title: string, description?: string, jsonLd?: Record
             metaDescription.setAttribute('content', description);
         }
 
-        let scriptTag = document.querySelector('script[type="application/ld+json"]');
+        let scriptTag = document.querySelector('script[id="dynamic-article-schema"]');
 
         if (!jsonLdString && scriptTag) {
             scriptTag.remove();
@@ -27,6 +27,7 @@ export function usePageHead(title: string, description?: string, jsonLd?: Record
             if (!scriptTag) {
                 scriptTag = document.createElement('script');
                 scriptTag.setAttribute('type', 'application/ld+json');
+                scriptTag.setAttribute('id', 'dynamic-article-schema');
                 document.head.appendChild(scriptTag);
             }
             scriptTag.textContent = jsonLdString;

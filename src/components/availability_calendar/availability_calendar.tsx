@@ -135,7 +135,7 @@ export default function AvailabilityCalendar({ onSlotSelect, headingLevel = 'h2'
 
     return (
         <div className="availability-container">
-            <TitleTag style={{ marginTop: 0}}>calendarul cu ore disponibile</TitleTag>
+            <TitleTag style={{ marginTop: 0 }}>calendarul cu ore disponibile</TitleTag>
 
             <div className="legend">
                 <span className="legend-busy">ocupat</span>
@@ -168,7 +168,7 @@ export default function AvailabilityCalendar({ onSlotSelect, headingLevel = 'h2'
             />
 
             <div className="hourly-breakdown">
-                <p style={{ fontSize: '1.3rem', fontWeight: 'bold', margin: '0' }}>Programul pentru {selectedDate.toLocaleDateString('ro-RO', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+                <p style={{ fontWeight: 'bold', margin: '0' }}>Programul pentru {selectedDate.toLocaleDateString('ro-RO', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
 
                 {freeSlots.length === 0 ? (
                     <p className="all-busy">Complet rezervat în această zi.</p>

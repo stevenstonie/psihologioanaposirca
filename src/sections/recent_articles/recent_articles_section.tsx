@@ -19,7 +19,7 @@ export default function RecentArticlesSection() {
                 <LoaderBreathing text='Se preiau articolele...' />
             ) : (
                 <>
-                    <ArticlesPreviewGrid articles={articles?.slice(0, 6) || []} emptyMessage='Niciun articol recent..' />
+                    <ArticlesPreviewGrid articles={articles?.slice(0, 6) || []} articleTitleHeadingLevel='h3' emptyMessage='Niciun articol recent..' />
 
                     <br></br>
 

@@ -5,15 +5,22 @@ import { PrivacyPolicyLink } from '../../pages/policies_page/policies_page';
 
 interface ContactFormProps {
     selectedTime?: string;
+    onFormSubmitted?: () => void;
     headingLevel?: 'h2' | 'h3' | 'h4';
 }
 
-export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Readonly<ContactFormProps>) {
+export default function ContactForm({ selectedTime, onFormSubmitted, headingLevel = 'h2' }: Readonly<ContactFormProps>) {
     const TitleTag = headingLevel;
+    const web3FormsAccessKey = import.meta.env.VITE_WEB_3_FORMS_ACCESS_KEY;
+
     const [status, setStatus] = useState<string>('');
     const [isError, setIsError] = useState<boolean>(false);
+
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const captchaRef = useRef<HCaptcha>(null);
+
+    const [charCount, setCharCount] = useState(0);
+    const MAX_CHARS = 1000;
 
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -29,10 +36,16 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
 
         const formElement = e.currentTarget;
         const formData = new FormData(e.currentTarget);
-        formData.append('access_key', '458841d5-37e3-4439-89d7-8aa871667bef');
+        formData.append('access_key', web3FormsAccessKey);
         formData.append('h-captcha-response', captchaToken);
 
         const messageVal = formData.get('message') as string;
+
+        if (messageVal.length > MAX_CHARS) {
+            setStatus(`Mesajul depășește limita de ${MAX_CHARS} de caractere.`);
+            setIsError(true);
+            return;
+        }
         if (/(http|https|www\.)/i.test(messageVal)) {
             setStatus('Din motive de securitate, link-urile nu sunt permise în mesaj.');
             setIsError(true);
@@ -54,13 +67,17 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
             const data = await response.json();
 
             if (data.success) {
-                setStatus('Mesajul a fost trimis cu succes!');
+                if (onFormSubmitted) {
+                    onFormSubmitted();
+                }
                 formElement.reset();
                 captchaRef.current?.resetCaptcha();
                 setCaptchaToken(null);
+                setCharCount(0);
+                setStatus('Mesajul a fost trimis cu succes!');
             } else {
-                setStatus(data.message || 'Trimiterea a eșuat. Încercați din nou.');
                 setIsError(true);
+                setStatus(data.message || 'Trimiterea a eșuat. Încercați din nou.');
             }
         } catch (error) {
             console.error('Web3Forms submission failed:', error);
@@ -111,13 +128,19 @@ export default function ContactForm({ selectedTime, headingLevel = 'h2' }: Reado
                 className="contact-form-input"
             />
 
-            <textarea
-                name="message"
-                required
-                placeholder="Și un mesaj"
-                rows={4}
-                className="contact-form-input textarea"
-            />
+            <div className="textarea-container">
+                <textarea
+                    className="contact-form-input textarea"
+                    name="message"
+                    required
+                    placeholder="Și un mesaj"
+                    rows={4}
+                    onChange={(e) => setCharCount(e.target.value.length)}
+                />
+                <div className={`char-counter ${charCount > MAX_CHARS ? 'limit-reached' : ''}`}>
+                    {charCount} / {MAX_CHARS}
+                </div>
+            </div>
 
             <label className="contact-form-checkbox-label">
                 <input type="checkbox" name="consent" required />

@@ -8,14 +8,12 @@
 
 - [ ] create an xml sitemap
 
-- [ ] experiment with certificates being in a single card
-
-- [ ] descriptive image in 'about me' sections
-
 - [ ] 'how we can work' section should have text image; image text; text image
 
 - [ ] experiment with blobs from https://app.haikei.app
 
 - [ ] check on how to integrate county in seo
 
-- [ ] change imabe types into webp
+- [ ] change image types into webp
+
+- [ ] check into ssg with vite
