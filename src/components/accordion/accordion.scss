@@ -68,13 +68,14 @@
 
             .accordion-inner {
                 overflow: hidden;
-            }
 
-            p {
-                margin: 0;
-                padding: 0 24px 20px;
-                line-height: 1.75;
-                color: var(--color-text-lighter);
+                p {
+                    font-size: 1.1rem;
+                    margin: 0;
+                    padding: 0 24px 20px;
+                    line-height: 1.75;
+                    color: var(--color-text-lighter);
+                }
             }
         }
 

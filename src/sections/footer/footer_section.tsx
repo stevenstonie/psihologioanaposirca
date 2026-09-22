@@ -28,7 +28,7 @@ export default function FooterSection() {
 
             <div className='footer-copyright'>
                 <small style={{ fontSize: '1rem' }}>&copy; {currentYear} Toate drepturile rezervate.</small>
-                <small style={{ fontSize: '.8rem' }}>Realizat cu grijă de <a href="https://stevendev.me" target="_blank" rel="noopener noreferrer">stevendev</a>.</small>
+                <small style={{ fontSize: '.8rem' }}>Realizat cu grijă de <a style={{ color: 'rgb(218, 82, 24)' }} href="https://stevendev.me" target="_blank" rel="noopener noreferrer">stevendev</a>.</small>
             </div>
         </footer>
     );

@@ -48,11 +48,11 @@ export default function WhyChooseMyServicesSection() {
                 />
             </CardLayout>
 
-            <br></br>
-            <br></br>
+            <br />
+            <br />
 
             <div className="make-an-appointment-button-container">
-                <Button className="make-an-appointment-button" to={ROUTES.APPOINTMENT} size="lg">Programează-te</Button>
+                <Button className="make-an-appointment-button" to={ROUTES.APPOINTMENT} size="lg">Trimite-mi un mesaj</Button>
             </div>
         </section>
     );

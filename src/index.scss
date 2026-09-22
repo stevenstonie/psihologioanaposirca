@@ -92,9 +92,11 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  margin-bottom: .8rem;
 
   @media (min-width: 600px) {
     font-size: 2.4rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -121,14 +123,19 @@ a {
   }
 }
 
-section,
+section {
+  padding: var(--margin-y-spacing-small) var(--margin-x-spacing-small);
+}
+
 .page-hero {
   padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
 }
 
 @media (min-width: 768px) {
+  section {
+    padding: var(--margin-y-spacing-small) var(--margin-x-spacing-large);
+  }
 
-  section,
   .page-hero {
     padding: var(--margin-top-spacing) var(--margin-x-spacing-large);
   }

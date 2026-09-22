@@ -36,7 +36,7 @@ export default function AboutMePage() {
                         alt="O imagine cu mine in care stau in picioare"
                     />
 
-                    <h2 className='sr-only'>Cine sunt</h2>
+                    <h2 className='sr-only'>Cabinet de psihologie particulară Constanța</h2>
                     <p className='bigger-paragraph'>Bună! Sunt Poșircă Ioana-Claudia, psiholog, și mă bucur sincer că ai ajuns aici.</p>
                     <p className='big-paragraph'>Am ales psihologia dintr-o curiozitate care nu m-a părăsit niciodată: aceea de a înțelege cum se formează oamenii, cum se schimbă și cum ajung să se raporteze la ei înșiși și la cei din jur. Cu timpul, am înțeles că psihologia nu înseamnă doar teorii și instrumente de lucru - înseamnă, mai presus de orice, <strong>întâlnirea cu un om și cu povestea lui</strong>.</p>
 
@@ -52,7 +52,7 @@ export default function AboutMePage() {
                         alt="O imagine cu mine uitându-mă în dreapta"
                     />
                     <h2>Cum lucrez</h2>
-                    <p className='big-paragraph'>Drumul acesta m-a apropiat de oameni și contexte foarte diferite: copii și adolescenți, persoane cu dificultăți de dezvoltare, vârstnici și mediul educațional. Fiecare experiență m-a învățat același lucru: <strong>un om nu poate fi redus la o dificultate sau la o etichetă</strong>.</p>
+                    <p className='big-paragraph'>Drumul acesta m-a apropiat de oameni și contexte foarte diferite: copii și adolescenți, persoane cu dificultăți de dezvoltare, vârstnici și mediul educațional. Fiecare experiență m-a învățat același lucru: <strong>un om NU poate fi redus la o dificultate sau la o etichetă</strong>.</p>
                     <p className='big-paragraph' style={{ fontFamily: 'var(--font-quote)', fontWeight: 'bold' }}>Nu cred în rețete universale și nici în ideea că există un singur fel „corect” de a fi. Cred în explorare, în înțelegerea propriei povești și în crearea unui spațiu în care lucrurile pot fi privite cu mai multă claritate.</p>
                     <p className='big-paragraph'>Ofer în prezent <strong>intervenție psihologică primară</strong> — un sprijin în care rigoarea psihologiei nu pierde din partea ei umană. Dacă, pe parcurs, apare nevoia unui demers terapeutic mai amplu, te pot îndruma către un specialist potrivit.</p>
                 </section>
@@ -105,7 +105,7 @@ export default function AboutMePage() {
 
                 <section className="cta-section">
                     <p className="big-paragraph">Dacă simți că a venit momentul să te oprești puțin și să te privești cu mai multă atenție, <span style={{ fontFamily: 'var(--font-quote)', fontWeight: 'bold' }}>te invit să facem loc, împreună, acestui proces.</span ></p>
-                    <Button variant='primary' size="lg" to={ROUTES.APPOINTMENT}>Trimite-mi un mesaj</Button>
+                    <Button variant='primary' size="lg" to={ROUTES.APPOINTMENT}>Scrie-mi un mesaj</Button>
                 </section>
             </main>
 

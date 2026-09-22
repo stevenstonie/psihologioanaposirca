@@ -8,6 +8,7 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import AntiSuicideBanner from './components/anti_suicide_banner/anti_suicide_banner';
 import { lazy, useEffect } from 'react';
 import { Suspended } from './utils/page_loading/Suspended'
+import { JsonLdForLocalBusiness } from './components/contact_details/contact_details';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +44,7 @@ function App() {
       >
         <BrowserRouter>
           <ScrollToTop />
+          <JsonLdForLocalBusiness />
 
           <AntiSuicideBanner />
           <Navbar />
@@ -61,7 +63,6 @@ function App() {
             <Route path={ROUTES.POLICIES} element={<Suspended key="policies"><PoliciesPage /></Suspended>} />
             <Route path="*" element={<Suspended key="not_found"><NotFoundPage /></Suspended>} />
           </Routes>
-
         </BrowserRouter>
       </PersistQueryClientProvider>
       <></>

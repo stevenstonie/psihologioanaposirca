@@ -7,6 +7,10 @@
         padding: var(--margin-top-spacing) var(--margin-x-spacing-small);
     }
 
+    h2 {
+        margin-top: 0;
+    }
+
     @media (min-width: 768px) {
         h1 {
             padding: var(--margin-top-spacing) var(--margin-x-spacing-large);

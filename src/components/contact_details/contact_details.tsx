@@ -134,7 +134,7 @@ export const contactData: ContactItem[] = [
     }
 ];
 
-export const LocalBusinessSchema = () => {
+export const JsonLdForLocalBusiness = () => {
     const schema = {
         "@context": "https://schema.org",
         "@type": "MedicalClinic",
@@ -156,8 +156,8 @@ export const LocalBusinessSchema = () => {
         },
         // "geo": {
         //     "@type": "GeoCoordinates",
-        //     "latitude": 44.4268, 
-        //     "longitude": 26.1025
+        //     "latitude": 44.444, 
+        //     "longitude": 22.2222
         // },
     };
 
