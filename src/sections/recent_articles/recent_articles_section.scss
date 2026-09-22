@@ -1,20 +1,18 @@
-.recent-articles-section {
-    .see-all-articles-btn-container {
-        display: flex;
-        justify-content: center;
-
-        @media (min-width: 768px) {
-            justify-content: start;
-        }
-    }
-
-    li:nth-child(n+4) {
-        display: none;
-    }
+.see-all-articles-btn-container {
+    display: flex;
+    justify-content: center;
 
     @media (min-width: 768px) {
-        li:nth-child(n+4) {
-            display: block;
-        }
+        justify-content: start;
+    }
+}
+
+li:nth-child(n+4) {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    li:nth-child(n+4) {
+        display: block;
     }
 }

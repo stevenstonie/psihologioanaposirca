@@ -7,7 +7,7 @@ import checkmarkIconPath from '@/assets/svgs/icons/others/checkmark.svg';
 import './contact_details.scss';
 
 const city: string = 'Constanța';
-const country: string = 'Romania';
+const country: string = 'România';
 const countryCodeIso2: string = 'RO';
 const phoneNumber: string = '+40749900483';
 const emailAddress: string = 'psihologioanaposirca@gmail.com';

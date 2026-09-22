@@ -9,8 +9,8 @@ import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function ContactPage() {
     usePageHead(
-        'Contact și Locație Cabinet | Ioana Poșircă',
-        'Ai nevoie de sprijin? Contactează-mă pentru a programa o ședință de psihoterapie.'
+        'Contact și Locație Cabinet | Ioana Poșircă | Constanța',
+        'Ai nevoie de sprijin? Contactează-mă pentru a programa o ședință de psihologie.'
     );
     // waitForAssets(contactPageCoverImagePath);
 

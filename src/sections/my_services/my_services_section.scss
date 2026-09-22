@@ -1,35 +1,30 @@
-.my-services-section {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+.floating-sphere {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
 
-    .floating-sphere {
-        float: left;
-        margin-right: 30px;
-        margin-bottom: 10px;
-
-        @media (max-width: 600px) {
-            width: 150px;
-            margin-right: 15px;
-        }
-
-        @media (max-width: 350px) {
-            width: 120px;
-        }
+    @media (max-width: 600px) {
+        width: 150px;
+        margin-right: 15px;
     }
 
-    .how-we-can-work,
-    .how-we-can-work-options {
-        clear: left;
+    @media (max-width: 350px) {
+        width: 120px;
     }
+}
 
-    .how-we-can-work-options {
-        padding: 0;
-    }
+.how-we-can-work,
+.how-we-can-work-options {
+    clear: left;
+}
 
-    @media (max-width: 768px) {
-        .see-more-details-container {
-            display: flex;
-            justify-content: center;
-        }
+.how-we-can-work-options {
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .see-more-details-container {
+        display: flex;
+        justify-content: center;
     }
 }

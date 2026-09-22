@@ -12,7 +12,7 @@ export default function RecentArticlesSection() {
     if (error) return <div>Preluarea articolelor a eșuat.</div>;
 
     return (
-        <section className='recent-articles-section'>
+        <>
             <h2>Articole recente</h2>
 
             {isPending ? (
@@ -30,6 +30,6 @@ export default function RecentArticlesSection() {
                     </div>
                 </>
             )}
-        </section>
+        </>
     );
 }

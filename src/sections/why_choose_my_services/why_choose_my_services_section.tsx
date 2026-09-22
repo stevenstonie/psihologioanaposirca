@@ -10,7 +10,7 @@ import { ROUTES } from "../../utils/navigation";
 
 export default function WhyChooseMyServicesSection() {
     return (
-        <section className="why-choose-my-services-section">
+        <>
             <h2>De ce să alegi serviciile mele</h2>
             <div className="text-segment">
                 <p style={{ fontWeight: 'bold', fontSize: '1.6rem', fontFamily: 'var(--font-quote)' }}>
@@ -54,6 +54,6 @@ export default function WhyChooseMyServicesSection() {
             <div className="make-an-appointment-button-container">
                 <Button className="make-an-appointment-button" to={ROUTES.APPOINTMENT} size="lg">Trimite-mi un mesaj</Button>
             </div>
-        </section>
+        </>
     );
 }

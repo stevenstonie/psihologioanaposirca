@@ -40,7 +40,7 @@ export default function ArticleDetailsPage() {
     } : undefined;
 
     usePageHead(
-        article ? `${article.title} | Ioana Poșircă` : 'Se încarcă articolul... | Ioana Poșircă',
+        article ? `${article.title} | Ioana Poșircă | Constanța` : 'Se încarcă articolul... | Ioana Poșircă | Constanța',
         article ? getCleanExcerpt(article.contents) : '',
         articleSchema
     );

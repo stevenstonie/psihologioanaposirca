@@ -7,7 +7,7 @@ import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function ServicesPage() {
     usePageHead(
-        'Servicii | Ioana Poșircă',
+        'Servicii | Ioana Poșircă | Constanța',
         'Ofer ședințe de psihologie individuală, consiliere și dezvoltare personală. Vezi lista completă de servicii și alege ce ți se potrivește.'
     );
     // waitForAssets(servicesPageCoverImagePath);

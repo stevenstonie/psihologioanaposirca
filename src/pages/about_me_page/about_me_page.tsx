@@ -20,7 +20,7 @@ import { ROUTES } from '../../utils/navigation';
 
 export default function AboutMePage() {
     usePageHead(
-        'Despre mine | Ioana Poșircă',
+        'Despre mine | Ioana Poșircă | Constanța',
         'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
     );
     // waitForAssets();
@@ -36,7 +36,7 @@ export default function AboutMePage() {
                         alt="O imagine cu mine in care stau in picioare"
                     />
 
-                    <h2 className='sr-only'>Cabinet de psihologie particulară Constanța</h2>
+                    <h2 className='sr-only'>Cabinet Psihologie particulară Constanța</h2>
                     <p className='bigger-paragraph'>Bună! Sunt Poșircă Ioana-Claudia, psiholog, și mă bucur sincer că ai ajuns aici.</p>
                     <p className='big-paragraph'>Am ales psihologia dintr-o curiozitate care nu m-a părăsit niciodată: aceea de a înțelege cum se formează oamenii, cum se schimbă și cum ajung să se raporteze la ei înșiși și la cei din jur. Cu timpul, am înțeles că psihologia nu înseamnă doar teorii și instrumente de lucru - înseamnă, mai presus de orice, <strong>întâlnirea cu un om și cu povestea lui</strong>.</p>
 

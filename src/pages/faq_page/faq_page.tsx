@@ -9,7 +9,7 @@ import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function FAQPage() {
     usePageHead(
-        'Întrebări Frecvente (FAQ) | Ioana Poșircă',
+        'Întrebări Frecvente (FAQ) | Ioana Poșircă | Constanța',
         'Ai întrebări despre cum decurge o ședință de psihologie, confidențialitate sau alte detalii? Găsești aici răspunsuri la cele mai frecvente neclarități.'
     );
     // waitForAssets(faqPageCoverImagePath);

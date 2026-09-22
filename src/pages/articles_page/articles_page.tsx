@@ -10,7 +10,7 @@ import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function ArticlesPage() {
     usePageHead(
-        'Articole | Ioana Poșircă',
+        'Articole | Ioana Poșircă | Constanța',
         'Explorează articole despre gestionarea anxietății, relații de cuplu, dezvoltare personală și sănătate mintală, scrise dintr-o perspectivă psihoterapeutică.'
     );
     // waitForAssets(articlesPageCoverImagePath);

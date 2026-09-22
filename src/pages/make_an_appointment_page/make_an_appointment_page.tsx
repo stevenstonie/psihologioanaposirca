@@ -11,7 +11,7 @@ import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function AppointmentPage() {
     usePageHead(
-        'Programări | Ioana Poșircă',
+        'Programări | Ioana Poșircă | Constanța',
         'Programează o ședință. Vezi calendarul cu orele disponibile și alege un interval.'
     );
     // waitForAssets(appointmentPageCoverImagePath);

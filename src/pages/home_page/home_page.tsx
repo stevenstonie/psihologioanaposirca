@@ -9,20 +9,28 @@ import { usePageHead } from "../../utils/page_head_updater";
 
 export default function HomePage() {
     usePageHead(
-        'Ioana Poșircă | Psiholog',
+        'Ioana Poșircă | Cabinet Psihologie Constanța',
         'Cabinet de consiliere psihologică (în Constanța și online). Te ajut să gestionezi anxietatea, stresul și să îți regăsești echilibrul.'
     );
 
     return (
         <>
             <main className="home-page">
-                <h1 className="sr-only">Servicii profesionale de psihologie</h1>
-
-                <IntroSection></IntroSection>
-                <SpecializationsSection></SpecializationsSection>
-                <MyServicesSection></MyServicesSection>
-                <RecentArticlesSection></RecentArticlesSection>
-                <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
+                <section className="intro-section">
+                    <IntroSection></IntroSection>
+                </section>
+                <section className="specializations-section">
+                    <SpecializationsSection></SpecializationsSection>
+                </section>
+                <section className='my-services-section'>
+                    <MyServicesSection></MyServicesSection>
+                </section>
+                <section className='recent-articles-section'>
+                    <RecentArticlesSection></RecentArticlesSection>
+                </section>
+                <section className="why-choose-my-services-section">
+                    <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
+                </section>
             </main>
 
             <FooterSection></FooterSection>
