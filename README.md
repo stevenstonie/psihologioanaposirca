@@ -12,6 +12,22 @@ go to `google console` --> `api's and services` --> `credentials` --> `create cr
 create the spreadsheet, set the general access to 'anyone with the link' and make sure its set to 'viewer'. also to grab its id, copy the string after /d/ in url
 
 
+### deployment setup
+> npm install gh-pages --save-dev
+
+add:
+```
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
+```
+to "scripts"
+
+and a new field:
+```
+"homepage": "https://website.domain",
+```
+
+
 # during
 
 `npm run dev`
@@ -20,6 +36,14 @@ create the spreadsheet, set the general access to 'anyone with the link' and mak
 
 
 # post
+
+## deploy
+
+> npm run predeploy
+
+> npm run deploy
+
+## others
 
 any react dom \<Link\> tag should have the following:
 `onMouseDown={(e) => e.preventDefault()}`
