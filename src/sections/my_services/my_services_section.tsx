@@ -10,7 +10,7 @@ import Button from '../../components/button/button';
 
 export default function MyServicesSection() {
     return (
-        <>
+        <section className='my-services-section'>
             <h2>Serviciile mele</h2>
             <div>
                 <div className="floating-sphere">
@@ -36,6 +36,6 @@ export default function MyServicesSection() {
             <div className='see-more-details-container'>
                 <Button to={ROUTES.SERVICES} size="md">Vezi mai multe detalii</Button>
             </div>
-        </>
+        </section>
     );
 }

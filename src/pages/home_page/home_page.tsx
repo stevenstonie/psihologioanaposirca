@@ -16,21 +16,11 @@ export default function HomePage() {
     return (
         <>
             <main className="home-page">
-                <section className="intro-section">
-                    <IntroSection></IntroSection>
-                </section>
-                <section className="specializations-section">
-                    <SpecializationsSection></SpecializationsSection>
-                </section>
-                <section className='my-services-section'>
-                    <MyServicesSection></MyServicesSection>
-                </section>
-                <section className='recent-articles-section'>
-                    <RecentArticlesSection></RecentArticlesSection>
-                </section>
-                <section className="why-choose-my-services-section">
-                    <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
-                </section>
+                <IntroSection></IntroSection>
+                <SpecializationsSection></SpecializationsSection>
+                <MyServicesSection></MyServicesSection>
+                <RecentArticlesSection></RecentArticlesSection>
+                <WhyChooseMyServicesSection></WhyChooseMyServicesSection>
             </main>
 
             <FooterSection></FooterSection>

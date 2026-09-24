@@ -11,7 +11,7 @@ import { StrapWithInfo } from "../../components/strap_with_info/strap_with_info"
 export default function SpecializationsSection() {
 
     return (
-        <>
+        <section className="specializations-section">
             <h2>Specializări</h2>
             <CardLayout mode="carousel">
                 <StrapWithInfo icon={<img src={handsProtectingBrainIconPath} alt="hands protecting a brain" />}
@@ -37,6 +37,6 @@ export default function SpecializationsSection() {
             <div className="learn-more-button-container">
                 <Button to={ROUTES.ABOUT_ME} size="md">Află mai multe</Button>
             </div>
-        </>
+        </section>
     );
 }

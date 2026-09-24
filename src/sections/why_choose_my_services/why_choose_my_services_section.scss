@@ -1,26 +1,31 @@
-.text-segment {
-    p {
-        @media (min-width: 600px) {
-            font-size: 1.4rem;
+.why-choose-my-services-section {
+    padding-top: 3rem;
+    padding-bottom: 50px;
+
+    .text-segment {
+        p {
+            @media (min-width: 600px) {
+                font-size: 1.4rem;
+            }
+        }
+
+        li {
+            @media (min-width: 600px) {
+                font-size: 1.2rem;
+            }
         }
     }
 
-    li {
-        @media (min-width: 600px) {
-            font-size: 1.2rem;
-        }
-    }
-}
+    .make-an-appointment-button-container {
+        display: flex;
+        justify-content: center;
 
-.make-an-appointment-button-container {
-    display: flex;
-    justify-content: center;
+        .make-an-appointment-button {
+            width: 100%;
 
-    .make-an-appointment-button {
-        width: 100%;
-
-        @media (min-width: 768px) {
-            width: 70%;
+            @media (min-width: 768px) {
+                width: 70%;
+            }
         }
     }
 }
