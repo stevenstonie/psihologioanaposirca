@@ -140,7 +140,7 @@ export const JsonLdForLocalBusiness = () => {
         "@type": "MedicalClinic",
         "medicalSpecialty": "Psihologie",
         "name": "Cabinet Individual de Psihologie Ioana Poșircă",
-        "image": "https://psihologioanaposirca.ro/thumbnail-image.jpg",
+        "image": "https://psihologioanaposirca.ro/thumbnail-image.webp",
         "url": "https://psihologioanaposirca.ro",
         "telephone": phoneNumber,
         "address": {

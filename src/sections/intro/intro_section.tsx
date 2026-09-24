@@ -1,5 +1,5 @@
 import './intro_section.scss';
-import introImage from '@/assets/images/intro-image.jpg';
+import introImage from '@/assets/images/intro-image.webp';
 import { ROUTES } from '../../utils/navigation';
 import Button from '../../components/button/button';
 
