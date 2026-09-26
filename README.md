@@ -12,7 +12,7 @@ go to `google console` --> `api's and services` --> `credentials` --> `create cr
 create the spreadsheet, set the general access to 'anyone with the link' and make sure its set to 'viewer'. also to grab its id, copy the string after /d/ in url
 
 
-### deployment setup
+## deployment setup
 
 create a file **_redirects** in /public with the following contents:
 ```
@@ -22,12 +22,15 @@ create a file **_redirects** in /public with the following contents:
 go to cloudflare dashboard --> workers & pages --> create application --> pages tab --> connect to git --> select the repo
 
 fill in the form as follows:
+- framework preset: react (vite)
 - build command: npm run build
-- deploy command: npm run build
-- preview command: npm run preview
+- build output directory: /dist
+- root directory: /
 
 
 also add the domain in cloudflare and modify the nameservers in the registrar with the ones provided by cloudflare + update dns ssl/tls settings
+
+connect the domain to the project and voila
 
 
 # during
