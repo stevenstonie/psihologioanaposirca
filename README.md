@@ -13,18 +13,10 @@ create the spreadsheet, set the general access to 'anyone with the link' and mak
 
 
 ### deployment setup
-> npm install gh-pages --save-dev
 
-add:
+create a file **_redirects** in /public with the following contents:
 ```
-"predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
-```
-to "scripts"
-
-and a new field:
-```
-"homepage": "https://website.domain",
+/*    /index.html   200
 ```
 
 
@@ -39,9 +31,7 @@ and a new field:
 
 ## deploy
 
-> npm run predeploy
 
-> npm run deploy
 
 ## others
 
