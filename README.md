@@ -28,9 +28,12 @@ fill in the form as follows:
 - root directory: /
 
 
-also add the domain in cloudflare and modify the nameservers in the registrar with the ones provided by cloudflare + update dns ssl/tls settings
+add the domain in cloudflare and modify the nameservers in the registrar with the ones provided by cloudflare + update dns ssl/tls settings
+
+also in case of .env, go into the cloudflare project settings, find "variables and secrets" and insert the keys, as those are not pushed to the remote repo
 
 connect the domain to the project and voila
+
 
 
 # during
