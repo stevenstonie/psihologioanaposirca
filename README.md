@@ -27,6 +27,9 @@ fill in the form as follows:
 - preview command: npm run preview
 
 
+also add the domain in cloudflare and modify the nameservers in the registrar with the ones provided by cloudflare + update dns ssl/tls settings
+
+
 # during
 
 `npm run dev`
