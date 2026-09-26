@@ -19,6 +19,13 @@ create a file **_redirects** in /public with the following contents:
 /*    /index.html   200
 ```
 
+go to cloudflare dashboard --> workers & pages --> create application --> pages tab --> connect to git --> select the repo
+
+fill in the form as follows:
+- build command: npm run build
+- deploy command: npm run build
+- preview command: npm run preview
+
 
 # during
 
@@ -31,7 +38,7 @@ create a file **_redirects** in /public with the following contents:
 
 ## deploy
 
-
+just push the code to the repo and cloudflare will take it up from there
 
 ## others
 

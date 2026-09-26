@@ -1,11 +1,11 @@
-import CardLayout from '../../components/card_layout/card_layout';
-import RevealingCard from '../../components/revealing_card/revealing_card';
-import fourPuzzlePiecesIconPath from '@/assets/svgs/icons/about_me/four_puzzle_pieces.svg';
-import globeWithGraduationCapIconPath from '@/assets/svgs/icons/about_me/globe_with_a_graduation_cap.svg';
-import graduationCapIconPath from '@/assets/svgs/icons/about_me/graduation_cap.svg';
-import handHoldingLeavesIconPath from '@/assets/svgs/icons/about_me/hand_holding_two_leaves.svg';
-import personHoldingBookIconPath from '@/assets/svgs/icons/about_me/person_holding_a_book.svg';
-import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_teaching_child.svg';
+// import CardLayout from '../../components/card_layout/card_layout';
+// import RevealingCard from '../../components/revealing_card/revealing_card';
+// import fourPuzzlePiecesIconPath from '@/assets/svgs/icons/about_me/four_puzzle_pieces.svg';
+// import globeWithGraduationCapIconPath from '@/assets/svgs/icons/about_me/globe_with_a_graduation_cap.svg';
+// import graduationCapIconPath from '@/assets/svgs/icons/about_me/graduation_cap.svg';
+// import handHoldingLeavesIconPath from '@/assets/svgs/icons/about_me/hand_holding_two_leaves.svg';
+// import personHoldingBookIconPath from '@/assets/svgs/icons/about_me/person_holding_a_book.svg';
+// import personTeachingChildIconPath from '@/assets/svgs/icons/about_me/person_teaching_child.svg';
 import './about_me_page.scss';
 import { StrapWithInfo } from '../../components/strap_with_info/strap_with_info';
 import FooterSection from '../../sections/footer/footer_section';
@@ -14,7 +14,6 @@ import certificationImagePath from '@/assets/images/about_me/certificate.png';
 import practicalExperienceImagePath from '@/assets/images/about_me/three-hands-in-union.png';
 import aboutMeImage from '@/assets/images/about_me/standing-up.webp';
 import howIWorkImage from '@/assets/images/about_me/striking-a-pose-looking-to-the-right.webp';
-import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 import Button from '../../components/button/button';
 import { ROUTES } from '../../utils/navigation';
 

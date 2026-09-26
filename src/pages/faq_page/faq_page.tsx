@@ -5,7 +5,6 @@ import { usePageHead } from '../../utils/page_head_updater';
 import faqPageCoverImagePath from '@/assets/images/covers/calm_ocean_with_sky.webp';
 
 import './faq_page.scss';
-import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function FAQPage() {
     usePageHead(
