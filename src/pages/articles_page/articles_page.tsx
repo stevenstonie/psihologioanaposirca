@@ -16,8 +16,6 @@ export default function ArticlesPage() {
 
     const { data: articles, isPending, error } = queryForArticles();
 
-    if (error) return <div>Preluarea articolelor a eșuat.</div>;
-
     return (
         <>
             <main className='articles-page'>
@@ -30,6 +28,8 @@ export default function ArticlesPage() {
                 <section className="articles-grid-container">
                     {isPending ? (
                         <LoaderBreathing text='Se preiau articolele...' />
+                    ) : error ? (
+                        <div>Preluarea articolelor a eșuat.</div>
                     ) : (
                         <ArticlesPreviewGrid articles={articles || []} />
                     )}
