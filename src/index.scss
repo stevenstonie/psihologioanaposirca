@@ -46,6 +46,12 @@
     inset 8px 8px 20px 0px white;
 }
 
+.font-quote-italic {
+  font-family: var(--font-quote);
+  font-weight: bold;
+  font-style: italic;
+}
+
 html {
   font-family: var(--font-primary);
   color: var(--color-text-darker);

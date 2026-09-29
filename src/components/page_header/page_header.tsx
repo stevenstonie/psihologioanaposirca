@@ -13,7 +13,7 @@ export default function PageHeader({ title, description, imagePath }: Readonly<P
             style={imagePath ? { backgroundImage: `url(${imagePath})` } : undefined}
         >
             <h1>{title}</h1>
-            <p>{description}</p>
+            <p className='font-quote-italic'>{description}</p>
         </header>
     );
 }

@@ -2,14 +2,23 @@
 
 `npm install -D sass`
 
-## articles feature
+## get the keys
+- go to `google console` --> `api's and services` --> `credentials` --> `create credentials` and make sure the keys have their respective google API selected (if its a google sheets key then google sheets API, if calendar then google calendar API, etc). 
+- if the API is not shown go and enable it. 
+- restrict the key to only the needed URL's (including maybe the local one as well)
+- the keys should be placed in:
+  - **.env** for prod
+  - **.env.development** for dev
 
-### get the key
-go to `google console` --> `api's and services` --> `credentials` --> `create credentials` and make sure the key has the google sheets API selected (if not shown go and enable the API), then restrict the key to only the needed URL's (including maybe the local one as well)
+## features
 
 ### make the sheet
 
 create the spreadsheet, set the general access to 'anyone with the link' and make sure its set to 'viewer'. also to grab its id, copy the string after /d/ in url
+
+### make the calendar
+
+create the calendar and, in a similar fashion to the article feature, set the general access to anyone with the link but as restricted as possible. fetch the id too
 
 
 ## deployment setup
@@ -58,7 +67,7 @@ and
 
 ^^^ actually it was just my browser apparently ;-P
 
-^^^ and also it wasnt just ract dom \<Link\> tags but anything draggable like images and such
+^^^ and also it wasnt just react dom \<Link\> tags but anything draggable like images and such
 
 
 

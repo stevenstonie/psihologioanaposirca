@@ -1,13 +1,4 @@
 .contact-page {
-    .introductory-text {
-        font-family: var(--font-quote);
-        font-size: 2rem;
-
-        @media (min-width: 768px) {
-            font-size: 2.5rem;
-        }
-    }
-
     .page-contents {
         display: flex;
         flex-direction: column;
