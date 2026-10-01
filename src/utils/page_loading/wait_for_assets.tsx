@@ -1,7 +1,10 @@
 
 const assetCache = new Map<string, Promise<void> | true>();
 
-export function waitForAssets(imageUrl?: string) {
+export function waitForAssets(imageUrl?: string, timeoutMs: number = 7000) {
+    // dont run on server (if running on ssr)
+    if (typeof window === 'undefined') return;
+
     const cacheKey = imageUrl || 'fonts-only';
     // already checked this page?
     if (assetCache.get(cacheKey) === true) return;
@@ -41,8 +44,16 @@ export function waitForAssets(imageUrl?: string) {
         );
     }
 
-    // if not ready, bundle them together, wait and then mark as cached
-    const loadPromise = Promise.all(tasks).then(() => {
+    let timerId: ReturnType<typeof setTimeout>;
+    const timeoutPromise = new Promise((resolve) => {
+        timerId = setTimeout(resolve, timeoutMs);
+    });
+    // if not ready, bundle them together, wait for them and then mark as cached (or continue after a max timeout is reached)
+    const loadPromise = Promise.race([
+        Promise.all(tasks),
+        timeoutPromise
+    ]).then(() => {
+        clearTimeout(timerId);
         assetCache.set(cacheKey, true);
     });
 

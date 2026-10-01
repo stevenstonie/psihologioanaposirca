@@ -16,13 +16,14 @@ import aboutMeImage from '@/assets/images/about_me/standing-up.webp';
 import howIWorkImage from '@/assets/images/about_me/striking-a-pose-looking-to-the-right.webp';
 import Button from '../../components/button/button';
 import { ROUTES } from '../../utils/navigation';
+import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function AboutMePage() {
     usePageHead(
         'Despre mine | Ioana Poșircă | Constanța',
         'Află mai multe despre formarea mea ca psiholog, abordarea mea în cabinet și cum te pot susține în procesul tău de vindecare emoțională.'
     );
-    // waitForAssets();
+    waitForAssets(aboutMeImage);
 
     return (
         <>

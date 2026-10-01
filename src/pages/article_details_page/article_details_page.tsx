@@ -10,6 +10,7 @@ import { LoaderBreathing } from '../../components/loader_breathing/loader_breath
 import { handleArticleImageError } from '../../utils/image_helpers';
 import { usePageHead } from '../../utils/page_head_updater';
 import { getSafeIsoDate } from '../../utils/helpers';
+import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function ArticleDetailsPage() {
     const articleTagClassName: string = "article-details-page";
@@ -44,6 +45,7 @@ export default function ArticleDetailsPage() {
         article ? getCleanExcerpt(article.contents) : '',
         articleSchema
     );
+    waitForAssets();
 
     if (isPending) {
         return (

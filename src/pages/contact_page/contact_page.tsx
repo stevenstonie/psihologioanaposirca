@@ -5,13 +5,14 @@ import FooterSection from '../../sections/footer/footer_section';
 import { usePageHead } from '../../utils/page_head_updater';
 import contactPageCoverImagePath from '@/assets/images/covers/two_coffee_cups_on_a_table.webp';
 import './contact_page.scss';
+import { waitForAssets } from '../../utils/page_loading/wait_for_assets';
 
 export default function ContactPage() {
     usePageHead(
         'Contact și Locație Cabinet | Ioana Poșircă | Constanța',
         'Ai nevoie de sprijin? Contactează-mă pentru a programa o ședință de psihologie.'
     );
-    // waitForAssets(contactPageCoverImagePath);
+    waitForAssets(contactPageCoverImagePath);
 
     return (
         <>

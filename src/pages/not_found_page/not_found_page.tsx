@@ -2,7 +2,6 @@ import './not_found_page.scss';
 import lostPersonIcon from '@/assets/svgs/icons/others/lost_person_next_to_a_sign.svg';
 
 export default function NotFoundPage() {
-
     return (
         <main className="not-found-page-container">
             <h1>Hopaa!</h1>

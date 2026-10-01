@@ -6,12 +6,15 @@ import SpecializationsSection from "../../sections/specializations/specializatio
 import WhyChooseMyServicesSection from "../../sections/why_choose_my_services/why_choose_my_services_section";
 import './home_page.scss';
 import { usePageHead } from "../../utils/page_head_updater";
+import { waitForAssets } from "../../utils/page_loading/wait_for_assets";
 
 export default function HomePage() {
     usePageHead(
         'Ioana Poșircă | Cabinet Psihologie Constanța',
         'Cabinet de consiliere psihologică (în Constanța și online). Te ajut să gestionezi anxietatea, stresul și să îți regăsești echilibrul.'
     );
+    waitForAssets();
+
 
     return (
         <>
