@@ -32,9 +32,11 @@
 
     .service-card {
         background: color-mix(in srgb, var(--color-bg) 50%, transparent);
-        border-radius: 12px;
         padding: 2rem 1.5rem;
-        box-shadow: var(--shadow-claymorphic);
+
+        border: var(--border-subtle);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-card);
 
         h2 {
             padding-bottom: .5rem;

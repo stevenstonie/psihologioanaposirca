@@ -19,39 +19,38 @@
     .contact-blob {
         display: flex;
         gap: 1rem;
-        padding: 1rem 1rem;
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
+        padding: 1rem;
         align-items: center;
         width: 100%;
 
-        border-radius: 10px;
-        background: color-mix(in srgb, var(--color-bg) 50%, transparent);
-        box-shadow:
-            0 8px 16px rgba(0, 0, 0, 0.08),
-            inset -2px -2px 6px rgba(255, 255, 255, 0.9),
-            inset 2px 2px 6px rgba(50, 50, 50, 0.2);
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        border-radius: var(--border-radius-md);
+        background-color: color-mix(in srgb, var(--color-bg) 50%, transparent);
+        border: var(--border-interactive);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
 
         position: relative;
         z-index: 0;
 
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1),
+            box-shadow 0.3s cubic-bezier(0.23, 1, 0.320, 1),
+            background-color 0.2s ease,
+            z-index 0s;
+
         &:hover {
             z-index: 1;
             transform: translateY(-3px);
-            box-shadow:
-                0 12px 28px rgba(0, 0, 0, 0.16),
-                inset 6px 6px 16px rgba(255, 255, 255, 0.8),
-                inset -6px -6px 20px -5px var(--color-bg-darker);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            background-color: color-mix(in srgb, var(--color-bg-lighter) 50%, transparent);
         }
 
         &:active {
             transform: translateY(1px);
-            box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.1),
-                inset 2px 2px 8px rgba(255, 255, 255, 0.85),
-                inset -2px -2px 8px rgba(163, 177, 198, 0.4);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            background-color: var(--color-bg-darker);
         }
 
         .contact-blob-icon {
@@ -65,7 +64,6 @@
 
         .contact-blob-content {
             flex: 1;
-            /* THE MAGIC FIX: Takes all available space, pushing the button to the right */
             min-width: 0;
             display: flex;
             flex-direction: column;
@@ -98,7 +96,6 @@
             background: none;
             border: none;
             padding: 8px;
-            /* Bigger click target */
             margin-left: 0.5rem;
             cursor: pointer;
             color: inherit;

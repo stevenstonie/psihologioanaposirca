@@ -1,41 +1,42 @@
-# pre
+## pre
 
 `npm install -D sass`
 
-## get the keys
-- go to `google console` --> `api's and services` --> `credentials` --> `create credentials` and make sure the keys have their respective google API selected (if its a google sheets key then google sheets API, if calendar then google calendar API, etc). 
-- if the API is not shown go and enable it. 
+### get the keys
+
+- go to `google console` --> `api's and services` --> `credentials` --> `create credentials` and make sure the keys have their respective google API selected (if its a google sheets key then google sheets API, if calendar then google calendar API, etc).
+- if the API is not shown go and enable it.
 - restrict the key to only the needed URL's (including maybe the local one as well)
 - the keys should be placed in:
   - **.env** for prod
   - **.env.development** for dev
 
-## features
+### features
 
-### make the sheet
+#### make the sheet
 
 create the spreadsheet, set the general access to 'anyone with the link' and make sure its set to 'viewer'. also to grab its id, copy the string after /d/ in url
 
-### make the calendar
+#### make the calendar
 
 create the calendar and, in a similar fashion to the article feature, set the general access to anyone with the link but as restricted as possible. fetch the id too
 
+### deployment setup
 
-## deployment setup
+create a file **\_redirects** in /public with the following contents:
 
-create a file **_redirects** in /public with the following contents:
-```
+```text
 /*    /index.html   200
 ```
 
 go to cloudflare dashboard --> workers & pages --> create application --> pages tab --> connect to git --> select the repo
 
 fill in the form as follows:
+
 - framework preset: react (vite)
 - build command: npm run build
 - build output directory: /dist
 - root directory: /
-
 
 add the domain in cloudflare and modify the nameservers in the registrar with the ones provided by cloudflare + update dns ssl/tls settings
 
@@ -43,22 +44,27 @@ also in case of .env, go into the cloudflare project settings, find "variables a
 
 connect the domain to the project and voila
 
-
-
-# during
+## mid
 
 `npm run dev`
 
 `npm run build`
 
+## post
 
-# post
+### deploy
 
-## deploy
+just push the code to the repo (on the selected branch to be watched for deployment) and cloudflare will take it up from there
 
-just push the code to the repo and cloudflare will take it up from there
+#### deploy to a sub domain from a branch
 
-## others
+create a branch (ex: **dev**) and have code pushed to the repo from it
+
+in cloudflare, create a new custom domain with the subdomain as anything (ex: **test**)
+
+go to dns settings and make sure the CNAME record with the test.domainname.tld name has a value of dev.someprojectname.pages.dev
+
+### others
 
 any react dom \<Link\> tag should have the following:
 `onMouseDown={(e) => e.preventDefault()}`
@@ -69,46 +75,32 @@ and
 
 ^^^ and also it wasnt just react dom \<Link\> tags but anything draggable like images and such
 
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
+/ \
 
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 

@@ -7,13 +7,11 @@
 
     .accordion-item {
         list-style: none;
-        border-radius: 16px;
-        background: color-mix(in srgb, var(--color-bg) 100%, transparent);
-        box-shadow:
-            3px 8px 15px 4px rgba(0, 0, 0, 0.2),
-            inset -3px -3px 10px var(--color-bg-darker),
-            inset 5px 5px 10px rgba(255, 255, 255, 0.9);
-        transition: box-shadow 0.3s, background 0.3s;
+        border-radius: var(--border-radius-sm);
+        background-color: var(--color-bg-lighter);
+        border: var(--border-interactive);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.3s ease, background-color 0.3s ease;
 
         .accordion-title {
             display: flex;
@@ -22,24 +20,20 @@
             border: none;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 1rem;
             min-height: 44px;
-            padding: 19px 24px;
+            padding: 1.25rem 1.5rem;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 1.125rem;
+            font-family: inherit;
             font-weight: 600;
             letter-spacing: -0.01em;
-            color: inherit;
-            transition: color 0.2s;
-            border-radius: 16px;
+            color: var(--color-text-darker);
+            border-radius: var(--border-radius-md);
+            transition: color 0.2s ease;
 
             &:hover {
                 color: var(--color-primary);
-            }
-
-            &:focus-visible {
-                outline: 2px solid var(--color-primary);
-                outline-offset: 2px;
             }
         }
 
@@ -49,16 +43,11 @@
             flex: none;
             width: 36px;
             height: 36px;
-            border-radius: 12px;
-            background: color-mix(in oklch, var(--color-primary) 8%, var(--color-bg));
-            border: none;
+            border-radius: var(--border-radius-sm);
+            background-color: var(--color-bg);
             color: var(--color-primary);
             transition: rotate 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                background 0.3s,
-                box-shadow 0.3s;
-            box-shadow:
-                inset -1px -1px 2px rgba(0, 0, 0, 0.04),
-                inset 1px 1px 2px rgba(255, 255, 255, 0.7);
+                background-color 0.3s ease;
         }
 
         .accordion-content {
@@ -72,7 +61,7 @@
                 p {
                     font-size: 1.1rem;
                     margin: 0;
-                    padding: 0 24px 20px;
+                    padding: 0 1.5rem 1.25rem;
                     line-height: 1.75;
                     color: var(--color-text-lighter);
                 }
@@ -80,19 +69,13 @@
         }
 
         &:has(.accordion-title[aria-expanded="true"]) {
-            border-radius: 16px;
-            background: color-mix(in srgb, var(--color-bg) 98%, var(--color-primary) 2%);
-            box-shadow:
-                3px 8px 15px 4px rgba(0, 0, 0, 0.2),
-                inset -1px -1px 3px rgba(0, 0, 0, 0.06),
-                inset 1px 1px 3px rgba(255, 255, 255, 0.9);
+            background-color: color-mix(in oklch, var(--color-bg-lighter) 40%, transparent);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 
             .accordion-icon {
                 rotate: -180deg;
-                background: color-mix(in oklch, var(--color-primary) 18%, var(--color-bg));
-                box-shadow:
-                    inset -2px -2px 4px rgba(0, 0, 0, 0.08),
-                    inset 2px 2px 4px rgba(255, 255, 255, 0.8);
+                background-color: var(--color-secondary);
+                color: #ffffff;
             }
 
             .accordion-content {

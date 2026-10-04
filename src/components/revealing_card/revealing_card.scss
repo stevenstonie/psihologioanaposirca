@@ -5,9 +5,10 @@
     padding: 24px 22px 26px;
     opacity: 1;
     transform: none;
-    border-radius: 10px;
-    background: color-mix(in srgb, var(--color-bg) 100%, transparent);
-    box-shadow: var(--shadow-claymorphic);
+    border: var(--border-subtle);
+    border-radius: var(--border-radius-md);
+    background-color: color-mix(in srgb, var(--color-bg) 50%, transparent);
+    box-shadow: var(--shadow-card);
 
     @supports (animation-timeline: view()) {
         animation: card-reveal linear both;

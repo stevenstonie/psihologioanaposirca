@@ -6,9 +6,10 @@
     list-style: none;
     width: fit-content;
 
-    background: color-mix(in srgb, var(--color-bg) 80%, transparent);
-    border-radius: 10px;
-    box-shadow: var(--shadow-claymorphic);
+    background-color: color-mix(in srgb, var(--color-bg) 50%, white);
+    border: var(--border-subtle);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-card);
 
     opacity: 0;
     scale: 0.9;

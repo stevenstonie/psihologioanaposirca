@@ -15,25 +15,26 @@
 }
 
 :root {
-  --color-primary: #168d5b;
-  --color-primary-darker: #106d46;
-  --color-primary-lighter: #26b076;
+  --color-primary: #0f9660;
+  --color-primary-darker: #09774b;
+  --color-primary-lighter: #1db779;
 
-  --color-secondary: #bb2a66;
-  --color-secondary-darker: #901548;
-  --color-secondary-lighter: #cb3976;
+  --color-secondary: #876449;
+  --color-secondary-darker: #704f36;
+  --color-secondary-lighter: #bf8960;
 
   --color-bg: #e7ddcb;
-  --color-bg-darker: #a0834c;
+  --color-bg-darker: #c0a775;
+  --color-bg-lighter: #eee8de;
 
   --color-text-darker: #2a2a2a;
   --color-text-lighter: #4a4a4a;
   --color-grey-even-lighter: #898989;
 
   --color-error: #d32f2f;
-  --color-success: green;
+  --color-success: #2e7d32;
 
-  --font-primary: 'IBMPlexSerifMedium', sans-serif;
+  --font-primary: 'IBMPlexSerifMedium', serif;
   --font-quote: 'Arima', serif;
 
   --margin-x-spacing-large: 3rem;
@@ -41,10 +42,19 @@
   --margin-y-spacing-small: 1rem;
   --margin-top-spacing: 40px;
 
-  --shadow-claymorphic: 9px 9px 20px -10px rgb(55, 55, 55),
-    inset -5px -5px 14px 0px var(--color-bg-darker),
-    inset 8px 8px 20px 0px white;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+
+  --border-subtle: 1px solid var(--color-bg-darker);
+  --border-interactive: 2px solid var(--color-secondary-darker);
 }
+
+// --shadow-claymorphic: 9px 9px 20px -10px rgb(55, 55, 55),
+//   inset -5px -5px 14px 0px var(--color-bg-darker),
+//   inset 8px 8px 20px 0px white;
 
 .font-quote-italic {
   font-family: var(--font-quote);
@@ -55,7 +65,7 @@
 html {
   font-family: var(--font-primary);
   color: var(--color-text-darker);
-  background-color: #edeae6;
+  background-color: #f5f3ef;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -122,11 +132,7 @@ select {
 }
 
 a {
-  color: var(--color-secondary);
-
-  &:hover {
-    color: var(--color-secondary-darker);
-  }
+  color: var(--color-secondary-darker);
 }
 
 section {
