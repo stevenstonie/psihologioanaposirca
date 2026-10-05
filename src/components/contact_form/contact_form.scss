@@ -4,7 +4,7 @@
     gap: 1.25rem;
     max-width: 100%;
     padding: 1rem;
-    background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
     border: var(--border-subtle);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-card);
@@ -32,9 +32,9 @@
         background: color-mix(in srgb, var(--color-bg) 90%, transparent);
         color: var(--color-text);
         box-shadow:
-            0 8px 16px rgba(0, 0, 0, 0.08),
-            inset -2px -2px 6px rgba(255, 255, 255, 0.9),
-            inset 2px 2px 6px rgba(50, 50, 50, 0.2);
+            0 12px 28px rgba(0, 0, 0, 0.16),
+            inset 6px 6px 16px rgba(255, 255, 255, 0.8),
+            inset -6px -6px 20px -5px var(--color-bg-darker);
 
         transition: all 0.3s ease;
 
@@ -47,9 +47,10 @@
             outline: none;
             background: color-mix(in srgb, var(--color-bg) 95%, transparent);
             box-shadow:
-                0 12px 28px rgba(0, 0, 0, 0.16),
-                inset 6px 6px 16px rgba(255, 255, 255, 0.8),
-                inset -6px -6px 20px -5px var(--color-bg-darker);
+                0 8px 16px rgba(0, 0, 0, 0.08),
+                inset -2px -2px 6px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 6px rgba(50, 50, 50, 0.2);
+
         }
 
         &.textarea {

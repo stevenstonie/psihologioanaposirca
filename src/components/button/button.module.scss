@@ -5,8 +5,8 @@
   gap: 0.5rem;
 
   padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-sm);
-  border: var(--border-interactive);
+  border-radius: var(--border-radius-round);
+  border: var(--border-type);
   cursor: pointer;
   font-weight: 600;
   font-family: inherit;
@@ -25,12 +25,14 @@
   --bg-base: var(--color-primary);
   --bg-hover: var(--color-primary-lighter);
   --bg-active: var(--color-primary-darker);
+  --border-type: var(--border-interactive-prim-col);
 }
 
 .btn.secondary {
-  --bg-base: var(--color-secondary);
-  --bg-hover: var(--color-secondary-lighter);
+  --bg-base: var(--color-secondary-lighter);
+  --bg-hover: var(--color-secondary);
   --bg-active: var(--color-secondary-darker);
+  --border-type: var(--border-interactive-sec-col);
 }
 
 .btn:hover {

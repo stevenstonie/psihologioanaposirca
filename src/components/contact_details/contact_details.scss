@@ -23,9 +23,9 @@
         align-items: center;
         width: 100%;
 
-        border-radius: var(--border-radius-md);
+        border-radius: var(--border-radius-round);
         background-color: color-mix(in srgb, var(--color-bg) 50%, transparent);
-        border: var(--border-interactive);
+        border: var(--border-fat);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
         text-decoration: none;

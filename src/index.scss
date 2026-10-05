@@ -47,9 +47,12 @@
   --border-radius-sm: 6px;
   --border-radius-md: 12px;
   --border-radius-lg: 24px;
+  --border-radius-round: 50px;
 
   --border-subtle: 1px solid var(--color-bg-darker);
-  --border-interactive: 2px solid var(--color-secondary-darker);
+  --border-fat: 2px solid var(--color-bg-darker);
+  --border-interactive-sec-col: 2px solid color-mix(in srgb, var(--color-secondary-darker) 80%, black);
+  --border-interactive-prim-col: 2px solid color-mix(in srgb, var(--color-primary-darker) 80%, black);
 }
 
 // --shadow-claymorphic: 9px 9px 20px -10px rgb(55, 55, 55),

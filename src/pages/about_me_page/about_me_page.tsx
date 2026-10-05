@@ -105,7 +105,7 @@ export default function AboutMePage() {
 
                 <section className="cta-section">
                     <p className="big-paragraph">Dacă simți că a venit momentul să te oprești puțin și să te privești cu mai multă atenție, <span className='font-quote-italic'>te invit să facem loc, împreună, acestui proces.</span ></p>
-                    <Button variant='primary' size="lg" to={ROUTES.APPOINTMENT}>Scrie-mi un mesaj</Button>
+                    <Button variant='primary' size="lg" to={ROUTES.APPOINTMENT}>Scrie-mi un mesaj &rarr;</Button>
                 </section>
             </main>
 

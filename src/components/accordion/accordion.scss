@@ -9,9 +9,12 @@
         list-style: none;
         border-radius: var(--border-radius-sm);
         background-color: var(--color-bg-lighter);
-        border: var(--border-interactive);
+        border: var(--border-fat);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        transition:
+            box-shadow .3s ease,
+            background-color .3s ease,
+            border .3s ease;
 
         .accordion-title {
             display: flex;
@@ -69,13 +72,14 @@
         }
 
         &:has(.accordion-title[aria-expanded="true"]) {
-            background-color: color-mix(in oklch, var(--color-bg-lighter) 40%, transparent);
+            background-color: color-mix(in srgb, var(--color-bg-lighter) 50%, white);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            border: var(--border-interactive-sec-col);
 
             .accordion-icon {
                 rotate: -180deg;
-                background-color: var(--color-secondary);
-                color: #ffffff;
+                background-color: color-mix(in srgb, var(--color-bg-lighter) 80%, var(--color-secondary-lighter));
+                color: #000;
             }
 
             .accordion-content {
