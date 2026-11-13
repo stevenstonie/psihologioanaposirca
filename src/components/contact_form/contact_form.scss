@@ -3,11 +3,11 @@
     flex-direction: column;
     gap: 1.25rem;
     max-width: 100%;
-    padding: 1rem;
-    background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
-    border: var(--border-subtle);
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-card);
+    padding: 1.25rem;
+    background-color: color-mix(in srgb, var(--color-bg) 45%, white);
+    border: none;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-inset);
 
     opacity: 0;
     animation: formIn 0.5s ease-out forwards;
@@ -20,7 +20,7 @@
     .contact-form-title {
         margin: 0;
         font-size: 1.5rem;
-        color: var(--color-text);
+        color: var(--color-text-darker);
         font-weight: 600;
     }
 
@@ -29,28 +29,23 @@
         font-size: 1rem;
         border: none;
         border-radius: 10px;
-        background: color-mix(in srgb, var(--color-bg) 90%, transparent);
-        color: var(--color-text);
-        box-shadow:
-            0 12px 28px rgba(0, 0, 0, 0.16),
-            inset 6px 6px 16px rgba(255, 255, 255, 0.8),
-            inset -6px -6px 20px -5px var(--color-bg-darker);
+        background: color-mix(in srgb, var(--color-bg-lighter) 70%, white);
+        color: var(--color-text-darker);
+        box-shadow: var(--shadow-raised);
 
-        transition: all 0.3s ease;
+        transition:
+            box-shadow 0.25s ease,
+            background-color 0.25s ease;
 
         &::placeholder {
-            color: var(--color-text-light);
-            opacity: 0.6;
+            color: var(--color-text-lighter);
+            opacity: 0.55;
         }
 
         &:focus {
             outline: none;
-            background: color-mix(in srgb, var(--color-bg) 95%, transparent);
-            box-shadow:
-                0 8px 16px rgba(0, 0, 0, 0.08),
-                inset -2px -2px 6px rgba(255, 255, 255, 0.9),
-                inset 2px 2px 6px rgba(50, 50, 50, 0.2);
-
+            background: color-mix(in srgb, var(--color-bg) 80%, white);
+            box-shadow: var(--shadow-inset);
         }
 
         &.textarea {
@@ -60,14 +55,14 @@
     }
 
     .contact-form-input.readonly-time {
-        background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-        color: var(--color-accent);
+        background: color-mix(in srgb, var(--color-primary) 12%, var(--color-bg-lighter));
+        color: var(--color-primary-darker);
         font-weight: bold;
         cursor: default;
-        border: 1px solid var(--color-accent);
+        box-shadow: var(--shadow-inset);
 
         &:focus {
-            box-shadow: none;
+            box-shadow: var(--shadow-inset);
         }
     }
 
@@ -76,7 +71,7 @@
         align-items: center;
         gap: 0.75rem;
         font-size: 0.85rem;
-        color: var(--color-text);
+        color: var(--color-text-darker);
         cursor: pointer;
 
         input[type="checkbox"] {
@@ -116,25 +111,26 @@
         padding: 1rem;
         font-size: 1rem;
         font-weight: 600;
-        color: black;
-        background: var(--color-accent);
+        color: #ffffff;
+        background: var(--color-primary);
         border: none;
         border-radius: 10px;
         cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow:
-            0 6px 12px rgba(0, 0, 0, 0.08),
-            inset -1px -1px 4px rgba(255, 255, 255, 0.8),
-            inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+        transition:
+            background-color 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: var(--shadow-raised);
 
         &:hover:not(:disabled) {
-            background: var(--color-accent-hover);
+            background: var(--color-primary-lighter);
+            transform: translateY(-1px);
         }
 
         &:active:not(:disabled) {
-            box-shadow:
-                inset 0 4px 10px rgba(0, 0, 0, 0.2),
-                inset 0 -2px 6px rgba(255, 255, 255, 0.4);
+            background: var(--color-primary-darker);
+            transform: translateY(0);
+            box-shadow: var(--shadow-inset);
         }
 
         &:disabled {
@@ -147,10 +143,8 @@
         margin: 0;
         padding: 0.875rem 1rem;
         border-radius: 10px;
-        background: color-mix(in srgb, var(--color-bg) 85%, transparent);
-        box-shadow:
-            inset -3px -3px 8px 0px var(--color-bg-darker),
-            inset 3px 3px 8px 0px white;
+        background: color-mix(in srgb, var(--color-bg) 80%, white);
+        box-shadow: var(--shadow-inset);
         font-size: 0.9rem;
         text-align: center;
         animation: slideIn 0.3s ease-out;

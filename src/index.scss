@@ -42,22 +42,24 @@
   --margin-y-spacing-small: 1rem;
   --margin-top-spacing: 40px;
 
-  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
-
   --border-radius-sm: 6px;
   --border-radius-md: 12px;
   --border-radius-lg: 24px;
   --border-radius-round: 50px;
 
-  --border-subtle: 1px solid var(--color-bg-darker);
-  --border-fat: 2px solid var(--color-bg-darker);
-  --border-interactive-sec-col: 2px solid color-mix(in srgb, var(--color-secondary-darker) 80%, black);
-  --border-interactive-prim-col: 2px solid color-mix(in srgb, var(--color-primary-darker) 80%, black);
-}
+  --border-interactive-sec-col: 2px solid color-mix(in srgb, var(--color-secondary-darker) 45%, var(--color-secondary-lighter));
+  --border-interactive-prim-col: 2px solid color-mix(in srgb, var(--color-primary-darker) 45%, var(--color-primary-lighter));
 
-// --shadow-claymorphic: 9px 9px 20px -10px rgb(55, 55, 55),
-//   inset -5px -5px 14px 0px var(--color-bg-darker),
-//   inset 8px 8px 20px 0px white;
+  --shadow-inset:
+    inset 2px 2px 5px color-mix(in srgb, var(--color-bg-darker) 40%, transparent),
+    inset -2px -2px 5px color-mix(in srgb, white 55%, transparent),
+    0 0 0 0 transparent;
+
+  --shadow-raised:
+    inset 0 1px 1px color-mix(in srgb, white 70%, transparent),
+    inset 0 -1px 2px color-mix(in srgb, var(--color-bg-darker) 20%, transparent),
+    0 5px 12px -7px color-mix(in srgb, var(--color-bg-darker) 55%, transparent);
+}
 
 .font-quote-italic {
   font-family: var(--font-quote);

@@ -6,10 +6,9 @@
     list-style: none;
     width: fit-content;
 
-    background-color: color-mix(in srgb, var(--color-bg) 50%, white);
-    border: var(--border-subtle);
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-card);
+    background-color: color-mix(in srgb, var(--color-bg-lighter) 60%, white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-raised);
 
     opacity: 0;
     scale: 0.9;

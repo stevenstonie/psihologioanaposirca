@@ -14,7 +14,7 @@
   color: #ffffff;
   background: var(--bg-base);
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-raised);
 
   transition: background-color 0.2s ease,
     transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
@@ -38,13 +38,12 @@
 .btn:hover {
   background: var(--bg-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .btn:active {
   background: var(--bg-active);
   transform: translateY(1px) scale(0.98);
-  box-shadow: none;
+  box-shadow: var(--shadow-inset);
 }
 
 .btn:focus-visible {
