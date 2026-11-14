@@ -1,7 +1,11 @@
 .home-page {
-    section {
-        &:first-of-type {
-            padding-top: 5rem;
+    section:first-of-type {
+        padding-top: clamp(4rem, 8vw, 5.5rem);
+    }
+
+    @media (max-width: 600px) {
+        section > h2 {
+            text-align: center;
         }
     }
 }

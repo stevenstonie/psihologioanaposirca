@@ -8,61 +8,111 @@
     padding-bottom: 8rem;
 
     .intro-container {
-        max-width: 1300px;
+        max-width: 1200px;
         margin: 0 auto;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        grid-template-areas:
+            "eyebrow media"
+            "quote media"
+            "subtext media"
+            "buttons media";
+        column-gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
+    }
 
-        .intro-eyebrow {
-            order: 1;
+    .intro-eyebrow {
+        grid-area: eyebrow;
+        margin: 0 0 1rem 0;
+        font-size: clamp(0.85rem, 1.6vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .intro-media {
+        grid-area: media;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro-quote {
+        grid-area: quote;
+        margin: 0 0 1.25rem 0;
+        font-family: var(--font-quote);
+        font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+        line-height: 1.25;
+        text-shadow: 1px 0;
+        text-wrap: balance;
+    }
+
+    .intro-highlight {
+        color: var(--color-secondary);
+        text-decoration: underline;
+    }
+
+    .intro-subtext {
+        grid-area: subtext;
+        margin: 0 0 2rem 0;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        font-weight: normal;
+        line-height: 1.55;
+        color: var(--color-primary-darker);
+    }
+
+    .intro-image {
+        display: block;
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 220px 220px var(--border-radius-md) var(--border-radius-md);
+        box-shadow: var(--shadow-raised);
+    }
+
+    .intro-buttons {
+        grid-area: buttons;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @media (max-width: 899px) {
+
+        .intro-container {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "eyebrow"
+                "media"
+                "quote"
+                "subtext"
+                "buttons";
+            row-gap: 1.5rem;
+        }
+
+        .intro-eyebrow,
+        .intro-quote,
+        .intro-subtext {
+            margin: 0;
+            text-align: center;
+        }
+
+        .intro-media {
+            margin: 0.5rem 0;
         }
 
         .intro-image {
-            order: 2;
-            display: block;
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 8px;
-            margin: 0 auto 1.5rem auto;
-        }
-
-        .intro-text {
-            order: 3;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--color-text-darker);
-            margin-bottom: 2rem;
+            max-width: 420px;
         }
 
         .intro-buttons {
-            order: 4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            clear: both;
-            padding-bottom: 3rem;
-        }
-    }
-}
-
-@media (min-width: 1100px) {
-    .intro-section {
-        .intro-container {
-            display: block;
-
-            .intro-image {
-                float: left;
-                margin: 0 2rem 1rem 0;
-            }
-
-            .intro-buttons {
-                flex-direction: row;
-                justify-content: center;
-                gap: 10rem;
-            }
+            justify-content: center;
         }
     }
 }

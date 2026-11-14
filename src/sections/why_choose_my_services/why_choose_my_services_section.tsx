@@ -54,6 +54,9 @@ export default function WhyChooseMyServicesSection() {
             <div className="make-an-appointment-button-container">
                 <Button className="make-an-appointment-button" to={ROUTES.APPOINTMENT} size="lg">Trimite-mi un mesaj &rarr;</Button>
             </div>
+
+            <br />
+            <br />
         </section>
     );
 }

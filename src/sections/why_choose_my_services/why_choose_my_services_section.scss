@@ -1,24 +1,8 @@
 .why-choose-my-services-section {
-    padding-top: 3rem;
-    padding-bottom: 50px;
-
-    .text-segment {
-        p {
-            @media (min-width: 600px) {
-                font-size: 1.4rem;
-            }
-        }
-
-        li {
-            @media (min-width: 600px) {
-                font-size: 1.2rem;
-            }
-        }
-    }
-
     .make-an-appointment-button-container {
         display: flex;
         justify-content: center;
+        margin-top: 1.5rem;
 
         .make-an-appointment-button {
             width: 100%;
