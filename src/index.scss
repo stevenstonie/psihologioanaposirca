@@ -26,6 +26,7 @@
   --color-bg: #e7ddcb;
   --color-bg-darker: #c0a775;
   --color-bg-lighter: #eee8de;
+  --color-of-base-background: #f9f8f8;
 
   --color-text-darker: #2a2a2a;
   --color-text-lighter: #4a4a4a;
@@ -70,7 +71,7 @@
 html {
   font-family: var(--font-primary);
   color: var(--color-text-darker);
-  background-color: #f5f3ef;
+  background-color: var(--color-of-base-background);
   margin: 0;
   padding: 0;
   box-sizing: border-box;

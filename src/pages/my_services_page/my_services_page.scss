@@ -61,7 +61,6 @@
         background: color-mix(in srgb, var(--color-bg-lighter) 55%, white);
         padding: 2rem;
         border-left: 3px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
-        border-radius: var(--border-radius-md);
         box-shadow: var(--shadow-raised);
     }
 }

@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import './navbar.scss';
 import NavBrand from '../nav_brand/nav_brand';
 import { NavLinks } from '../nav_links/nav_links';
-import { NAV_ITEMS } from '../../utils/navigation';
+import { NAV_ITEMS, ROUTES } from '../../utils/navigation';
 
 export default function Navbar() {
+    const { pathname } = useLocation();
+    const isAboutPage = pathname === ROUTES.ABOUT_ME;
+
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -89,7 +93,7 @@ export default function Navbar() {
 
     return (
         <header className="nav-wrapper">
-            <div className={`nav-container ${isVisible ? 'is-visible' : 'is-hidden'}`}>
+            <div className={`nav-container ${isVisible ? 'is-visible' : 'is-hidden'} ${isAboutPage ? 'is-on-about-page' : ''}`}>
                 <NavBrand onClick={() => setIsOpen(false)} />
 
                 <nav ref={menuRef}>
